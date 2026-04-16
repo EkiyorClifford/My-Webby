@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hestia — System Design</title>
+    <link rel="stylesheet" href="../../dist/output.css">
+    <style>
+        ::selection {
+            background-color: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+        }
+    </style>
+</head>
+
+<body class="bg-zinc-950 text-zinc-400 font-sans px-6 md:px-20 py-16">
+
+<!-- HEADER -->
+<a href="../index.html" class="text-sm text-zinc-600 hover:text-emerald-400 font-mono">
+    ← back
+</a>
+
+<div class="flex flex-wrap items-baseline justify-between gap-4 mt-8">
+    <h1 class="text-4xl md:text-6xl font-medium text-zinc-100 tracking-tight">
+        Hestia
+    </h1>
+    
+    <!-- Live Links -->
+    <div class="flex gap-4">
+        <a href="#" class="text-sm font-mono text-emerald-400 hover:text-emerald-300 border border-emerald-800 bg-emerald-950/30 px-4 py-2 rounded-full transition-all duration-300 hover:bg-emerald-950/50 flex items-center gap-2">
+            <span>↗</span> Live Demo
+        </a>
+        <a href="#" class="text-sm font-mono text-zinc-400 hover:text-white border border-zinc-800 bg-zinc-900/50 px-4 py-2 rounded-full transition-all duration-300 hover:bg-zinc-800 flex items-center gap-2">
+            <span>⌨</span> GitHub
+        </a>
+    </div>
+</div>
+
+<p class="mt-6 max-w-2xl text-lg">
+    Property rental platform designed to remove agent friction by enabling direct landlord–tenant interaction through structured workflows.
+</p>
+
+<!-- STACK USED -->
+<div class="flex flex-wrap gap-2 mt-4">
+    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">HTML</span>
+    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">PostgreSQL</span>
+    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">CSS</span>
+    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">JavaScript</span>
+    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">REST</span>
+</div>
+
+
+<!-- PICTURE PROOF -->
+<!-- Hero Image / Architecture Preview -->
+<div class="mt-12 rounded-xl border border-zinc-800 overflow-hidden bg-zinc-900/30">
+    <img 
+        src="../../dist/images/hestia-preview.png" 
+        alt="Hestia — System architecture and interface preview" 
+        class="w-full h-auto object-cover"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+    >
+    <!-- Fallback if image is missing (during development) -->
+    <div class="hidden w-full aspect-[21/9] bg-gradient-to-br from-emerald-950/50 to-zinc-950 flex items-center justify-center border-b border-zinc-800">
+        <div class="text-center">
+            <div class="font-mono text-emerald-400 text-sm mb-2">[ hestia architecture preview ]</div>
+            <div class="text-zinc-500 text-xs font-mono">// Add screenshot to /images/hestia-preview.png</div>
+        </div>
+    </div>
+</div>
+
+<!-- Caption -->
+<p class="mt-2 text-xs text-zinc-600 font-mono text-center">
+    Fig 1. Hestia — Property browsing interface and inspection request flow.
+</p>
+
+<!-- SECTION: FLOW -->
+<section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">01 — System Flow</h2>
+
+    <!-- Replace the flow div with this -->
+<div class="bg-zinc-900 border border-zinc-800 p-6">
+    <div class="flex flex-wrap gap-4 md:gap-8 items-center">
+        <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">1</span>
+            <span class="font-mono text-sm">User registers account</span>
+        </div>
+        <span class="text-zinc-600">→</span>
+        <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">2</span>
+            <span class="font-mono text-sm">Browses available properties</span>
+        </div>
+        <span class="text-zinc-600">→</span>
+        <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">3</span>
+            <span class="font-mono text-sm">Requests inspection</span>
+        </div>
+        <span class="text-zinc-600">→</span>
+        <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">4</span>
+            <span class="font-mono text-sm">Landlord reviews request</span>
+        </div>
+        <span class="text-zinc-600">→</span>
+        <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 text-xs flex items-center justify-center font-mono border border-emerald-700">5</span>
+            <span class="font-mono text-sm text-emerald-300">Approval → booking confirmed</span>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- SECTION: DATABASE -->
+<section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">02 — Database Design</h2>
+
+    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed">
+        users (id, name, email, role)  
+        properties (id, landlord_id, title, location, price)  
+        inspections (id, user_id, property_id, status)  
+        approvals (id, inspection_id, status)  
+    </div>
+
+    <p class="mt-4 text-zinc-500">
+        Designed to separate user actions (inspections) from decisions (approvals), allowing flexible workflows and future automation.
+    </p>
+</section>
+
+<!-- SECTION: BACKEND LOGIC -->
+<section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">03 — Backend Logic</h2>
+
+    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed">
+        POST /register  
+        POST /login  
+
+        GET /properties  
+        POST /inspection/request 
+        Request body:
+        {
+        "user_id": 12,
+        "property_id": 45,
+        "date": "2026-04-20"
+        }  
+
+        POST /inspection/approve  
+        POST /inspection/reject  
+    </div>
+
+    <p class="mt-4 text-zinc-500">
+        Backend handles state transitions between user actions and landlord decisions, ensuring consistent data flow across the system.
+    </p>
+</section>
+
+<!-- SECTION: WHY -->
+<section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">04 — Design Decisions</h2>
+
+    <p class="max-w-2xl leading-relaxed">
+        The system is structured to avoid tight coupling between users and properties. 
+        Instead of direct booking, an inspection layer introduces control, validation, and future monetization opportunities.
+    </p>
+</section>
+
+<!-- SECTION: STATE LOGIC -->
+ <section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">05 — State Handling</h2>
+
+    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm">
+        inspection.status:
+        - pending
+        - approved
+        - rejected
+    </div>
+
+    <p class="mt-4 text-zinc-500">
+        State-based design ensures predictable transitions and prevents conflicting actions between users and landlords.
+    </p>
+</section>
+</body>
+</html>

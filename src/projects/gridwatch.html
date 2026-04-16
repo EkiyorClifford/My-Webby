@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GridWatch — System Design</title>
+    <link rel="stylesheet" href="../../dist/output.css">
+</head>
+
+<body class="bg-zinc-950 text-zinc-400 font-sans px-6 md:px-20 py-16">
+
+<!-- HEADER -->
+<a href="../index.html" class="text-sm text-zinc-600 hover:text-emerald-400 font-mono">
+    ← back
+</a>
+
+<h1 class="text-4xl md:text-6xl text-zinc-100 mt-6">
+    Gridwatch
+</h1>
+
+<p class="mt-6 max-w-2xl text-lg">
+    Event-driven outage map enabling live updates, community reporting, and rapid visibility into electricity disruptions at scale.
+</p>
+
+<!-- SECTION: FLOW -->
+<section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">01 — System Flow</h2>
+
+    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed">
+        User reports outage  
+        → Location captured  
+        → Stored in database  
+        → Map updates in real-time  
+        → Other users view outage zones  
+    </div>
+</section>
+
+<!-- SECTION: DATABASE -->
+<section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">02 — Database Design</h2>
+
+    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed">
+        reports (id, user_id, location, status, timestamp)  
+        users (id, email)  
+    </div>
+
+    <p class="mt-4 text-zinc-500">
+        Designed to separate user actions (inspections) from decisions (approvals), allowing flexible workflows and future automation.
+    </p>
+</section>
+
+<!-- SECTION: BACKEND LOGIC -->
+<section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">03 — Backend Logic</h2>
+
+    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed">
+        <p>POST /api/outages/report → submit outage</p>
+        <p>GET /api/outages → fetch active outages</p>
+        <p>PATCH /api/outages/:id → update status</p>
+        <p>GET /api/zones → aggregated grid health data</p>
+    </div>
+
+    <p class="mt-4 text-zinc-500">
+        Backend handles state transitions between user actions and landlord decisions, ensuring consistent data flow across the system.
+    </p>
+</section>
+
+<!-- SECTION: DESIGN DECISIONS -->
+<section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">04 — Design Decisions</h2>
+
+    <p class="max-w-2xl leading-relaxed">
+        System prioritizes user-reported data before external validation
+    </p>
+    <p class="max-w-2xl leading-relaxed">
+        Aggregation layer prevents duplicate outage reports from cluttering the map
+    </p>
+    <p class="max-w-2xl leading-relaxed">
+        Zone-based structure allows scaling from city → national grid view
+    </p>
+</section>
+
+</body>
+</html>

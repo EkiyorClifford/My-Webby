@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekiyor Clifford — Full-Stack Developer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../dist/output.css">
+    
+    <style>
+        body { cursor: none; }
+
+        ::selection {
+            background-color: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+        }
+
+        .cursor-dot {
+            position: fixed;
+            width: 0.75rem;
+            height: 0.75rem;
+            background-color: #10b981;
+            border-radius: 9999px;
+            pointer-events: none;
+            z-index: 50;
+            mix-blend-mode: difference;
+            transform: translate(-50%, -50%);
+            transition: 0.2s;
+        }
+
+        a:hover ~ .cursor-dot,
+        button:hover ~ .cursor-dot,
+        .project-row:hover ~ .cursor-dot {
+            width: 2rem;
+            height: 2rem;
+            background-color: transparent;
+            border: 1px solid #10b981;
+        }
+
+        .terminal-mode {
+            background-color: #000 !important;
+            color: #10b981 !important;
+        }
+
+        .terminal-mode * {
+            color: #10b981 !important;
+            border-color: #10b981 !important;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-zinc-950 text-zinc-400 font-light antialiased font-sans">
+
+<!-- Cursor -->
+<div class="cursor-dot" id="cursor"></div>
+
+<!-- Preview -->
+<div id="projectPreview" class="fixed pointer-events-none z-40 opacity-0 transition-opacity duration-300"
+     style="width: 400px; height: 300px;">
+    <img id="previewImg" src="" class="w-full h-full object-cover rounded-lg border border-zinc-700 shadow-2xl">
+</div>
+
+<main class="container mx-auto px-6 md:px-12 lg:px-24 max-w-[1400px]">
+        
+<header class="pt-12 pb-24 flex justify-between text-sm uppercase tracking-[0.2em] text-zinc-500">
+    <div class="hover:text-emerald-400">Ekiyor Clifford</div>
+    <div class="flex gap-6">
+        <a href="#work" class="hover:text-emerald-400">Systems</a>
+        <a href="#about" class="hover:text-emerald-400">About</a>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="mb-32">
+    <h1 class="text-5xl md:text-7xl lg:text-8xl font-medium text-zinc-100 leading-tight">
+        I build systems<br>
+        people actually<br>
+        <span class="text-emerald-500 font-mono">use</span>.
+    </h1>
+
+    <p class="mt-10 text-lg max-w-2xl text-zinc-400 font-mono border-l-2 border-emerald-800 pl-6">
+        <span class="text-emerald-500">Who Am I?</span><br>
+        Full-stack developer focused on building scalable platforms — from clean interfaces 
+        to the backend systems that power them. Currently working on property tech and real-time applications.
+    </p>
+</section>
+
+<!-- PROJECTS -->
+<section id="work" class="mb-32">
+    <div class="mb-8 text-xs uppercase tracking-[0.3em] text-zinc-600 font-mono">~/systems</div>
+            
+    <!-- HESTIA -->
+    <div class="project-row grid grid-cols-12 py-10 border-t border-zinc-800 cursor-pointer"
+         data-preview="https://ibb.co/b5sCg0NG"
+         data-link="./projects/hestia.html">
+
+        <div class="col-span-2 text-zinc-600 font-mono">01</div>
+
+        <div class="col-span-5">
+            <h3 class="text-3xl text-zinc-300">
+                <span class="text-emerald-600 font-mono">></span> Hestia
+            </h3>
+
+            <div class="flex gap-2 mt-3 flex-wrap text-xs">
+                <span class="border px-3 py-1">HTML</span>
+                <span class="border px-3 py-1">PostgreSQL</span>
+                <span class="border px-3 py-1">JavaScript</span>
+                <span class="border px-3 py-1">PHP</span>
+            </div>
+        </div>
+
+        <div class="col-span-5 text-sm text-right text-zinc-500 font-mono">
+            <span class="text-emerald-600">//</span>
+            Property rental platform enabling direct landlord–tenant interaction, with structured workflows for listings, approvals, and inspections.
+        </div>
+    </div>
+
+    <!-- GRIDWATCH -->
+    <div class="project-row grid grid-cols-12 py-10 border-t border-zinc-800 cursor-pointer"
+         data-preview="../dist/images/outage-map.png"
+         data-link="./projects/gridwatch.html">
+
+        <div class="col-span-2 text-zinc-600 font-mono">02</div>
+
+        <div class="col-span-5">
+            <h3 class="text-3xl text-zinc-300">
+                <span class="text-emerald-600 font-mono">></span> GridWatch
+            </h3>
+
+            <div class="flex gap-2 mt-3 flex-wrap text-xs">
+                <span class="border px-3 py-1">Node.js</span>
+                <span class="border px-3 py-1">Leaflet</span>
+                <span class="border px-3 py-1">JavaScript</span>
+            </div>
+        </div>
+
+        <div class="col-span-5 text-sm text-right text-zinc-500 font-mono">
+            <span class="text-emerald-600">//</span>
+            Real-time outage tracking platform using user reports and geolocation to visualize electricity disruptions across regions.
+        </div>
+    </div>
+
+    <!-- AUTH -->
+    <div class="project-row grid grid-cols-12 py-10 border-t border-b border-zinc-800 cursor-pointer"
+         data-preview="./images/auth.png"
+         data-link="/projects/auth">
+
+        <div class="col-span-2 text-zinc-600 font-mono">03</div>
+
+        <div class="col-span-5">
+            <h3 class="text-3xl text-zinc-300">
+                <span class="text-emerald-600 font-mono">></span> Auth System
+            </h3>
+
+            <div class="flex gap-2 mt-3 flex-wrap text-xs">
+                <span class="border px-3 py-1">PHP</span>
+                <span class="border px-3 py-1">MySQL</span>
+                <span class="border px-3 py-1">JWT</span>
+            </div>
+        </div>
+
+        <div class="col-span-5 text-sm text-right text-zinc-500 font-mono">
+            <span class="text-emerald-600">//</span>
+            Authentication system handling user sessions, secure login flows, and role-based access control.
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="grid md:grid-cols-2 gap-12 mb-32">
+    <div>
+        <div class="mb-6 text-xs uppercase tracking-[0.3em] text-zinc-600 font-mono">~/about</div>
+
+        <p class="text-xl text-zinc-300">
+            I build products end-to-end — not just interfaces, but the systems behind them.
+        </p>
+
+        <p class="mt-6 text-zinc-500">
+            Currently focused on solving real problems in property tech and infrastructure. 
+            I care about performance, clarity, and building systems that actually scale with usage.
+        </p>
+
+        <button id="terminalModeToggle" class="mt-10 text-xs text-zinc-500 font-mono border-b border-zinc-800">
+            $ Ctrl+K
+        </button>
+    </div>
+
+    <div>
+        <div class="text-zinc-500 font-mono">$ contact</div>
+        <a href="mailto:clifford.dev@gmail.com" class="block text-xl text-zinc-200 mt-2">
+            clifford.dev@gmail.com
+        </a>
+
+        <div class="mt-10 text-sm text-zinc-500 space-y-2">
+            <a href="https://github.com/EkiyorClifford" class="text-emerald-400 hover:text-emerald-300" target="_blank">github/EkiyorClifford</a>
+            <p>linkedin <a href="https://linkedin.com/in/ekiyor" class="text-emerald-400 hover:text-emerald-300" target="_blank">/in/ekiyor</a></p>
+            <p>Nigeria</p>
+        </div>
+    </div>
+</section>
+
+<footer class="border-t border-zinc-900 py-6 text-xs text-zinc-600 flex justify-between font-mono">
+    <span>© 2026 — EKIYOR CLIFFORD</span>
+    <span class="text-emerald-700">● SYSTEMS ONLINE</span>
+</footer>
+
+</main>
+
+<script>
+// Cursor
+const cursor = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+});
+
+// Preview
+const preview = document.getElementById('projectPreview');
+const previewImg = document.getElementById('previewImg');
+
+let active = false;
+
+document.querySelectorAll('.project-row').forEach(row => {
+    const src = row.dataset.preview;
+
+    row.addEventListener('mouseenter', e => {
+        previewImg.src = src;
+        preview.style.opacity = '1';
+        active = true;
+    });
+
+    row.addEventListener('mouseleave', () => {
+        preview.style.opacity = '0';
+        active = false;
+    });
+
+    row.addEventListener('mousemove', e => {
+        if (active) {
+            preview.style.left = (e.clientX + 20) + 'px';
+            preview.style.top = e.clientY + 'px';
+        }
+    });
+
+    const link = row.dataset.link;
+    if (link) {
+        row.addEventListener('click', () => {
+            window.location.href = link;
+        });
+    }
+});
+
+// Terminal Mode
+let terminal = false;
+const btn = document.getElementById('terminalModeToggle');
+
+function toggleTerminal() {
+    terminal = !terminal;
+    document.body.classList.toggle('terminal-mode');
+
+    if (btn) {
+        btn.innerHTML = terminal ? '$ Ctrl+K — ACTIVE' : '$ Ctrl+K';
+    }
+}
+
+document.addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        toggleTerminal();
+    }
+});
+
+if (btn) btn.addEventListener('click', toggleTerminal);
+</script>
+
+</body>
+</html>
