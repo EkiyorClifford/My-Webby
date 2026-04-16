@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../dist/output.css">
     
     <style>
-        body { cursor: none; }
+        body { cursor: default; }
 
         ::selection {
             background-color: rgba(16, 185, 129, 0.2);
@@ -95,7 +95,7 @@
             
     <!-- HESTIA -->
     <div class="project-row grid grid-cols-12 py-10 border-t border-zinc-800 cursor-pointer"
-         data-preview="https://ibb.co/b5sCg0NG"
+         data-preview='https://i.ibb.co/SwtMXjVZ/hestia-index.png'
          data-link="./projects/hestia.html">
 
         <div class="col-span-2 text-zinc-600 font-mono">01</div>
@@ -121,7 +121,7 @@
 
     <!-- GRIDWATCH -->
     <div class="project-row grid grid-cols-12 py-10 border-t border-zinc-800 cursor-pointer"
-         data-preview="../dist/images/outage-map.png"
+         data-preview="https://placehold.co/400x300/0f172a/10b981?text=GridWatch+Preview"
          data-link="./projects/gridwatch.html">
 
         <div class="col-span-2 text-zinc-600 font-mono">02</div>
@@ -145,8 +145,8 @@
     </div>
 
     <!-- AUTH -->
-    <div class="project-row grid grid-cols-12 py-10 border-t border-b border-zinc-800 cursor-pointer"
-         data-preview="./images/auth.png"
+    <!-- <div class="project-row grid grid-cols-12 py-10 border-t border-b border-zinc-800 cursor-pointer"
+         data-preview="https://placehold.co/400x300/0f172a/10b981?text=Auth+Preview"
          data-link="/projects/auth">
 
         <div class="col-span-2 text-zinc-600 font-mono">03</div>
@@ -167,37 +167,70 @@
             <span class="text-emerald-600">//</span>
             Authentication system handling user sessions, secure login flows, and role-based access control.
         </div>
-    </div>
+    </div> -->
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="grid md:grid-cols-2 gap-12 mb-32">
     <div>
-        <div class="mb-6 text-xs uppercase tracking-[0.3em] text-zinc-600 font-mono">~/about</div>
+        <div class="mb-6 text-xs uppercase tracking-[0.3em] text-zinc-600 font-mono">~/About</div>
 
-        <p class="text-xl text-zinc-300">
+        <p class="text-xl text-zinc-300 leading-relaxed">
             I build products end-to-end — not just interfaces, but the systems behind them.
         </p>
 
-        <p class="mt-6 text-zinc-500">
-            Currently focused on solving real problems in property tech and infrastructure. 
-            I care about performance, clarity, and building systems that actually scale with usage.
+        <p class="mt-6 text-zinc-500 leading-relaxed">
+            Currently focused on property tech and real-time systems, with an emphasis on performance, clarity, and scalability.
         </p>
+
+        <div class="mt-10 text-sm text-zinc-600 font-mono space-y-2">
+            <p>// How I think</p>
+            <p>→ Systems over shortcuts</p>
+            <p>→ Clarity over complexity</p>
+            <p>→ Build for real users, not demos</p>
+        </div>
 
         <button id="terminalModeToggle" class="mt-10 text-xs text-zinc-500 font-mono border-b border-zinc-800">
             $ Ctrl+K
         </button>
     </div>
-
+    <!-- CONTACT ME -->
     <div>
-        <div class="text-zinc-500 font-mono">$ contact</div>
-        <a href="mailto:clifford.dev@gmail.com" class="block text-xl text-zinc-200 mt-2">
-            clifford.dev@gmail.com
-        </a>
+        <div class="text-zinc-500 font-mono">$ Contact</div>
+
+        <p class="mt-4 text-zinc-400 max-w-sm">
+            Building scalable platforms and real-time systems.  
+            Open to freelance work, collaborations, or opportunities where I can contribute to meaningful products.
+        </p>
+        <!-- EMAIL -->
+        <div class="mt-6 flex items-center gap-4">
+            <a href="mailto:clifford.dev@gmail.com" 
+            class="text-xl text-zinc-200 hover:text-emerald-400 transition">
+                clifford.dev@gmail.com
+            </a>
+
+            <button id="copyEmailBtn"
+                class="text-xs font-mono text-zinc-500 border border-zinc-800 px-2 py-1 hover:text-emerald-400 hover:border-emerald-700 transition">
+                copy
+            </button>
+        </div>
 
         <div class="mt-10 text-sm text-zinc-500 space-y-2">
-            <a href="https://github.com/EkiyorClifford" class="text-emerald-400 hover:text-emerald-300" target="_blank">github/EkiyorClifford</a>
-            <p>linkedin <a href="https://linkedin.com/in/ekiyor" class="text-emerald-400 hover:text-emerald-300" target="_blank">/in/ekiyor</a></p>
+            <a href="https://github.com/EkiyorClifford" 
+            class="text-emerald-400 hover:text-emerald-300" 
+            target="_blank">
+            github /ekiyorclifford
+            </a>
+
+            <p>
+                linkedin 
+                <a href="https://linkedin.com/in/ekiyor" 
+                class="text-emerald-400 hover:text-emerald-300" 
+                target="_blank">
+                /in/ekiyor
+                </a>
+            </p>
+
             <p>Nigeria</p>
         </div>
     </div>
@@ -221,6 +254,10 @@ document.addEventListener('mousemove', e => {
 // Preview
 const preview = document.getElementById('projectPreview');
 const previewImg = document.getElementById('previewImg');
+
+previewImg.onerror = () => {
+    preview.style.opacity = '0';
+};
 
 let active = false;
 
@@ -266,14 +303,31 @@ function toggleTerminal() {
     }
 }
 
-document.addEventListener('keydown', e => {
-    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+window.addEventListener('keydown', e => {
+    const key = (e.key || '').toLowerCase();
+    if ((e.ctrlKey || e.metaKey) && key === 'k') {
         e.preventDefault();
         toggleTerminal();
     }
 });
 
 if (btn) btn.addEventListener('click', toggleTerminal);
+
+// EMAIL COPY
+
+const copyBtn = document.getElementById('copyEmailBtn');
+
+if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText('clifford.dev@gmail.com');
+
+        copyBtn.innerText = 'copied';
+        
+        setTimeout(() => {
+            copyBtn.innerText = 'copy';
+        }, 2000);
+    });
+}
 </script>
 
 </body>
