@@ -51,61 +51,128 @@
 
 
 <!-- PICTURE PROOF -->
-<!-- Hero Image / Architecture Preview -->
-<div class="mt-12 rounded-xl border border-zinc-800 overflow-hidden bg-zinc-900/30">
-    <img 
-        src="../../dist/images/hestia-preview.png" 
-        alt="Hestia — System architecture and interface preview" 
-        class="w-full h-auto object-cover"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-    >
-    <!-- Fallback if image is missing (during development) -->
-    <div class="hidden w-full aspect-[21/9] bg-gradient-to-br from-emerald-950/50 to-zinc-950 flex items-center justify-center border-b border-zinc-800">
-        <div class="text-center">
-            <div class="font-mono text-emerald-400 text-sm mb-2">[ hestia architecture preview ]</div>
-            <div class="text-zinc-500 text-xs font-mono">// Add screenshot to /images/hestia-preview.png</div>
+   <!-- Image Gallery: The User Journey (Larger, Clearer) -->
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+        
+        <!-- Screenshot 1: Home Page -->
+        <div class="rounded-xl border border-zinc-800 overflow-hidden bg-zinc-900/30 group cursor-zoom-in" data-lightbox="hestia-home">
+            <div class="relative overflow-hidden">
+                <img 
+                    src="https://i.ibb.co/SwtMXjVZ/hestia-index.png"  border="0"
+                    alt="Hestia home page — landing and search" 
+                    class="w-full h-64 md:h-72 object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    onerror="this.src='https://placehold.co/800x600/0a0a0a/10b981?text=Home+Page'"
+                >
+                <div class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-sm px-2.5 py-1 rounded text-[10px] font-mono text-emerald-400 border border-zinc-700">
+                    /
+                </div>
+                <!-- Zoom indicator on hover -->
+                <div class="absolute bottom-3 right-3 bg-zinc-950/80 backdrop-blur-sm p-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        <line x1="11" y1="8" x2="11" y2="14"></line>
+                        <line x1="8" y1="11" x2="14" y2="11"></line>
+                    </svg>
+                </div>
+            </div>
+            <div class="p-4 border-t border-zinc-800">
+                <div class="font-mono text-xs text-emerald-400">01 — Home</div>
+                <div class="text-xs text-zinc-500 mt-1">Landing page with search entry</div>
+            </div>
+        </div>
+        
+        <!-- Screenshot 2: Properties Listing -->
+        <div class="rounded-xl border border-zinc-800 overflow-hidden bg-zinc-900/30 group cursor-zoom-in" data-lightbox="hestia-properties">
+            <div class="relative overflow-hidden">
+                <img 
+                    src="https://i.ibb.co/yFQNT9CL/PROPERTIES.png" alt="PROPERTIES" border="0"
+                    class="w-full h-64 md:h-72 object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    onerror="this.src='https://placehold.co/800x600/0a0a0a/10b981?text=Properties+Listing'"
+                >
+                <div class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-sm px-2.5 py-1 rounded text-[10px] font-mono text-emerald-400 border border-zinc-700">
+                    /properties
+                </div>
+                <div class="absolute bottom-3 right-3 bg-zinc-950/80 backdrop-blur-sm p-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        <line x1="11" y1="8" x2="11" y2="14"></line>
+                        <line x1="8" y1="11" x2="14" y2="11"></line>
+                    </svg>
+                </div>
+            </div>
+            <div class="p-4 border-t border-zinc-800">
+                <div class="font-mono text-xs text-emerald-400">02 — Browse</div>
+                <div class="text-xs text-zinc-500 mt-1">Property listings with filtering</div>
+            </div>
+        </div>
+        
+        <!-- Screenshot 3: USER DASHBOARD -->
+        <div class="rounded-xl border border-zinc-800 overflow-hidden bg-zinc-900/30 group cursor-zoom-in" data-lightbox="hestia-dashboard">
+            <div class="relative overflow-hidden">
+                <img 
+                    src="https://i.ibb.co/b5Sw2Q69/landlord-profile.png" alt="landlord profile" border="0"
+                    class="w-full h-64 md:h-72 object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    onerror="this.src='https://placehold.co/800x600/0a0a0a/10b981?text=User+Dashboard'"
+                >
+                <div class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-sm px-2.5 py-1 rounded text-[10px] font-mono text-emerald-400 border border-zinc-700">
+                    /dashboard
+                </div>
+                <div class="absolute bottom-3 right-3 bg-zinc-950/80 backdrop-blur-sm p-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        <line x1="11" y1="8" x2="11" y2="14"></line>
+                        <line x1="8" y1="11" x2="14" y2="11"></line>
+                    </svg>
+                </div>
+            </div>
+            <div class="p-4 border-t border-zinc-800">
+                <div class="font-mono text-xs text-emerald-400">03 — Action</div>
+                <div class="text-xs text-zinc-500 mt-1">User Dashboard</div>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Caption -->
-<p class="mt-2 text-xs text-zinc-600 font-mono text-center">
-    Fig 1. Hestia — Property browsing interface and inspection request flow.
-</p>
+    <!-- Gallery Caption -->
+    <p class="mt-3 text-xs text-zinc-600 font-mono text-center">
+        Fig 1–3. Complete user journey — from discovery to booking intent. Click any image to expand.
+    </p>
 
 <!-- SECTION: FLOW -->
 <section class="mt-16">
     <h2 class="text-xl text-emerald-400 font-mono mb-4">01 — System Flow</h2>
 
     <!-- Replace the flow div with this -->
-<div class="bg-zinc-900 border border-zinc-800 p-6">
-    <div class="flex flex-wrap gap-4 md:gap-8 items-center">
-        <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">1</span>
-            <span class="font-mono text-sm">User registers account</span>
-        </div>
-        <span class="text-zinc-600">→</span>
-        <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">2</span>
-            <span class="font-mono text-sm">Browses available properties</span>
-        </div>
-        <span class="text-zinc-600">→</span>
-        <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">3</span>
-            <span class="font-mono text-sm">Requests inspection</span>
-        </div>
-        <span class="text-zinc-600">→</span>
-        <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">4</span>
-            <span class="font-mono text-sm">Landlord reviews request</span>
-        </div>
-        <span class="text-zinc-600">→</span>
-        <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 text-xs flex items-center justify-center font-mono border border-emerald-700">5</span>
-            <span class="font-mono text-sm text-emerald-300">Approval → booking confirmed</span>
+    <div class="bg-zinc-900 border border-zinc-800 p-6">
+        <div class="flex flex-wrap gap-4 md:gap-8 items-center">
+            <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">1</span>
+                <span class="font-mono text-sm">User registers account</span>
+            </div>
+            <span class="text-zinc-600">→</span>
+            <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">2</span>
+                <span class="font-mono text-sm">Browses available properties</span>
+            </div>
+            <span class="text-zinc-600">→</span>
+            <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">3</span>
+                <span class="font-mono text-sm">Requests inspection</span>
+            </div>
+            <span class="text-zinc-600">→</span>
+            <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">4</span>
+                <span class="font-mono text-sm">Landlord reviews request</span>
+            </div>
+            <span class="text-zinc-600">→</span>
+            <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 text-xs flex items-center justify-center font-mono border border-emerald-700">5</span>
+                <span class="font-mono text-sm text-emerald-300">Approval → booking confirmed</span>
+            </div>
         </div>
     </div>
-</div>
 </section>
 
 <!-- SECTION: DATABASE -->
@@ -119,7 +186,7 @@
         approvals (id, inspection_id, status)  
     </div>
 
-    <p class="mt-4 text-zinc-500">
+    <p class="mt-4 text-sm text-zinc-500 max-w-2xl leading-relaxed">
         Designed to separate user actions (inspections) from decisions (approvals), allowing flexible workflows and future automation.
     </p>
 </section>
@@ -128,24 +195,37 @@
 <section class="mt-16">
     <h2 class="text-xl text-emerald-400 font-mono mb-4">03 — Backend Logic</h2>
 
-    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed">
-        POST /register  
-        POST /login  
+    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed space-y-4">
+        <div>
+            POST /register  
+            POST /login  
+        </div>
 
-        GET /properties  
-        POST /inspection/request 
-        Request body:
-        {
-        "user_id": 12,
-        "property_id": 45,
-        "date": "2026-04-20"
-        }  
+        <div>
+            GET /properties  
+        </div>
 
-        POST /inspection/approve  
-        POST /inspection/reject  
+        <div>
+            POST /inspection/request  
+            
+            <div class="mt-2 text-xs text-zinc-500">Request body:</div>
+            <div class="bg-black mt-2 p-3 text-xs border border-zinc-800">
+    {
+    "user_id": 12,
+    "property_id": 45,
+    "date": "2026-04-20"
+    }
+            </div>
+        </div>
+
+        <div>
+            POST /inspection/approve  
+            POST /inspection/reject  
+        </div>
+
     </div>
 
-    <p class="mt-4 text-zinc-500">
+    <p class="mt-4 text-sm text-zinc-500 max-w-2xl leading-relaxed">
         Backend handles state transitions between user actions and landlord decisions, ensuring consistent data flow across the system.
     </p>
 </section>
@@ -154,9 +234,9 @@
 <section class="mt-16">
     <h2 class="text-xl text-emerald-400 font-mono mb-4">04 — Design Decisions</h2>
 
-    <p class="max-w-2xl leading-relaxed">
-        The system is structured to avoid tight coupling between users and properties. 
-        Instead of direct booking, an inspection layer introduces control, validation, and future monetization opportunities.
+    <p class="max-w-2xl leading-relaxed text-zinc-400">
+        Instead of allowing direct booking, an inspection layer was introduced to control access, validate intent, and reduce landlord risk.
+        This structure also creates a natural checkpoint for future features like payments, scheduling, and automated approvals.
     </p>
 </section>
 
@@ -171,9 +251,166 @@
         - rejected
     </div>
 
-    <p class="mt-4 text-zinc-500">
+    <p class="mt-4 text-sm text-zinc-500 max-w-2xl leading-relaxed">
         State-based design ensures predictable transitions and prevents conflicting actions between users and landlords.
     </p>
 </section>
+
+<!-- SECTION SYSTEM INSIGHT -->
+    <section class="mt-16">
+        <h2 class="text-xl text-emerald-400 font-mono mb-4">06 — System Insight</h2>
+
+        <p class="max-w-2xl text-zinc-400 leading-relaxed">
+            The core challenge was balancing user freedom with landlord control. 
+            By introducing structured workflows instead of direct interactions, the system ensures trust, reduces friction, and keeps both sides aligned without relying on intermediaries.
+        </p>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-zinc-950/95 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 md:p-8">
+        
+        <!-- Close Button -->
+        <button id="lightboxClose" class="absolute top-6 right-6 text-zinc-400 hover:text-white transition-colors duration-300 z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        
+        <!-- Image Container -->
+        <div class="max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center">
+            <img id="lightboxImg" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl border border-zinc-800">
+        </div>
+        
+        <!-- Caption -->
+        <div id="lightboxCaption" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm font-mono text-zinc-400 bg-zinc-950/80 backdrop-blur-sm px-4 py-2 rounded-full border border-zinc-800">
+            <!-- Caption injected via JS -->
+        </div>
+        
+        <!-- Prev/Next arrows (optional, for gallery navigation) -->
+        <button id="lightboxPrev" class="absolute left-6 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white transition-colors duration-300 hidden md:block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <button id="lightboxNext" class="absolute right-6 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white transition-colors duration-300 hidden md:block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <script>
+                // --- Lightbox Functionality ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+
+        // Collect all gallery images
+        const galleryImages = document.querySelectorAll('[data-lightbox]');
+        let currentImageIndex = 0;
+        const imageData = [];
+
+        // Build image data array
+        galleryImages.forEach((item, index) => {
+            const img = item.querySelector('img');
+            const captionEl = item.querySelector('.font-mono.text-xs.text-emerald-400');
+            const descEl = item.querySelector('.text-xs.text-zinc-500');
+            
+            imageData.push({
+                src: img.src,
+                alt: img.alt,
+                caption: captionEl ? captionEl.textContent : '',
+                description: descEl ? descEl.textContent : ''
+            });
+            
+            // Attach click handler
+            item.addEventListener('click', () => {
+                openLightbox(index);
+            });
+        });
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const data = imageData[index];
+            
+            lightboxImg.src = data.src;
+            lightboxImg.alt = data.alt;
+            lightboxCaption.textContent = `${data.caption} — ${data.description}`;
+            
+            lightbox.style.opacity = '1';
+            lightbox.style.pointerEvents = 'auto';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            
+            // Update arrow visibility
+            updateArrows();
+        }
+
+        function closeLightbox() {
+            lightbox.style.opacity = '0';
+            lightbox.style.pointerEvents = 'none';
+            document.body.style.overflow = '';
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % imageData.length;
+            const data = imageData[currentImageIndex];
+            
+            lightboxImg.src = data.src;
+            lightboxImg.alt = data.alt;
+            lightboxCaption.textContent = `${data.caption} — ${data.description}`;
+            
+            updateArrows();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + imageData.length) % imageData.length;
+            const data = imageData[currentImageIndex];
+            
+            lightboxImg.src = data.src;
+            lightboxImg.alt = data.alt;
+            lightboxCaption.textContent = `${data.caption} — ${data.description}`;
+            
+            updateArrows();
+        }
+
+        function updateArrows() {
+            if (imageData.length <= 1) {
+                lightboxPrev.style.display = 'none';
+                lightboxNext.style.display = 'none';
+            } else {
+                lightboxPrev.style.display = 'block';
+                lightboxNext.style.display = 'block';
+            }
+        }
+
+        // Event listeners
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', prevImage);
+        lightboxNext.addEventListener('click', nextImage);
+
+        // Close on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.style.opacity === '1') {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                } else if (e.key === 'ArrowLeft') {
+                    prevImage();
+                } else if (e.key === 'ArrowRight') {
+                    nextImage();
+                }
+            }
+        });
+    </script>
 </body>
 </html>

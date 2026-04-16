@@ -15,68 +15,110 @@
 </a>
 
 <h1 class="text-4xl md:text-6xl text-zinc-100 mt-6">
-    Gridwatch
+    GridWatch
 </h1>
 
-<p class="mt-6 max-w-2xl text-lg">
-    Event-driven outage map enabling live updates, community reporting, and rapid visibility into electricity disruptions at scale.
+<p class="mt-6 max-w-2xl text-lg text-zinc-400">
+    Real-time outage tracking platform designed to visualize power disruptions using user-reported data and live updates.
 </p>
+
+<div class="mt-4 text-xs font-mono text-yellow-500">
+    status: in progress
+</div>
+
+<!-- SECTION: PROBLEM -->
+<section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">01 — Problem</h2>
+
+    <p class="max-w-2xl text-zinc-400 leading-relaxed">
+        In many regions, there is no reliable, real-time visibility into power outages. 
+        Users rely on guesswork, social media, or delayed updates from providers.
+    </p>
+</section>
 
 <!-- SECTION: FLOW -->
 <section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">01 — System Flow</h2>
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">02 — System Flow</h2>
 
     <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed">
         User reports outage  
         → Location captured  
         → Stored in database  
-        → Map updates in real-time  
-        → Other users view outage zones  
+        → Broadcast to map  
+        → Visible to other users  
     </div>
 </section>
 
 <!-- SECTION: DATABASE -->
 <section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">02 — Database Design</h2>
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">03 — Database Design</h2>
 
     <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed">
         reports (id, user_id, location, status, timestamp)  
         users (id, email)  
     </div>
 
-    <p class="mt-4 text-zinc-500">
-        Designed to separate user actions (inspections) from decisions (approvals), allowing flexible workflows and future automation.
+    <p class="mt-4 text-sm text-zinc-500 max-w-2xl leading-relaxed">
+        Designed to capture user-reported outages as the primary signal, with flexibility to integrate external grid data later.
     </p>
 </section>
 
 <!-- SECTION: BACKEND LOGIC -->
 <section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">03 — Backend Logic</h2>
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">04 — Backend Logic</h2>
 
-    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed">
-        <p>POST /api/outages/report → submit outage</p>
-        <p>GET /api/outages → fetch active outages</p>
-        <p>PATCH /api/outages/:id → update status</p>
-        <p>GET /api/zones → aggregated grid health data</p>
+    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm space-y-4">
+        
+        <div>
+            POST /api/outages/report  
+        </div>
+
+        <div>
+            GET /api/outages  
+        </div>
+
+        <div>
+            PATCH /api/outages/:id  
+        </div>
+
+        <div>
+            GET /api/zones  
+        </div>
+
+        <div class="text-xs text-zinc-500">
+            (future) WebSocket → real-time updates
+        </div>
+
     </div>
 
-    <p class="mt-4 text-zinc-500">
-        Backend handles state transitions between user actions and landlord decisions, ensuring consistent data flow across the system.
+    <p class="mt-4 text-sm text-zinc-500 max-w-2xl leading-relaxed">
+        API structure is designed around real-time updates and aggregation, enabling efficient data flow between user reports and map visualization.
     </p>
 </section>
 
 <!-- SECTION: DESIGN DECISIONS -->
 <section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">04 — Design Decisions</h2>
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">05 — Design Decisions</h2>
 
-    <p class="max-w-2xl leading-relaxed">
-        System prioritizes user-reported data before external validation
+    <p class="max-w-2xl text-zinc-400 leading-relaxed">
+        The system prioritizes user-reported data as the fastest signal for outages, ensuring immediate visibility even without official grid data.
     </p>
-    <p class="max-w-2xl leading-relaxed">
-        Aggregation layer prevents duplicate outage reports from cluttering the map
+
+    <p class="max-w-2xl text-zinc-400 leading-relaxed mt-4">
+        An aggregation layer groups nearby reports to prevent duplication and maintain a clean, readable map interface.
     </p>
-    <p class="max-w-2xl leading-relaxed">
-        Zone-based structure allows scaling from city → national grid view
+
+    <p class="max-w-2xl text-zinc-400 leading-relaxed mt-4">
+        A zone-based structure allows the system to scale from local neighborhoods to city-wide and eventually national grid visibility.
+    </p>
+</section>
+
+<!-- SECTION: VISION -->
+<section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">06 — Vision</h2>
+
+    <p class="max-w-2xl text-zinc-400 leading-relaxed">
+        The goal is to evolve into a real-time infrastructure layer for outage visibility, combining user reports with grid data to provide accurate, location-based insights.
     </p>
 </section>
 

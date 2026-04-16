@@ -30,7 +30,7 @@
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    cursor: none;
+    cursor: default;
   }
   
   ::selection {
