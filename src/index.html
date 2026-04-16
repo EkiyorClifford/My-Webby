@@ -61,7 +61,7 @@
 <!-- Preview -->
 <div id="projectPreview" class="fixed pointer-events-none z-40 opacity-0 transition-opacity duration-300"
      style="width: 400px; height: 300px;">
-    <img id="previewImg" src="" class="w-full h-full object-cover rounded-lg border border-zinc-700 shadow-2xl">
+    <img id="previewImg" src="" class="w-full h-full object-cover rounded-lg border border-zinc-700 shadow-2xl opacity-0 transition-opacity duration-300">
 </div>
 
 <main class="container mx-auto px-6 md:px-12 lg:px-24 max-w-[1400px]">
@@ -255,8 +255,23 @@ document.addEventListener('mousemove', e => {
 const preview = document.getElementById('projectPreview');
 const previewImg = document.getElementById('previewImg');
 
+// Preload preview images
+const previewUrls = [];
+document.querySelectorAll('.project-row').forEach(row => {
+    const src = row.dataset.preview;
+    if (src && !previewUrls.includes(src)) {
+        previewUrls.push(src);
+        const img = new Image();
+        img.src = src;
+    }
+});
+
 previewImg.onerror = () => {
     preview.style.opacity = '0';
+};
+
+previewImg.onload = () => {
+    previewImg.style.opacity = '1';
 };
 
 let active = false;

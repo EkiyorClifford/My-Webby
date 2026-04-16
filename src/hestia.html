@@ -61,6 +61,8 @@
                     src="https://i.ibb.co/SwtMXjVZ/hestia-index.png"  border="0"
                     alt="Hestia home page — landing and search" 
                     class="w-full h-64 md:h-72 object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                    decoding="async"
                     onerror="this.src='https://placehold.co/800x600/0a0a0a/10b981?text=Home+Page'"
                 >
                 <div class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-sm px-2.5 py-1 rounded text-[10px] font-mono text-emerald-400 border border-zinc-700">
@@ -88,6 +90,8 @@
                 <img 
                     src="https://i.ibb.co/yFQNT9CL/PROPERTIES.png" alt="PROPERTIES" border="0"
                     class="w-full h-64 md:h-72 object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                    decoding="async"
                     onerror="this.src='https://placehold.co/800x600/0a0a0a/10b981?text=Properties+Listing'"
                 >
                 <div class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-sm px-2.5 py-1 rounded text-[10px] font-mono text-emerald-400 border border-zinc-700">
@@ -114,6 +118,8 @@
                 <img 
                     src="https://i.ibb.co/b5Sw2Q69/landlord-profile.png" alt="landlord profile" border="0"
                     class="w-full h-64 md:h-72 object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                    decoding="async"
                     onerror="this.src='https://placehold.co/800x600/0a0a0a/10b981?text=User+Dashboard'"
                 >
                 <div class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-sm px-2.5 py-1 rounded text-[10px] font-mono text-emerald-400 border border-zinc-700">
@@ -278,7 +284,7 @@
         
         <!-- Image Container -->
         <div class="max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center">
-            <img id="lightboxImg" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl border border-zinc-800">
+            <img id="lightboxImg" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl border border-zinc-800 opacity-0 transition-opacity duration-300" loading="lazy" decoding="async">
         </div>
         
         <!-- Caption -->
@@ -336,11 +342,17 @@
             currentImageIndex = index;
             const data = imageData[index];
             
+            lightboxImg.style.opacity = '0';
             lightboxImg.src = data.src;
             lightboxImg.alt = data.alt;
             lightboxCaption.textContent = `${data.caption} — ${data.description}`;
             
             lightbox.style.opacity = '1';
+            
+            // Fade in image when loaded
+            lightboxImg.onload = () => {
+                lightboxImg.style.opacity = '1';
+            };
             lightbox.style.pointerEvents = 'auto';
             document.body.style.overflow = 'hidden'; // Prevent scrolling
             
