@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ekiyor Clifford - Full Stack Developer | System Design & Web Development Portfolio</title>
-    <meta name="description" content="Full stack developer and system designer specializing in modern web applications, real-time systems, and scalable architecture. Portfolio featuring Hestia property management, GridWatch power monitoring, and custom development solutions.">
-    <meta name="keywords" content="full stack developer, web development, system design, real-time applications, property management, power grid monitoring, responsive design, modern web applications, scalable architecture, JavaScript, HTML, CSS, portfolio">
+    <meta name="description" content="Full stack developer and system designer specializing in modern web applications, real-time systems, and scalable architecture. Portfolio featuring Serein wellness booking, Hestia property management, and GridWatch power monitoring.">
+    <meta name="keywords" content="full stack developer, web development, system design, real-time applications, spa booking, property management, power grid monitoring, Next.js, Supabase, responsive design, modern web applications, scalable architecture, JavaScript, HTML, CSS, portfolio">
     <meta name="author" content="Ekiyor Clifford">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     
@@ -13,8 +13,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ekiyorclifford.github.io/My-Webby/">
     <meta property="og:title" content="Ekiyor Clifford - Full Stack Developer | System Design & Web Development Portfolio">
-    <meta property="og:description" content="Full stack developer and system designer specializing in modern web applications, real-time systems, and scalable architecture. Portfolio featuring Hestia property management, GridWatch power monitoring, and custom development solutions.">
-    <meta property="og:image" content="https://i.ibb.co/SwtMXjVZ/hestia-index.png">
+    <meta property="og:description" content="Full stack developer and system designer specializing in modern web applications, real-time systems, and scalable architecture. Portfolio featuring Serein wellness booking, Hestia property management, and GridWatch power monitoring.">
+    <meta property="og:image" content="https://ekiyorclifford.github.io/My-Webby/assets/serein/serein-home.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Portfolio - Ekiyor Clifford">
@@ -24,8 +24,8 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://ekiyorclifford.github.io/My-Webby/">
     <meta property="twitter:title" content="Ekiyor Clifford - Full Stack Developer | System Design & Web Development Portfolio">
-    <meta property="twitter:description" content="Full stack developer and system designer specializing in modern web applications, real-time systems, and scalable architecture. Portfolio featuring Hestia property management, GridWatch power monitoring, and custom development solutions.">
-    <meta property="twitter:image" content="https://i.ibb.co/SwtMXjVZ/hestia-index.png">
+    <meta property="twitter:description" content="Full stack developer and system designer specializing in modern web applications, real-time systems, and scalable architecture. Portfolio featuring Serein wellness booking, Hestia property management, and GridWatch power monitoring.">
+    <meta property="twitter:image" content="https://ekiyorclifford.github.io/My-Webby/assets/serein/serein-home.png">
     <meta property="twitter:creator" content="@ekiyorclifford">
     
     <!-- Additional SEO Meta Tags -->
@@ -138,13 +138,39 @@
 <!-- PROJECTS -->
 <section id="work" class="mb-32">
     <div class="mb-8 text-xs uppercase tracking-[0.3em] text-zinc-600 font-mono">~/systems</div>
+
+    <!-- SEREIN -->
+    <div class="project-row grid grid-cols-12 py-10 border-t border-zinc-800 cursor-pointer"
+         data-preview="./assets/serein/serein-home.png"
+         data-link="./serein.html">
+
+        <div class="col-span-2 text-zinc-600 font-mono">01</div>
+
+        <div class="col-span-5">
+            <h3 class="text-3xl text-zinc-300">
+                <span class="text-emerald-600 font-mono">></span> Serein
+            </h3>
+
+            <div class="flex gap-2 mt-3 flex-wrap text-xs">
+                <span class="border px-3 py-1">Next.js</span>
+                <span class="border px-3 py-1">TypeScript</span>
+                <span class="border px-3 py-1">Supabase</span>
+                <span class="border px-3 py-1">Paystack</span>
+            </div>
+        </div>
+
+        <div class="col-span-5 text-sm text-right text-zinc-500 font-mono">
+            <span class="text-emerald-600">//</span>
+            Full-stack spa booking platform with Paystack payments, dual customer/admin auth, live availability, and an operations dashboard.
+        </div>
+    </div>
             
     <!-- HESTIA -->
     <div class="project-row grid grid-cols-12 py-10 border-t border-zinc-800 cursor-pointer"
          data-preview='https://i.ibb.co/SwtMXjVZ/hestia-index.png'
          data-link="./hestia.html">
 
-        <div class="col-span-2 text-zinc-600 font-mono">01</div>
+        <div class="col-span-2 text-zinc-600 font-mono">02</div>
 
         <div class="col-span-5">
             <h3 class="text-3xl text-zinc-300">
@@ -166,11 +192,11 @@
     </div>
 
     <!-- GRIDWATCH -->
-    <div class="project-row grid grid-cols-12 py-10 border-t border-zinc-800 cursor-pointer"
+    <div class="project-row grid grid-cols-12 py-10 border-t border-b border-zinc-800 cursor-pointer"
          data-preview="https://placehold.co/400x300/0f172a/10b981?text=GridWatch+Preview"
          data-link="./gridwatch.html">
 
-        <div class="col-span-2 text-zinc-600 font-mono">02</div>
+        <div class="col-span-2 text-zinc-600 font-mono">03</div>
 
         <div class="col-span-5">
             <h3 class="text-3xl text-zinc-300">
@@ -189,31 +215,6 @@
             Real-time outage tracking platform using user reports and geolocation to visualize electricity disruptions across regions.
         </div>
     </div>
-
-    <!-- AUTH -->
-    <!-- <div class="project-row grid grid-cols-12 py-10 border-t border-b border-zinc-800 cursor-pointer"
-         data-preview="https://placehold.co/400x300/0f172a/10b981?text=Auth+Preview"
-         data-link="/projects/auth">
-
-        <div class="col-span-2 text-zinc-600 font-mono">03</div>
-
-        <div class="col-span-5">
-            <h3 class="text-3xl text-zinc-300">
-                <span class="text-emerald-600 font-mono">></span> Auth System
-            </h3>
-
-            <div class="flex gap-2 mt-3 flex-wrap text-xs">
-                <span class="border px-3 py-1">PHP</span>
-                <span class="border px-3 py-1">MySQL</span>
-                <span class="border px-3 py-1">JWT</span>
-            </div>
-        </div>
-
-        <div class="col-span-5 text-sm text-right text-zinc-500 font-mono">
-            <span class="text-emerald-600">//</span>
-            Authentication system handling user sessions, secure login flows, and role-based access control.
-        </div>
-    </div> -->
 </section>
 
 <!-- ABOUT -->
