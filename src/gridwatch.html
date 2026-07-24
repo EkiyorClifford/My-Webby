@@ -3,77 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GridWatch Power Grid Monitoring System - Smart Grid Analytics Platform</title>
-    <meta name="description" content="Complete system design and implementation of GridWatch, a comprehensive power grid monitoring platform featuring real-time analytics, smart grid management, outage detection, and predictive maintenance. Built with scalable architecture and responsive design.">
-    <meta name="keywords" content="power grid monitoring, smart grid, energy management, real-time analytics, outage detection, predictive maintenance, grid visualization, web development, system design, full-stack development, responsive design">
+    <title>GridWatch — Power Outage Tracking (In Progress) | Case Study</title>
+    <meta name="description" content="GridWatch is an in-progress outage tracking concept: user-reported power disruptions, geolocation, and map visualization. Built around Node.js, Leaflet, and a zone-based data model.">
+    <meta name="keywords" content="power outage tracking, smart grid, energy management, real-time maps, Leaflet, Node.js, system design, portfolio">
     <meta name="author" content="Ekiyor Clifford">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ekiyorclifford.github.io/My-Webby/gridwatch.html">
-    <meta property="og:title" content="GridWatch Power Grid Monitoring System - Smart Grid Analytics Platform">
-    <meta property="og:description" content="Complete system design and implementation of GridWatch, a comprehensive power grid monitoring platform featuring real-time analytics, smart grid management, outage detection, and predictive maintenance.">
-    <meta property="og:image" content="https://i.ibb.co/yFQNT9CL/PROPERTIES.png">
+    <meta property="og:title" content="GridWatch — Power Outage Tracking (In Progress)">
+    <meta property="og:description" content="In-progress outage tracking concept with user reports, geolocation, and map visualization — Node.js, Leaflet, JavaScript.">
+    <meta property="og:image" content="https://ekiyorclifford.github.io/My-Webby/assets/gridwatch/gridwatch-preview.svg">
     <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:height" content="750">
     <meta property="og:site_name" content="Portfolio - Ekiyor Clifford">
     <meta property="og:locale" content="en_US">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://ekiyorclifford.github.io/My-Webby/gridwatch.html">
-    <meta property="twitter:title" content="GridWatch Power Grid Monitoring System - Smart Grid Analytics Platform">
-    <meta property="twitter:description" content="Complete system design and implementation of GridWatch, a comprehensive power grid monitoring platform featuring real-time analytics, smart grid management, outage detection, and predictive maintenance.">
-    <meta property="twitter:image" content="https://i.ibb.co/yFQNT9CL/PROPERTIES.png">
+    <meta property="twitter:title" content="GridWatch — Power Outage Tracking (In Progress)">
+    <meta property="twitter:description" content="In-progress outage tracking concept with user reports, geolocation, and map visualization — Node.js, Leaflet, JavaScript.">
+    <meta property="twitter:image" content="https://ekiyorclifford.github.io/My-Webby/assets/gridwatch/gridwatch-preview.svg">
     <meta property="twitter:creator" content="@ekiyorclifford">
-    
-    <!-- Additional SEO Meta Tags -->
+
     <meta name="theme-color" content="#0a0a0a">
     <meta name="msapplication-TileColor" content="#0a0a0a">
-    <meta name="application-name" content="GridWatch Power Monitoring">
+    <meta name="application-name" content="GridWatch">
     <meta name="apple-mobile-web-app-title" content="GridWatch">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    <!-- Canonical URL -->
+
     <link rel="canonical" href="https://ekiyorclifford.github.io/My-Webby/gridwatch.html">
-    
-    <!-- Favicon and Icons -->
+
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" href="favicon.svg">
     <link rel="shortcut icon" href="favicon.svg">
-    
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://i.ibb.co">
-    <link rel="preconnect" href="https://placehold.co">
-    
-    <!-- DNS Prefetch -->
-    <link rel="dns-prefetch" href="https://i.ibb.co">
-    <link rel="dns-prefetch" href="https://placehold.co">
-    
+
     <link rel="stylesheet" href="output.css">
-    
-    <!-- Structured Data (JSON-LD) -->
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "CreativeWork",
-        "name": "GridWatch Power Grid Monitoring System",
-        "description": "Complete system design and implementation of GridWatch, a comprehensive power grid monitoring platform featuring real-time analytics, smart grid management, outage detection, and predictive maintenance.",
+        "name": "GridWatch Power Outage Tracking",
+        "description": "In-progress outage tracking concept featuring user-reported disruptions, geolocation, and map visualization.",
         "author": {
             "@type": "Person",
             "name": "Ekiyor Clifford",
             "url": "https://github.com/EkiyorClifford"
         },
-        "image": "https://i.ibb.co/yFQNT9CL/PROPERTIES.png",
+        "image": "https://ekiyorclifford.github.io/My-Webby/assets/gridwatch/gridwatch-preview.svg",
         "url": "https://ekiyorclifford.github.io/My-Webby/gridwatch.html",
         "dateCreated": "2025",
-        "keywords": "power grid monitoring, smart grid, energy management, real-time analytics, outage detection, predictive maintenance, grid visualization, web development, system design, full-stack development, responsive design",
+        "keywords": "power outage tracking, Leaflet, Node.js, geolocation, system design",
         "genre": "Web Development",
-        "programmingLanguage": "HTML, CSS, JavaScript",
-        "applicationCategory": "Portfolio Project"
+        "programmingLanguage": "HTML, CSS, JavaScript, Node.js",
+        "applicationCategory": "Portfolio Project",
+        "creativeWorkStatus": "Incomplete"
     }
     </script>
 </head>
@@ -85,16 +71,43 @@
     ← back
 </a>
 
-<h1 class="text-4xl md:text-6xl text-zinc-100 mt-6">
-    GridWatch
-</h1>
+<div class="flex flex-wrap items-baseline justify-between gap-4 mt-8">
+    <h1 class="text-4xl md:text-6xl font-medium text-zinc-100 tracking-tight">
+        GridWatch
+    </h1>
 
-<p class="mt-6 max-w-2xl text-lg text-zinc-400">
-    Real-time outage tracking platform designed to visualize power disruptions using user-reported data and live updates.
+    <div class="flex gap-4 flex-wrap">
+        <span class="text-sm font-mono text-yellow-500 border border-yellow-800/60 bg-yellow-950/20 px-4 py-2 rounded-full">
+            status: in progress
+        </span>
+    </div>
+</div>
+
+<p class="mt-6 max-w-2xl text-lg">
+    Outage tracking concept for regions without reliable real-time grid visibility — user reports feed a map so disruptions show up where people actually are.
 </p>
 
-<div class="mt-4 text-xs font-mono text-yellow-500">
-    status: in progress
+<!-- STACK USED -->
+<div class="flex flex-wrap gap-2 mt-4">
+    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">Node.js</span>
+    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">Leaflet</span>
+    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">JavaScript</span>
+</div>
+
+<!-- Preview -->
+<div class="mt-10 rounded-xl border border-zinc-800 overflow-hidden bg-zinc-900/30 max-w-3xl">
+    <img
+        src="./assets/gridwatch/gridwatch-preview.svg"
+        alt="GridWatch concept preview — outage map in progress"
+        class="w-full h-auto"
+        width="1200"
+        height="750"
+        decoding="async"
+    >
+    <div class="p-4 border-t border-zinc-800">
+        <div class="font-mono text-xs text-emerald-400">Preview — concept</div>
+        <div class="text-xs text-zinc-500 mt-1">UI screenshots and live demo coming as the build matures</div>
+    </div>
 </div>
 
 <!-- SECTION: PROBLEM -->
@@ -102,8 +115,8 @@
     <h2 class="text-xl text-emerald-400 font-mono mb-4">01 — Problem</h2>
 
     <p class="max-w-2xl text-zinc-400 leading-relaxed">
-        In many regions, there is no reliable, real-time visibility into power outages. 
-        Users rely on guesswork, social media, or delayed updates from providers.
+        In many regions, there is no reliable, real-time visibility into power outages.
+        People rely on guesswork, social media, or delayed updates from providers.
     </p>
 </section>
 
@@ -111,60 +124,57 @@
 <section class="mt-16">
     <h2 class="text-xl text-emerald-400 font-mono mb-4">02 — System Flow</h2>
 
-    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed">
-        User reports outage  
-        → Location captured  
-        → Stored in database  
-        → Broadcast to map  
-        → Visible to other users  
+    <div class="bg-zinc-900 border border-zinc-800 p-6">
+        <div class="flex flex-wrap gap-4 md:gap-8 items-center">
+            <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">1</span>
+                <span class="font-mono text-sm">User reports outage</span>
+            </div>
+            <span class="text-zinc-600">→</span>
+            <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">2</span>
+                <span class="font-mono text-sm">Capture location</span>
+            </div>
+            <span class="text-zinc-600">→</span>
+            <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">3</span>
+                <span class="font-mono text-sm">Store + aggregate</span>
+            </div>
+            <span class="text-zinc-600">→</span>
+            <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 text-xs flex items-center justify-center font-mono border border-emerald-700">4</span>
+                <span class="font-mono text-sm text-emerald-300">Show on map</span>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- SECTION: DATABASE -->
+<!-- SECTION: DATA MODEL -->
 <section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">03 — Database Design</h2>
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">03 — Data Model</h2>
 
-    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed">
-        reports (id, user_id, location, status, timestamp)  
-        users (id, email)  
+    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed space-y-2">
+        <p>reports → id, user_id, location, status, timestamp</p>
+        <p>users → id, email</p>
+        <p class="text-xs text-zinc-500 mt-2">// zones planned for neighborhood → city scale aggregation</p>
     </div>
 
     <p class="mt-4 text-sm text-zinc-500 max-w-2xl leading-relaxed">
-        Designed to capture user-reported outages as the primary signal, with flexibility to integrate external grid data later.
+        User reports are the primary signal first; external grid feeds can plug in later without rewriting the core flow.
     </p>
 </section>
 
-<!-- SECTION: BACKEND LOGIC -->
+<!-- SECTION: API SHAPE -->
 <section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">04 — Backend Logic</h2>
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">04 — API Shape</h2>
 
-    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm space-y-4">
-        
-        <div>
-            POST /api/outages/report  
-        </div>
-
-        <div>
-            GET /api/outages  
-        </div>
-
-        <div>
-            PATCH /api/outages/:id  
-        </div>
-
-        <div>
-            GET /api/zones  
-        </div>
-
-        <div class="text-xs text-zinc-500">
-            (future) WebSocket → real-time updates
-        </div>
-
+    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm space-y-3">
+        <div>POST /api/outages/report</div>
+        <div>GET /api/outages</div>
+        <div>PATCH /api/outages/:id</div>
+        <div>GET /api/zones</div>
+        <div class="text-xs text-zinc-500">// future: WebSocket fan-out for live map updates</div>
     </div>
-
-    <p class="mt-4 text-sm text-zinc-500 max-w-2xl leading-relaxed">
-        API structure is designed around real-time updates and aggregation, enabling efficient data flow between user reports and map visualization.
-    </p>
 </section>
 
 <!-- SECTION: DESIGN DECISIONS -->
@@ -172,25 +182,27 @@
     <h2 class="text-xl text-emerald-400 font-mono mb-4">05 — Design Decisions</h2>
 
     <p class="max-w-2xl text-zinc-400 leading-relaxed">
-        The system prioritizes user-reported data as the fastest signal for outages, ensuring immediate visibility even without official grid data.
+        Crowd-reported outages beat waiting on official feeds when the goal is immediate local visibility.
     </p>
 
     <p class="max-w-2xl text-zinc-400 leading-relaxed mt-4">
-        An aggregation layer groups nearby reports to prevent duplication and maintain a clean, readable map interface.
+        Nearby reports should aggregate so the map stays readable instead of littered with duplicate pins.
     </p>
 
     <p class="max-w-2xl text-zinc-400 leading-relaxed mt-4">
-        A zone-based structure allows the system to scale from local neighborhoods to city-wide and eventually national grid visibility.
+        A zone model keeps the path open from neighborhood coverage to city-wide views without a rewrite.
     </p>
 </section>
 
-<!-- SECTION: VISION -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">06 — Vision</h2>
+<!-- SECTION: NEXT -->
+<section class="mt-16 mb-8">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">06 — What's Next</h2>
 
-    <p class="max-w-2xl text-zinc-400 leading-relaxed">
-        The goal is to evolve into a real-time infrastructure layer for outage visibility, combining user reports with grid data to provide accurate, location-based insights.
-    </p>
+    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed space-y-2">
+        <p>→ Ship a working map UI with report + list/calendar views</p>
+        <p>→ Add live updates (polling first, WebSocket later)</p>
+        <p>→ Publish repo + demo links when the first vertical slice is usable</p>
+    </div>
 </section>
 
 </body>
