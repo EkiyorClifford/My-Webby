@@ -78,6 +78,10 @@
             transition: 0.2s;
         }
 
+        .cursor-dot.is-hidden {
+            display: none;
+        }
+
         a:hover ~ .cursor-dot,
         button:hover ~ .cursor-dot,
         .project-row:hover ~ .cursor-dot {
@@ -87,14 +91,37 @@
             border: 1px solid #10b981;
         }
 
+        /* Soft terminal accent — readable zinc body, emerald accents */
         .terminal-mode {
-            background-color: #000 !important;
-            color: #10b981 !important;
+            background-color: #000;
         }
 
-        .terminal-mode * {
-            color: #10b981 !important;
-            border-color: #10b981 !important;
+        .terminal-mode .text-zinc-100,
+        .terminal-mode h1,
+        .terminal-mode h2,
+        .terminal-mode h3 {
+            color: #ecfdf5;
+        }
+
+        .terminal-mode a,
+        .terminal-mode .text-emerald-400,
+        .terminal-mode .text-emerald-500,
+        .terminal-mode .text-emerald-600,
+        .terminal-mode .text-emerald-700,
+        .terminal-mode .font-mono {
+            color: #34d399;
+        }
+
+        .terminal-mode .border-zinc-800,
+        .terminal-mode .border-zinc-900,
+        .terminal-mode .border-emerald-800 {
+            border-color: #065f46;
+        }
+
+        @media (hover: none), (prefers-reduced-motion: reduce) {
+            .cursor-dot {
+                display: none !important;
+            }
         }
     </style>
 </head>
@@ -140,81 +167,78 @@
     <div class="mb-8 text-xs uppercase tracking-[0.3em] text-zinc-600 font-mono">~/systems</div>
 
     <!-- SEREIN -->
-    <div class="project-row grid grid-cols-12 py-10 border-t border-zinc-800 cursor-pointer"
-         data-preview="./assets/serein/serein-home.png"
-         data-link="./serein.html">
+    <a href="./serein.html" class="project-row border-t border-zinc-800"
+       data-preview="./assets/serein/serein-home.png">
 
-        <div class="col-span-2 text-zinc-600 font-mono">01</div>
+        <div class="project-num">01</div>
 
-        <div class="col-span-5">
+        <div class="project-main">
             <h3 class="text-3xl text-zinc-300">
                 <span class="text-emerald-600 font-mono">></span> Serein
             </h3>
 
-            <div class="flex gap-2 mt-3 flex-wrap text-xs">
-                <span class="border px-3 py-1">Next.js</span>
-                <span class="border px-3 py-1">TypeScript</span>
-                <span class="border px-3 py-1">Supabase</span>
-                <span class="border px-3 py-1">Paystack</span>
+            <div class="flex gap-2 mt-3 flex-wrap text-xs text-zinc-400">
+                <span class="border border-zinc-700 px-3 py-1">Next.js</span>
+                <span class="border border-zinc-700 px-3 py-1">TypeScript</span>
+                <span class="border border-zinc-700 px-3 py-1">Supabase</span>
+                <span class="border border-zinc-700 px-3 py-1">Paystack</span>
             </div>
         </div>
 
-        <div class="col-span-5 text-sm text-right text-zinc-500 font-mono">
+        <div class="project-blurb">
             <span class="text-emerald-600">//</span>
             Full-stack spa booking platform with Paystack payments, dual customer/admin auth, live availability, and an operations dashboard.
         </div>
-    </div>
-            
+    </a>
+
     <!-- HESTIA -->
-    <div class="project-row grid grid-cols-12 py-10 border-t border-zinc-800 cursor-pointer"
-         data-preview='https://i.ibb.co/SwtMXjVZ/hestia-index.png'
-         data-link="./hestia.html">
+    <a href="./hestia.html" class="project-row border-t border-zinc-800"
+       data-preview="https://i.ibb.co/SwtMXjVZ/hestia-index.png">
 
-        <div class="col-span-2 text-zinc-600 font-mono">02</div>
+        <div class="project-num">02</div>
 
-        <div class="col-span-5">
+        <div class="project-main">
             <h3 class="text-3xl text-zinc-300">
                 <span class="text-emerald-600 font-mono">></span> Hestia
             </h3>
 
-            <div class="flex gap-2 mt-3 flex-wrap text-xs">
-                <span class="border px-3 py-1">HTML</span>
-                <span class="border px-3 py-1">PostgreSQL</span>
-                <span class="border px-3 py-1">JavaScript</span>
-                <span class="border px-3 py-1">PHP</span>
+            <div class="flex gap-2 mt-3 flex-wrap text-xs text-zinc-400">
+                <span class="border border-zinc-700 px-3 py-1">HTML</span>
+                <span class="border border-zinc-700 px-3 py-1">PostgreSQL</span>
+                <span class="border border-zinc-700 px-3 py-1">JavaScript</span>
+                <span class="border border-zinc-700 px-3 py-1">PHP</span>
             </div>
         </div>
 
-        <div class="col-span-5 text-sm text-right text-zinc-500 font-mono">
+        <div class="project-blurb">
             <span class="text-emerald-600">//</span>
             Property rental platform enabling direct landlord–tenant interaction, with structured workflows for listings, approvals, and inspections.
         </div>
-    </div>
+    </a>
 
     <!-- GRIDWATCH -->
-    <div class="project-row grid grid-cols-12 py-10 border-t border-b border-zinc-800 cursor-pointer"
-         data-preview="https://placehold.co/400x300/0f172a/10b981?text=GridWatch+Preview"
-         data-link="./gridwatch.html">
+    <a href="./gridwatch.html" class="project-row border-t border-b border-zinc-800"
+       data-preview="https://placehold.co/400x300/0f172a/10b981?text=GridWatch+Preview">
 
-        <div class="col-span-2 text-zinc-600 font-mono">03</div>
+        <div class="project-num">03</div>
 
-        <div class="col-span-5">
+        <div class="project-main">
             <h3 class="text-3xl text-zinc-300">
                 <span class="text-emerald-600 font-mono">></span> GridWatch
             </h3>
 
-            <div class="flex gap-2 mt-3 flex-wrap text-xs">
-                <span class="border px-3 py-1">Node.js</span>
-                <span class="border px-3 py-1">Leaflet</span>
-                <span class="border px-3 py-1">JavaScript</span>
+            <div class="flex gap-2 mt-3 flex-wrap text-xs text-zinc-400">
+                <span class="border border-zinc-700 px-3 py-1">Node.js</span>
+                <span class="border border-zinc-700 px-3 py-1">Leaflet</span>
+                <span class="border border-zinc-700 px-3 py-1">JavaScript</span>
             </div>
         </div>
 
-        <div class="col-span-5 text-sm text-right text-zinc-500 font-mono">
+        <div class="project-blurb">
             <span class="text-emerald-600">//</span>
             Real-time outage tracking platform using user reports and geolocation to visualize electricity disruptions across regions.
         </div>
-    </div>
+    </a>
 </section>
 
 <!-- ABOUT -->
@@ -250,10 +274,10 @@
             Open to freelance work, collaborations, or opportunities where I can contribute to meaningful products.
         </p>
         <!-- EMAIL -->
-        <div class="mt-6 flex items-center gap-4">
-            <a href="mailto:clifford.dev@gmail.com" 
-            class="text-xl text-zinc-200 hover:text-emerald-400 transition">
-                clifford.dev@gmail.com
+        <div class="mt-6 flex items-center gap-4 flex-wrap">
+            <a href="mailto:ekiyorclifford@gmail.com" 
+            class="text-xl text-zinc-200 hover:text-emerald-400 transition break-all">
+                ekiyorclifford@gmail.com
             </a>
 
             <button id="copyEmailBtn"
@@ -291,66 +315,73 @@
 </main>
 
 <script>
-// Cursor
-const cursor = document.getElementById('cursor');
-document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
+const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Preview
+// Cursor — desktop fine pointer only
+const cursor = document.getElementById('cursor');
+if (cursor) {
+    if (!canHover || prefersReducedMotion) {
+        cursor.classList.add('is-hidden');
+    } else {
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+    }
+}
+
+// Preview — desktop hover only (anchors handle navigation)
 const preview = document.getElementById('projectPreview');
 const previewImg = document.getElementById('previewImg');
 
-// Preload preview images
-const previewUrls = [];
-document.querySelectorAll('.project-row').forEach(row => {
-    const src = row.dataset.preview;
-    if (src && !previewUrls.includes(src)) {
-        previewUrls.push(src);
-        const img = new Image();
-        img.src = src;
-    }
-});
-
-previewImg.onerror = () => {
-    preview.style.opacity = '0';
-};
-
-previewImg.onload = () => {
-    previewImg.style.opacity = '1';
-};
-
-let active = false;
-
-document.querySelectorAll('.project-row').forEach(row => {
-    const src = row.dataset.preview;
-
-    row.addEventListener('mouseenter', e => {
-        previewImg.src = src;
-        preview.style.opacity = '1';
-        active = true;
-    });
-
-    row.addEventListener('mouseleave', () => {
-        preview.style.opacity = '0';
-        active = false;
-    });
-
-    row.addEventListener('mousemove', e => {
-        if (active) {
-            preview.style.left = (e.clientX + 20) + 'px';
-            preview.style.top = e.clientY + 'px';
+if (preview && previewImg && canHover) {
+    const previewUrls = [];
+    document.querySelectorAll('.project-row').forEach(row => {
+        const src = row.dataset.preview;
+        if (src && !previewUrls.includes(src)) {
+            previewUrls.push(src);
+            const img = new Image();
+            img.src = src;
         }
     });
 
-    const link = row.dataset.link;
-    if (link) {
-        row.addEventListener('click', () => {
-            window.location.href = link;
+    previewImg.onerror = () => {
+        preview.style.opacity = '0';
+    };
+
+    previewImg.onload = () => {
+        previewImg.style.opacity = '1';
+    };
+
+    let active = false;
+
+    document.querySelectorAll('.project-row').forEach(row => {
+        const src = row.dataset.preview;
+
+        row.addEventListener('mouseenter', () => {
+            if (!src) return;
+            previewImg.style.opacity = '0';
+            previewImg.src = src;
+            preview.style.opacity = '1';
+            active = true;
         });
-    }
-});
+
+        row.addEventListener('mouseleave', () => {
+            preview.style.opacity = '0';
+            active = false;
+        });
+
+        row.addEventListener('mousemove', e => {
+            if (active) {
+                preview.style.left = (e.clientX + 20) + 'px';
+                preview.style.top = e.clientY + 'px';
+            }
+        });
+    });
+} else if (preview) {
+    preview.style.display = 'none';
+}
 
 // Terminal Mode
 let terminal = false;
@@ -376,15 +407,15 @@ window.addEventListener('keydown', e => {
 if (btn) btn.addEventListener('click', toggleTerminal);
 
 // EMAIL COPY
-
+const CONTACT_EMAIL = 'ekiyorclifford@gmail.com';
 const copyBtn = document.getElementById('copyEmailBtn');
 
 if (copyBtn) {
     copyBtn.addEventListener('click', () => {
-        navigator.clipboard.writeText('clifford.dev@gmail.com');
+        navigator.clipboard.writeText(CONTACT_EMAIL);
 
         copyBtn.innerText = 'copied';
-        
+
         setTimeout(() => {
             copyBtn.innerText = 'copy';
         }, 2000);
