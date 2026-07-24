@@ -131,12 +131,6 @@
 <!-- Cursor -->
 <div class="cursor-dot" id="cursor"></div>
 
-<!-- Preview -->
-<div id="projectPreview" class="fixed pointer-events-none z-40 opacity-0 transition-opacity duration-300"
-     style="width: 400px; height: 300px;">
-    <img id="previewImg" src="" class="w-full h-full object-cover rounded-lg border border-zinc-700 shadow-2xl opacity-0 transition-opacity duration-300">
-</div>
-
 <main class="container mx-auto px-6 md:px-12 lg:px-24 max-w-[1400px]">
         
 <header class="pt-12 pb-24 flex justify-between text-sm uppercase tracking-[0.2em] text-zinc-500">
@@ -155,7 +149,14 @@
         <span class="text-emerald-500 font-mono">use</span>.
     </h1>
 
-    <p class="mt-10 text-lg max-w-2xl text-zinc-400 font-mono border-l-2 border-emerald-800 pl-6">
+    <a href="#work" class="scroll-cue" aria-label="Scroll to projects">
+        <span class="scroll-cue-track" aria-hidden="true">
+            <span class="scroll-cue-dot"></span>
+        </span>
+        <span class="scroll-cue-label">scroll</span>
+    </a>
+
+    <p class="mt-5 text-lg max-w-2xl text-zinc-400 font-mono border-l-2 border-emerald-800 pl-6">
         <span class="text-emerald-500">Who Am I?</span><br>
         Full-stack developer focused on building scalable platforms — from clean interfaces 
         to the backend systems that power them. Currently working on property tech and real-time applications.
@@ -167,76 +168,92 @@
     <div class="mb-8 text-xs uppercase tracking-[0.3em] text-zinc-600 font-mono">~/systems</div>
 
     <!-- SEREIN -->
-    <a href="./serein.html" class="project-row border-t border-zinc-800"
-       data-preview="./assets/serein/serein-home.png">
-
-        <div class="project-num">01</div>
-
-        <div class="project-main">
-            <h3 class="text-3xl text-zinc-300">
-                <span class="text-emerald-600 font-mono">></span> Serein
-            </h3>
-
-            <div class="flex gap-2 mt-3 flex-wrap text-xs text-zinc-400">
-                <span class="border border-zinc-700 px-3 py-1">Next.js</span>
-                <span class="border border-zinc-700 px-3 py-1">TypeScript</span>
-                <span class="border border-zinc-700 px-3 py-1">Supabase</span>
-                <span class="border border-zinc-700 px-3 py-1">Paystack</span>
-            </div>
+    <a href="./serein.html" class="project-row border-t border-zinc-800">
+        <div class="project-media">
+            <img
+                src="./assets/serein/serein-home.png"
+                alt="Serein wellness booking app homepage"
+                loading="lazy"
+                decoding="async"
+            >
         </div>
-
-        <div class="project-blurb">
-            <span class="text-emerald-600">//</span>
-            Full-stack spa booking platform with Paystack payments, dual customer/admin auth, live availability, and an operations dashboard.
+        <div class="project-body">
+            <div class="project-num">01</div>
+            <div>
+                <h3 class="text-3xl text-zinc-300">
+                    <span class="text-emerald-600 font-mono">></span> Serein
+                </h3>
+                <div class="flex gap-2 mt-3 flex-wrap text-xs text-zinc-400">
+                    <span class="border border-zinc-700 px-3 py-1">Next.js</span>
+                    <span class="border border-zinc-700 px-3 py-1">TypeScript</span>
+                    <span class="border border-zinc-700 px-3 py-1">Supabase</span>
+                    <span class="border border-zinc-700 px-3 py-1">Paystack</span>
+                </div>
+            </div>
+            <div class="project-blurb">
+                <span class="text-emerald-600">//</span>
+                Full-stack spa booking platform with Paystack payments, dual customer/admin auth, live availability, and an operations dashboard.
+            </div>
         </div>
     </a>
 
     <!-- HESTIA -->
-    <a href="./hestia.html" class="project-row border-t border-zinc-800"
-       data-preview="https://i.ibb.co/SwtMXjVZ/hestia-index.png">
-
-        <div class="project-num">02</div>
-
-        <div class="project-main">
-            <h3 class="text-3xl text-zinc-300">
-                <span class="text-emerald-600 font-mono">></span> Hestia
-            </h3>
-
-            <div class="flex gap-2 mt-3 flex-wrap text-xs text-zinc-400">
-                <span class="border border-zinc-700 px-3 py-1">HTML</span>
-                <span class="border border-zinc-700 px-3 py-1">PostgreSQL</span>
-                <span class="border border-zinc-700 px-3 py-1">JavaScript</span>
-                <span class="border border-zinc-700 px-3 py-1">PHP</span>
-            </div>
+    <a href="./hestia.html" class="project-row border-t border-zinc-800">
+        <div class="project-media">
+            <img
+                src="https://i.ibb.co/SwtMXjVZ/hestia-index.png"
+                alt="Hestia property management platform"
+                loading="lazy"
+                decoding="async"
+            >
         </div>
-
-        <div class="project-blurb">
-            <span class="text-emerald-600">//</span>
-            Property rental platform enabling direct landlord–tenant interaction, with structured workflows for listings, approvals, and inspections.
+        <div class="project-body">
+            <div class="project-num">02</div>
+            <div>
+                <h3 class="text-3xl text-zinc-300">
+                    <span class="text-emerald-600 font-mono">></span> Hestia
+                </h3>
+                <div class="flex gap-2 mt-3 flex-wrap text-xs text-zinc-400">
+                    <span class="border border-zinc-700 px-3 py-1">HTML</span>
+                    <span class="border border-zinc-700 px-3 py-1">PostgreSQL</span>
+                    <span class="border border-zinc-700 px-3 py-1">JavaScript</span>
+                    <span class="border border-zinc-700 px-3 py-1">PHP</span>
+                </div>
+            </div>
+            <div class="project-blurb">
+                <span class="text-emerald-600">//</span>
+                Property rental platform enabling direct landlord–tenant interaction, with structured workflows for listings, approvals, and inspections.
+            </div>
         </div>
     </a>
 
     <!-- GRIDWATCH -->
-    <a href="./gridwatch.html" class="project-row border-t border-b border-zinc-800"
-       data-preview="https://placehold.co/400x300/0f172a/10b981?text=GridWatch+Preview">
-
-        <div class="project-num">03</div>
-
-        <div class="project-main">
-            <h3 class="text-3xl text-zinc-300">
-                <span class="text-emerald-600 font-mono">></span> GridWatch
-            </h3>
-
-            <div class="flex gap-2 mt-3 flex-wrap text-xs text-zinc-400">
-                <span class="border border-zinc-700 px-3 py-1">Node.js</span>
-                <span class="border border-zinc-700 px-3 py-1">Leaflet</span>
-                <span class="border border-zinc-700 px-3 py-1">JavaScript</span>
-            </div>
+    <a href="./gridwatch.html" class="project-row border-t border-b border-zinc-800">
+        <div class="project-media">
+            <!-- Replace when a real GridWatch screenshot is available -->
+            <img
+                src="https://placehold.co/800x500/0f172a/10b981?text=GridWatch"
+                alt="GridWatch power outage tracking platform preview"
+                loading="lazy"
+                decoding="async"
+            >
         </div>
-
-        <div class="project-blurb">
-            <span class="text-emerald-600">//</span>
-            Real-time outage tracking platform using user reports and geolocation to visualize electricity disruptions across regions.
+        <div class="project-body">
+            <div class="project-num">03</div>
+            <div>
+                <h3 class="text-3xl text-zinc-300">
+                    <span class="text-emerald-600 font-mono">></span> GridWatch
+                </h3>
+                <div class="flex gap-2 mt-3 flex-wrap text-xs text-zinc-400">
+                    <span class="border border-zinc-700 px-3 py-1">Node.js</span>
+                    <span class="border border-zinc-700 px-3 py-1">Leaflet</span>
+                    <span class="border border-zinc-700 px-3 py-1">JavaScript</span>
+                </div>
+            </div>
+            <div class="project-blurb">
+                <span class="text-emerald-600">//</span>
+                Real-time outage tracking platform using user reports and geolocation to visualize electricity disruptions across regions.
+            </div>
         </div>
     </a>
 </section>
@@ -329,58 +346,6 @@ if (cursor) {
             cursor.style.top = e.clientY + 'px';
         });
     }
-}
-
-// Preview — desktop hover only (anchors handle navigation)
-const preview = document.getElementById('projectPreview');
-const previewImg = document.getElementById('previewImg');
-
-if (preview && previewImg && canHover) {
-    const previewUrls = [];
-    document.querySelectorAll('.project-row').forEach(row => {
-        const src = row.dataset.preview;
-        if (src && !previewUrls.includes(src)) {
-            previewUrls.push(src);
-            const img = new Image();
-            img.src = src;
-        }
-    });
-
-    previewImg.onerror = () => {
-        preview.style.opacity = '0';
-    };
-
-    previewImg.onload = () => {
-        previewImg.style.opacity = '1';
-    };
-
-    let active = false;
-
-    document.querySelectorAll('.project-row').forEach(row => {
-        const src = row.dataset.preview;
-
-        row.addEventListener('mouseenter', () => {
-            if (!src) return;
-            previewImg.style.opacity = '0';
-            previewImg.src = src;
-            preview.style.opacity = '1';
-            active = true;
-        });
-
-        row.addEventListener('mouseleave', () => {
-            preview.style.opacity = '0';
-            active = false;
-        });
-
-        row.addEventListener('mousemove', e => {
-            if (active) {
-                preview.style.left = (e.clientX + 20) + 'px';
-                preview.style.top = e.clientY + 'px';
-            }
-        });
-    });
-} else if (preview) {
-    preview.style.display = 'none';
 }
 
 // Terminal Mode
