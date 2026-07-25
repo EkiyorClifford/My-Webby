@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spark — Idea → MVP Spec Assistant | Ekiyor Clifford</title>
+    <meta name="description" content="Spark turns a rough product idea into a structured MVP brief with streaming Groq LLM API, founder Q&A refine, export, and shareable links — Next.js and TypeScript by Ekiyor Clifford.">
+    <meta name="author" content="Ekiyor Clifford">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="canonical" href="https://ekiyorclifford.netlify.app/spark.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="output.css">
+    <style>
+        ::selection {
+            background-color: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+        }
+    </style>
+</head>
+
+<body class="bg-zinc-950 text-zinc-400 font-sans px-6 md:px-20 py-16">
+
+<a href="./index.html" class="text-sm text-zinc-600 hover:text-emerald-400 font-mono">
+    ← back
+</a>
+
+<div class="flex flex-wrap items-baseline justify-between gap-4 mt-8">
+    <h1 class="text-4xl md:text-6xl font-medium text-zinc-100 tracking-tight">
+        Spark
+    </h1>
+
+    <div class="flex gap-4 flex-wrap">
+        <a id="spark-live" href="https://spark-mvp-orcin.vercel.app" target="_blank" rel="noreferrer"
+           class="text-sm font-mono text-emerald-400 hover:text-emerald-300 border border-emerald-800 bg-emerald-950/30 px-4 py-2 rounded-full transition-all duration-300 hover:bg-emerald-950/50">
+            Live Demo
+        </a>
+        <a href="https://github.com/EkiyorClifford" target="_blank" rel="noreferrer"
+           class="text-sm font-mono text-zinc-400 hover:text-white border border-zinc-800 bg-zinc-900/50 px-4 py-2 rounded-full transition-all duration-300 hover:bg-zinc-800">
+            GitHub
+        </a>
+    </div>
+</div>
+
+<p class="mt-6 max-w-2xl text-lg text-zinc-300">
+    Idea → MVP spec assistant with streaming LLM API integration.
+    Paste a product idea; get a structured brief founders can actually build from — powered by Groq.
+</p>
+
+<div class="flex gap-2 mt-6 flex-wrap text-xs text-zinc-400">
+    <span class="border border-zinc-700 px-3 py-1">Next.js</span>
+    <span class="border border-zinc-700 px-3 py-1">TypeScript</span>
+    <span class="border border-zinc-700 px-3 py-1">Groq API</span>
+    <span class="border border-zinc-700 px-3 py-1">Streaming</span>
+</div>
+
+<img
+    src="./assets/spark/spark-preview.svg"
+    alt="Spark idea to MVP spec assistant UI"
+    class="mt-12 w-full max-w-4xl rounded-lg border border-zinc-800"
+    width="1200"
+    height="750"
+>
+
+<section class="mt-16 max-w-3xl space-y-8">
+    <div>
+        <h2 class="text-xl text-zinc-100 font-medium">Problem</h2>
+        <p class="mt-3 leading-relaxed">
+            Founders often have a rough idea but no scoped MVP. Spark turns that ambiguity into a clear brief:
+            problem, target user, prioritized features, suggested stack, a 2-week plan, and open questions.
+        </p>
+    </div>
+
+    <div>
+        <h2 class="text-xl text-zinc-100 font-medium">What I built</h2>
+        <ul class="mt-3 space-y-2 list-disc list-inside text-zinc-400">
+            <li>Next.js App Router UI with streaming response panel</li>
+            <li>Server-side Groq Chat Completions (API key never exposed to the browser)</li>
+            <li>Round-2 founder Q&A that refines the MVP brief from answers</li>
+            <li>Stack preference, example chips, local history, copy/download, shareable links</li>
+            <li>Per-IP rate limiting to reduce abuse on a public demo</li>
+        </ul>
+    </div>
+
+    <div>
+        <h2 class="text-xl text-zinc-100 font-medium">Why it matters</h2>
+        <p class="mt-3 leading-relaxed">
+            This is the same pattern used to ship AI features inside real products:
+            product UX + Node API + LLM streaming — not a model-training research project.
+        </p>
+    </div>
+</section>
+
+<footer class="border-t border-zinc-900 mt-20 pt-6 text-xs text-zinc-600 font-mono flex justify-between">
+    <span>© 2026 — EKIYOR CLIFFORD</span>
+    <a href="./index.html" class="text-emerald-700 hover:text-emerald-500">← systems</a>
+</footer>
+
+<script>
+// After Vercel deploy, set window.__SPARK_LIVE__ or update the Live Demo href above.
+</script>
+</body>
+</html>
