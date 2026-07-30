@@ -87,7 +87,7 @@
             border: 1px solid #10b981;
         }
 
-        /* Soft terminal accent — readable zinc body, emerald accents */
+        /* Soft terminal accent: readable zinc body, emerald accents */
         .terminal-mode {
             background-color: #000;
         }
@@ -154,7 +154,7 @@
 
     <p class="mt-5 text-lg max-w-2xl text-zinc-400 font-mono border-l-2 border-emerald-800 pl-6">
         <span class="text-emerald-500">Who Am I?</span><br>
-        Full-stack developer focused on building scalable platforms — from clean interfaces 
+        Full-stack developer focused on building scalable platforms, from clean interfaces 
         to the backend systems that power them. Currently shipping product MVPs and LLM-powered features.
     </p>
 </section>
@@ -297,15 +297,15 @@
         <div class="mb-6 text-xs uppercase tracking-[0.3em] text-zinc-600 font-mono">~/About</div>
 
         <p class="text-xl text-zinc-300 leading-relaxed">
-            I’m Ekiyor — a full-stack developer in Nigeria. I came up self-taught and through a bootcamp, and for the last couple of years I’ve been building product surfaces end-to-end: the interface, the API, and the messy parts in between.
+            I’m Ekiyor, a full-stack developer in Nigeria. I came up self-taught and through a bootcamp, and for the last couple of years I’ve been building product surfaces end-to-end: the interface, the API, and the messy parts in between.
         </p>
 
         <p class="mt-6 text-zinc-500 leading-relaxed">
-            I like work with a clear user workflow — especially product MVPs and booking/SaaS systems. When it helps the product, I’ll wire LLM features too (that’s Spark). Day to day I ship with Next.js, and I’m comfortable in PHP/Laravel when the stack calls for it.
+            I like work with a clear user workflow, especially product MVPs and booking/SaaS systems. When it helps the product, I’ll wire LLM features too (that’s Spark). Day to day I ship with Next.js, and I’m comfortable in PHP/Laravel when the stack calls for it.
         </p>
 
         <p class="mt-6 text-zinc-500 leading-relaxed">
-            I care about the edges that break real users. On Serein, that meant getting multi-booking and duplicate slots right — not just shipping a pretty calendar. I tend to overdeliver past the brief when something would otherwise feel unfinished.
+            I care about the edges that break real users. On Serein, that meant getting multi-booking and duplicate slots right, not just shipping a pretty calendar. I tend to overdeliver past the brief when something would otherwise feel unfinished.
         </p>
 
         <div class="mt-10 text-sm text-zinc-600 font-mono space-y-2">
@@ -324,7 +324,7 @@
         <div class="text-zinc-500 font-mono">$ Contact</div>
 
         <p class="mt-4 text-zinc-400 max-w-sm">
-            Open to freelance builds, collaborations, and full-time roles — especially product MVPs and booking/SaaS work.
+            Open to freelance builds, collaborations, and full-time roles, especially product MVPs and booking/SaaS work.
         </p>
         <!-- EMAIL -->
         <div class="mt-6 flex items-center gap-4 flex-wrap">
@@ -361,7 +361,7 @@
 </section>
 
 <footer class="border-t border-zinc-900 py-6 text-xs text-zinc-600 flex justify-between font-mono">
-    <span>© 2026 — EKIYOR CLIFFORD</span>
+    <span>© 2026 · EKIYOR CLIFFORD</span>
     <span class="text-emerald-700">● SYSTEMS ONLINE</span>
 </footer>
 
@@ -371,7 +371,7 @@
 const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Cursor — desktop fine pointer only
+// Cursor: desktop fine pointer only
 const cursor = document.getElementById('cursor');
 if (cursor) {
     if (!canHover || prefersReducedMotion) {
@@ -393,7 +393,7 @@ function toggleTerminal() {
     document.body.classList.toggle('terminal-mode');
 
     if (btn) {
-        btn.innerHTML = terminal ? '$ Ctrl+K — ACTIVE' : '$ Ctrl+K';
+        btn.innerHTML = terminal ? '$ Ctrl+K · ACTIVE' : '$ Ctrl+K';
     }
 }
 
