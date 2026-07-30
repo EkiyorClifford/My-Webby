@@ -214,10 +214,29 @@
         Fig 1–3. Complete user journey — from discovery to booking intent. Click any image to expand.
     </p>
 
-<!-- SECTION: FLOW -->
+<!-- 01 — Outcome / Role -->
 <section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">01 — System Flow</h2>
-    
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">01 — Outcome / Role</h2>
+    <p class="max-w-2xl text-zinc-400 leading-relaxed">
+        Built a property rental platform that lets landlords and tenants interact directly through structured workflows — browse, request inspection, approve — without agent middlemen slowing every step.
+    </p>
+    <p class="max-w-2xl text-zinc-500 leading-relaxed mt-4">
+        Owned the full stack: public listings UI, auth, inspection request flow, landlord dashboard actions, PostgreSQL schema, and REST API.
+    </p>
+</section>
+
+<!-- 02 — Problem -->
+<section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">02 — Problem</h2>
+    <p class="max-w-2xl text-zinc-400 leading-relaxed">
+        Renting often depends on agents and informal back-and-forth. Landlords need control over who visits; tenants need a clear path from discovery to inspection without opaque handoffs.
+    </p>
+</section>
+
+<!-- 03 — System Flow -->
+<section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">03 — System Flow</h2>
+
     <div class="bg-zinc-900 border border-zinc-800 p-6">
         <div class="flex flex-wrap gap-4 md:gap-8 items-center">
             <div class="flex items-center gap-2">
@@ -248,96 +267,60 @@
     </div>
 </section>
 
-<!-- SECTION: DATABASE -->
+<!-- 04 — What I Built -->
 <section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">02 — Database Design</h2>
-
-    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed">
-        users (id, name, email, role)  
-        properties (id, landlord_id, title, location, price)  
-        inspections (id, user_id, property_id, status)  
-        approvals (id, inspection_id, status)  
-    </div>
-
-    <p class="mt-4 text-sm text-zinc-500 max-w-2xl leading-relaxed">
-        Designed to separate user actions (inspections) from decisions (approvals), allowing flexible workflows and future automation.
-    </p>
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">04 — What I Built</h2>
+    <ul class="max-w-2xl space-y-2 list-disc list-inside text-zinc-400 leading-relaxed">
+        <li>Public home + property browse with filtering</li>
+        <li>User registration / login and role-aware access</li>
+        <li>Inspection request flow from tenant to landlord</li>
+        <li>Landlord dashboard to review, approve, or reject requests</li>
+        <li>PostgreSQL-backed data model separating actions from decisions</li>
+    </ul>
 </section>
 
-<!-- SECTION: BACKEND LOGIC -->
+<!-- 05 — Key Decisions -->
 <section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">03 — Backend Logic</h2>
-
-    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed space-y-4">
-        <div>
-            POST /register  
-            POST /login  
-        </div>
-
-        <div>
-            GET /properties  
-        </div>
-
-        <div>
-            POST /inspection/request  
-            
-            <div class="mt-2 text-xs text-zinc-500">Request body:</div>
-            <div class="bg-black mt-2 p-3 text-xs border border-zinc-800">
-    {
-    "user_id": 12,
-    "property_id": 45,
-    "date": "2026-04-20"
-    }
-            </div>
-        </div>
-
-        <div>
-            POST /inspection/approve  
-            POST /inspection/reject  
-        </div>
-
-    </div>
-
-    <p class="mt-4 text-sm text-zinc-500 max-w-2xl leading-relaxed">
-        Backend handles state transitions between user actions and landlord decisions, ensuring consistent data flow across the system.
-    </p>
-</section>
-
-<!-- SECTION: WHY -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">04 — Design Decisions</h2>
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">05 — Key Decisions</h2>
 
     <p class="max-w-2xl leading-relaxed text-zinc-400">
-        Instead of allowing direct booking, an inspection layer was introduced to control access, validate intent, and reduce landlord risk.
-        This structure also creates a natural checkpoint for future features like payments, scheduling, and automated approvals.
+        <span class="text-zinc-200">Inspection before booking.</span> Direct booking was skipped in favor of an inspection layer — validates intent, reduces landlord risk, and leaves room for payments or scheduling later.
+    </p>
+    <p class="max-w-2xl leading-relaxed text-zinc-400 mt-4">
+        <span class="text-zinc-200">Separate actions from decisions.</span> Inspections (user requests) and approvals (landlord outcomes) stay distinct so workflows stay flexible and automatable.
+    </p>
+    <p class="max-w-2xl leading-relaxed text-zinc-400 mt-4">
+        <span class="text-zinc-200">Explicit status transitions.</span> pending → approved / rejected keeps both sides aligned and blocks conflicting actions.
     </p>
 </section>
 
-<!-- SECTION: STATE LOGIC -->
- <section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">05 — State Handling</h2>
+<!-- 06 — Engineering Notes -->
+<section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">06 — Engineering Notes</h2>
 
-    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm">
-        inspection.status:
-        - pending
-        - approved
-        - rejected
+    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed space-y-4 max-w-3xl">
+        <div>
+            users · properties · inspections · approvals
+        </div>
+        <div>
+            POST /register · POST /login · GET /properties
+        </div>
+        <div>
+            POST /inspection/request · POST /inspection/approve · POST /inspection/reject
+        </div>
+        <div class="text-xs text-zinc-500">
+            inspection.status: pending | approved | rejected
+        </div>
     </div>
-
-    <p class="mt-4 text-sm text-zinc-500 max-w-2xl leading-relaxed">
-        State-based design ensures predictable transitions and prevents conflicting actions between users and landlords.
-    </p>
 </section>
 
-<!-- SECTION SYSTEM INSIGHT -->
-    <section class="mt-16">
-        <h2 class="text-xl text-emerald-400 font-mono mb-4">06 — System Insight</h2>
-
-        <p class="max-w-2xl text-zinc-400 leading-relaxed">
-            The core challenge was balancing user freedom with landlord control. 
-            By introducing structured workflows instead of direct interactions, the system ensures trust, reduces friction, and keeps both sides aligned without relying on intermediaries.
-        </p>
-    </section>
+<!-- 07 — Result -->
+<section class="mt-16 mb-8">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">07 — Result</h2>
+    <p class="max-w-2xl text-zinc-400 leading-relaxed">
+        A clear landlord–tenant loop without intermediaries: discovery → inspection request → decision. The core challenge was balancing user freedom with landlord control — structured workflows keep both sides aligned.
+    </p>
+</section>
 
     <!-- Lightbox Modal -->
     <div id="lightbox" class="fixed inset-0 z-50 bg-zinc-950/95 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 md:p-8">

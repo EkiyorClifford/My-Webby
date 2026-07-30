@@ -238,9 +238,28 @@
     Fig 1–4. Home → book → account → admin. Click any image to expand.
 </p>
 
-<!-- SECTION: FLOW -->
+<!-- 01 — Outcome / Role -->
 <section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">01 — System Flow</h2>
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">01 — Outcome / Role</h2>
+    <p class="max-w-2xl text-zinc-400 leading-relaxed">
+        Solo-built a full booking + payments + admin ops platform for a wellness spa: guests claim live slots with upfront Paystack payment; staff run walk-ins, blocked availability, services, and revenue from one dashboard.
+    </p>
+    <p class="max-w-2xl text-zinc-500 leading-relaxed mt-4">
+        Owned the full stack — customer booking UX, dual auth, slot engine, payment verification/webhooks, admin operations, and email notifications.
+    </p>
+</section>
+
+<!-- 02 — Problem -->
+<section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">02 — Problem</h2>
+    <p class="max-w-2xl text-zinc-400 leading-relaxed">
+        Spas need more than a contact form. Customers expect live availability and paid confirmation; staff need walk-ins, blocks, and revenue without double-booking the same chair at the same hour.
+    </p>
+</section>
+
+<!-- 03 — System Flow -->
+<section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">03 — System Flow</h2>
 
     <div class="bg-zinc-900 border border-zinc-800 p-6">
         <div class="flex flex-wrap gap-4 md:gap-8 items-center">
@@ -272,100 +291,77 @@
     </div>
 
     <p class="mt-4 text-sm text-zinc-500 max-w-2xl leading-relaxed">
-        Guests can book without an account. After payment, they may optionally create an account with the same email to manage cancel/reschedule under a 2-hour cutoff and a max of 3 reschedules.
+        Guests book without an account. After payment, they can optionally create an account with the same email to cancel/reschedule under a 2-hour cutoff and a max of 3 reschedules.
     </p>
 </section>
 
-<!-- SECTION: CUSTOMER + ADMIN -->
-<section class="mt-16 grid md:grid-cols-2 gap-8">
-    <div>
-        <h2 class="text-xl text-emerald-400 font-mono mb-4">02 — Customer Surface</h2>
-        <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed space-y-2">
-            <p>→ Service browsing + booking at /book/[serviceId]</p>
-            <p>→ Live slot availability (Africa/Lagos)</p>
-            <p>→ Guest checkout (name, phone, email)</p>
-            <p>→ Upfront Paystack payment</p>
-            <p>→ Account auth + password reset</p>
-            <p>→ Cancel / reschedule with policy rules</p>
-            <p>→ Confirmation emails (Resend)</p>
+<!-- 04 — What I Built -->
+<section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">04 — What I Built</h2>
+
+    <div class="grid md:grid-cols-2 gap-8">
+        <div>
+            <p class="text-xs font-mono text-zinc-600 mb-3">Customer</p>
+            <ul class="space-y-2 list-disc list-inside text-zinc-400 text-sm leading-relaxed">
+                <li>Service browsing + booking at /book/[serviceId]</li>
+                <li>Live slot availability (Africa/Lagos)</li>
+                <li>Guest checkout + upfront Paystack payment</li>
+                <li>Account auth, cancel/reschedule with policy rules</li>
+                <li>Confirmation emails (Resend)</li>
+            </ul>
         </div>
-    </div>
-    <div>
-        <h2 class="text-xl text-emerald-400 font-mono mb-4">03 — Admin Operations</h2>
-        <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed space-y-2">
-            <p>→ Allowlist-gated admin login</p>
-            <p>→ Bookings dashboard (search / filter / calendar)</p>
-            <p>→ Manual walk-in bookings</p>
-            <p>→ Whole-day + time-range blocked slots</p>
-            <p>→ Sunday closure via business settings</p>
-            <p>→ Services CRUD (safe deactivate)</p>
-            <p>→ Paid revenue: today / week / month / all-time</p>
+        <div>
+            <p class="text-xs font-mono text-zinc-600 mb-3">Admin</p>
+            <ul class="space-y-2 list-disc list-inside text-zinc-400 text-sm leading-relaxed">
+                <li>Allowlist-gated admin login</li>
+                <li>Bookings dashboard (search / filter / calendar)</li>
+                <li>Walk-ins, blocked slots, Sunday closure</li>
+                <li>Services CRUD (safe deactivate)</li>
+                <li>Paid revenue: today / week / month / all-time</li>
+            </ul>
         </div>
     </div>
 </section>
 
-<!-- SECTION: BACKEND -->
+<!-- 05 — Key Decisions -->
 <section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">04 — Backend Logic</h2>
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">05 — Key Decisions</h2>
 
-    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed space-y-4">
-        <div>
-            POST /api/... — create booking + initiate Paystack
-        </div>
-        <div>
-            POST /api/.../verify — server-side payment verification
-        </div>
-        <div>
-            POST /api/.../webhook — Paystack HMAC webhook (idempotent confirm)
-        </div>
-        <div>
-            Admin writes via service-role · Customer booking reads via RLS (email-scoped)
-        </div>
-        <div class="text-xs text-zinc-500">
-            Dual cookie namespaces: customer-auth vs admin — isolated sessions
-        </div>
+    <p class="max-w-2xl leading-relaxed text-zinc-400">
+        <span class="text-zinc-200">Duplicate-booking guard first.</span> Multi-booking and overlapping slots were treated as a core product risk — pre-insert check plus post-insert re-check with rollback so two guests cannot claim the same hour under concurrency.
+    </p>
+    <p class="max-w-2xl leading-relaxed text-zinc-400 mt-4">
+        <span class="text-zinc-200">Pay before confirm.</span> The calendar only fills with paid demand. Guest checkout removes signup friction; account creation stays optional and post-booking.
+    </p>
+    <p class="max-w-2xl leading-relaxed text-zinc-400 mt-4">
+        <span class="text-zinc-200">Isolated admin auth.</span> Allowlist-gated and cookie-isolated from customer sessions — a role claim alone is not enough to reach operations tools.
+    </p>
+    <p class="max-w-2xl leading-relaxed text-zinc-400 mt-4">
+        <span class="text-zinc-200">Policy where customers look.</span> Cancel/reschedule rules (2-hour cutoff, max 3 reschedules) show in the UI and emails, not only in backend checks.
+    </p>
+</section>
+
+<!-- 06 — Engineering Notes -->
+<section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">06 — Engineering Notes</h2>
+
+    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed space-y-3 max-w-3xl">
+        <p>Slot engine → hours, duration, bookings, blocks, closed days, past-slot rejection</p>
+        <p>Payments → create + Paystack initiate · verify route · HMAC webhook (idempotent confirm)</p>
+        <p>Auth → dual cookie namespaces (customer vs admin) · RLS for email-scoped booking reads</p>
+        <p>Timezone → Africa/Lagos across availability, cutoffs, and revenue windows</p>
     </div>
 
     <p class="mt-4 text-sm text-zinc-500 max-w-2xl leading-relaxed">
-        Payment confirmation is shared between the verify route and webhook so retries and race conditions do not double-confirm a booking.
+        Verify route and webhook share confirmation logic so retries and race conditions do not double-confirm a booking.
     </p>
 </section>
 
-<!-- SECTION: ENGINEERING -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">05 — Engineering Focus</h2>
-
-    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed space-y-3">
-        <p>Slot engine → opening hours, duration, existing bookings, blocked slots, closed days, past-slot rejection</p>
-        <p>Double-booking guard → pre-insert check + post-insert re-check with rollback</p>
-        <p>Timezone → Africa/Lagos across availability, cutoffs, and revenue windows</p>
-        <p>Auth → allowlisted admins; customer sessions never share admin cookies</p>
-    </div>
-</section>
-
-<!-- SECTION: DESIGN DECISIONS -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">06 — Design Decisions</h2>
-
-    <p class="max-w-2xl leading-relaxed text-zinc-400">
-        Payment is required before confirmation so the calendar only fills with paid demand. Guest checkout removes signup friction; account creation stays optional and post-booking.
-    </p>
-
-    <p class="max-w-2xl leading-relaxed text-zinc-400 mt-4">
-        Admin auth is allowlist-gated and cookie-isolated from customer auth — a role claim alone is not enough to reach operations tools.
-    </p>
-
-    <p class="max-w-2xl leading-relaxed text-zinc-400 mt-4">
-        Cancel/reschedule rules (2-hour cutoff, max 3 reschedules) are shown in the UI and emails so policy is enforced where customers already look.
-    </p>
-</section>
-
-<!-- SECTION: INSIGHT -->
+<!-- 07 — Result -->
 <section class="mt-16 mb-8">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">07 — System Insight</h2>
-
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">07 — Result</h2>
     <p class="max-w-2xl text-zinc-400 leading-relaxed">
-        The hard part was not the booking form — it was keeping availability, payments, and operations consistent under concurrency. Overlap-aware slots, idempotent payment confirmation, and Lagos timezone discipline keep the product trustworthy for both guests and staff.
+        A trustworthy booking loop for guests and staff: overlap-aware slots, idempotent payment confirmation, and Lagos timezone discipline. The hard part was not the form — it was keeping availability, payments, and operations consistent under concurrency.
     </p>
 </section>
 

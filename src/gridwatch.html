@@ -110,19 +110,28 @@
     </div>
 </div>
 
-<!-- SECTION: PROBLEM -->
+<!-- 01 — Outcome / Role -->
 <section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">01 — Problem</h2>
-
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">01 — Outcome / Role</h2>
     <p class="max-w-2xl text-zinc-400 leading-relaxed">
-        In many regions, there is no reliable, real-time visibility into power outages.
-        People rely on guesswork, social media, or delayed updates from providers.
+        Designing a crowd-reported outage map for regions without reliable real-time grid visibility — so people can see disruptions where they actually are, not wait on delayed provider updates.
+    </p>
+    <p class="max-w-2xl text-zinc-500 leading-relaxed mt-4">
+        Status: in progress. System design and API shape are drafted; UI screenshots and a live demo will land with the first usable vertical slice. Solo concept and planned build.
     </p>
 </section>
 
-<!-- SECTION: FLOW -->
+<!-- 02 — Problem -->
 <section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">02 — System Flow</h2>
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">02 — Problem</h2>
+    <p class="max-w-2xl text-zinc-400 leading-relaxed">
+        In many regions there is no reliable, real-time view of power outages. People fall back on guesswork, social media, or delayed updates from providers.
+    </p>
+</section>
+
+<!-- 03 — System Flow -->
+<section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">03 — System Flow</h2>
 
     <div class="bg-zinc-900 border border-zinc-800 p-6">
         <div class="flex flex-wrap gap-4 md:gap-8 items-center">
@@ -149,61 +158,60 @@
     </div>
 </section>
 
-<!-- SECTION: DATA MODEL -->
+<!-- 04 — What I Built (planned) -->
 <section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">03 — Data Model</h2>
-
-    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed space-y-2">
-        <p>reports → id, user_id, location, status, timestamp</p>
-        <p>users → id, email</p>
-        <p class="text-xs text-zinc-500 mt-2">// zones planned for neighborhood → city scale aggregation</p>
-    </div>
-
-    <p class="mt-4 text-sm text-zinc-500 max-w-2xl leading-relaxed">
-        User reports are the primary signal first; external grid feeds can plug in later without rewriting the core flow.
-    </p>
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">04 — What I’m Building</h2>
+    <ul class="max-w-2xl space-y-2 list-disc list-inside text-zinc-400 leading-relaxed">
+        <li>Report flow with geolocation capture</li>
+        <li>Map view of active outages (Leaflet)</li>
+        <li>Aggregation so nearby reports don’t spam the map</li>
+        <li>Zone model for neighborhood → city scale views</li>
+        <li>API for report, list, update, and zones</li>
+    </ul>
 </section>
 
-<!-- SECTION: API SHAPE -->
+<!-- 05 — Key Decisions -->
 <section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">04 — API Shape</h2>
-
-    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm space-y-3">
-        <div>POST /api/outages/report</div>
-        <div>GET /api/outages</div>
-        <div>PATCH /api/outages/:id</div>
-        <div>GET /api/zones</div>
-        <div class="text-xs text-zinc-500">// future: WebSocket fan-out for live map updates</div>
-    </div>
-</section>
-
-<!-- SECTION: DESIGN DECISIONS -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">05 — Design Decisions</h2>
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">05 — Key Decisions</h2>
 
     <p class="max-w-2xl text-zinc-400 leading-relaxed">
-        Crowd-reported outages beat waiting on official feeds when the goal is immediate local visibility.
+        <span class="text-zinc-200">Crowd reports first.</span> User signals beat waiting on official feeds when the goal is immediate local visibility.
     </p>
-
     <p class="max-w-2xl text-zinc-400 leading-relaxed mt-4">
-        Nearby reports should aggregate so the map stays readable instead of littered with duplicate pins.
+        <span class="text-zinc-200">Aggregate nearby pins.</span> Keep the map readable instead of littered with duplicate reports for the same street.
     </p>
-
     <p class="max-w-2xl text-zinc-400 leading-relaxed mt-4">
-        A zone model keeps the path open from neighborhood coverage to city-wide views without a rewrite.
+        <span class="text-zinc-200">Zone model early.</span> Neighborhood → city scaling without a rewrite; external grid feeds can plug in later.
     </p>
 </section>
 
-<!-- SECTION: NEXT -->
-<section class="mt-16 mb-8">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">06 — What's Next</h2>
+<!-- 06 — Engineering Notes -->
+<section class="mt-16">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">06 — Engineering Notes</h2>
 
-    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed space-y-2">
-        <p>→ Ship a working map UI with report + list/calendar views</p>
+    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed space-y-3 max-w-3xl">
+        <p>reports → id, user_id, location, status, timestamp</p>
+        <p>users → id, email · zones planned for aggregation</p>
+        <p>POST /api/outages/report · GET /api/outages · PATCH /api/outages/:id · GET /api/zones</p>
+        <p class="text-xs text-zinc-500">// future: polling first, then WebSocket fan-out for live map updates</p>
+    </div>
+</section>
+
+<!-- 07 — What's Next -->
+<section class="mt-16 mb-8">
+    <h2 class="text-xl text-emerald-400 font-mono mb-4">07 — What’s Next</h2>
+
+    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed space-y-2 max-w-3xl">
+        <p>→ Ship a working map UI with report + list views</p>
         <p>→ Add live updates (polling first, WebSocket later)</p>
         <p>→ Publish repo + demo links when the first vertical slice is usable</p>
     </div>
 </section>
+
+<footer class="border-t border-zinc-900 mt-20 pt-6 text-xs text-zinc-600 font-mono flex justify-between">
+    <span>© 2026 — EKIYOR CLIFFORD</span>
+    <a href="./index.html" class="text-emerald-700 hover:text-emerald-500">← systems</a>
+</footer>
 
 </body>
 </html>
