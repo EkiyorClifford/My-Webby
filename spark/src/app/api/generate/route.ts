@@ -39,9 +39,9 @@ export async function POST(request: Request) {
   }
 
   const idea = typeof body.idea === "string" ? body.idea.trim() : "";
-  if (idea.length < 20) {
+  if (idea.length < 8) {
     return Response.json(
-      { error: "Please describe your idea in at least 20 characters." },
+      { error: "Please describe your idea in at least 8 characters." },
       { status: 400 },
     );
   }
@@ -99,7 +99,8 @@ export async function POST(request: Request) {
   if (!limit.ok) {
     return Response.json(
       {
-        error: `Rate limit reached. Try again in ${limit.retryAfterSec}s.`,
+        error: "rate_limited",
+        retryAfterSeconds: limit.retryAfterSec,
       },
       {
         status: 429,

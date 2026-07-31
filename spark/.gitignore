@@ -12,6 +12,10 @@
 
 # testing
 /coverage
+/test-outputs
+
+# local share store
+/.data
 
 # next.js
 /.next/
@@ -38,6 +42,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# fontshare download unpack (keep src/fonts only)
+/public/fonts
 
 # typescript
 *.tsbuildinfo

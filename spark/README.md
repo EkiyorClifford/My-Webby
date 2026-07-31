@@ -28,7 +28,6 @@ Browser streams Markdown into the brief panel
 ## Setup
 
 ```bash
-cd spark
 npm install
 cp .env.example .env.local
 # put GROQ_API_KEY in .env.local (from https://console.groq.com)
@@ -37,14 +36,15 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+**Live:** https://spark-mvp-orcin.vercel.app
+
 ## Deploy (Vercel)
 
-1. Push this folder to GitHub (or import the repo).
-2. Create a Vercel project from the repo; set **Root Directory** to `spark` if the repo is the portfolio monorepo.
-3. Add env vars:
+1. Import this repo in Vercel (root = repo root).
+2. Add env vars:
    - `GROQ_API_KEY`
    - `GROQ_MODEL` (optional, default `llama-3.3-70b-versatile`)
-4. Deploy. Share the production URL in your Upwork proposal.
+3. Deploy.
 
 ```bash
 npx vercel --prod
@@ -57,7 +57,19 @@ npx vercel --prod
 3. **Example idea chips** — marketplace, booking, SaaS, local ops  
 4. **Local history** — last briefs in `localStorage`  
 5. **Stack preference** — Next.js / none / mobile-first  
-6. **Shareable links** — `#s=` payload in the URL (same tab)
+6. **Shareable links** — short `/s/{id}` URLs (brief stored server-side)
+
+## Share storage
+
+Share links store the brief by short ID (not in the URL). Resolution order:
+
+1. Vercel KV / Upstash (`KV_REST_API_URL` + `KV_REST_API_TOKEN`, or `UPSTASH_*`)
+2. GitHub (`GITHUB_TOKEN` or `SHARE_GITHUB_TOKEN`) on branch `shares-data`
+3. Local filesystem (`.data/shares/`) for `npm run dev`
+
+```bash
+npm run test:share
+```
 
 ## Why this exists
 

@@ -1,24 +1,133 @@
 @import "tailwindcss";
 
 :root {
-  --background: #09090b;
-  --foreground: #a1a1aa;
+  /* Warm drafting desk — not cool blue-charcoal, not neon SaaS green */
+  --background: #141210;
+  --surface: #1c1916;
+  --surface-raised: #24201c;
+  --ink: #f2ebe0;
+  --muted: #9a9186;
+  --quiet: #6e675e;
+  --line: rgba(242, 235, 224, 0.1);
+  --accent: #c9a57a;
+  --accent-soft: #dfc09a;
+  --accent-deep: #8f734f;
+  --danger: #e8a0a0;
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-foreground: var(--muted);
+  --font-sans: var(--font-body);
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  color: var(--muted);
+  font-family: var(--font-body), system-ui, sans-serif;
+  min-height: 100%;
 }
 
 ::selection {
-  background: rgba(16, 185, 129, 0.25);
-  color: #ecfdf5;
+  background: rgba(201, 165, 122, 0.28);
+  color: var(--ink);
+}
+
+.spark-shell {
+  position: relative;
+  isolation: isolate;
+  min-height: 100%;
+}
+
+/* Atmosphere: warm directional wash + grain BEHIND content. No drifting blobs. */
+.spark-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(165deg, #171411 0%, #141210 42%, #100e0c 100%);
+}
+
+.spark-shell::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+/* Spec sheet panel: bespoke left chamfer, tonal edge, no all-around shadow */
+.draft-panel {
+  position: relative;
+  background: var(--surface);
+  color: var(--muted);
+  /* Clear the cut: pad past the chamfer so copy never clips */
+  padding: 1.35rem 1.35rem 1.35rem 1.75rem;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 1.75rem, 0.85rem 0.9rem, 0 0);
+  box-shadow:
+    inset 0 1px 0 rgba(242, 235, 224, 0.06),
+    0 1px 0 rgba(0, 0, 0, 0.35);
+}
+
+@media (min-width: 768px) {
+  .draft-panel {
+    padding: 1.75rem 1.75rem 1.75rem 2.15rem;
+  }
+}
+
+.prose-spark h2 {
+  color: var(--ink);
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.prose-spark h3,
+.prose-spark strong {
+  color: var(--ink);
+}
+
+.prose-spark p,
+.prose-spark li {
+  color: var(--muted);
+}
+
+/* Quiet hover: tone shift only, no lift / underline fill / glow */
+.spark-action {
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.spark-action:hover:not(:disabled) {
+  background: var(--accent-soft);
+  color: #1a1510;
+}
+
+.spark-action:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.spark-mark-spin {
+  transform-origin: 20px 20px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .spark-mark-spin {
+    animation: spark-ember 12s linear infinite;
+  }
+}
+
+@keyframes spark-ember {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
