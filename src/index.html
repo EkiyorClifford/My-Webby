@@ -1,428 +1,227 @@
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ekiyor Clifford - Full Stack Developer | System Design & Web Development Portfolio</title>
-    <meta name="description" content="Full stack developer specializing in product MVPs, LLM API integration, and scalable web systems. Portfolio featuring Spark, Serein wellness booking, Hestia property management, and GridWatch.">
-    <meta name="keywords" content="full stack developer, web development, system design, real-time applications, spa booking, property management, power grid monitoring, Next.js, Supabase, responsive design, modern web applications, scalable architecture, JavaScript, HTML, CSS, portfolio">
-    <meta name="author" content="Ekiyor Clifford">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ekiyorclifford.github.io/My-Webby/">
-    <meta property="og:title" content="Ekiyor Clifford - Full Stack Developer | System Design & Web Development Portfolio">
-    <meta property="og:description" content="Full stack developer and system designer specializing in modern web applications, real-time systems, and scalable architecture. Portfolio featuring Serein wellness booking, Hestia property management, and GridWatch power monitoring.">
-    <meta property="og:image" content="https://ekiyorclifford.github.io/My-Webby/assets/serein/serein-home.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="Portfolio - Ekiyor Clifford">
-    <meta property="og:locale" content="en_US">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ekiyorclifford.github.io/My-Webby/">
-    <meta property="twitter:title" content="Ekiyor Clifford - Full Stack Developer | System Design & Web Development Portfolio">
-    <meta property="twitter:description" content="Full stack developer and system designer specializing in modern web applications, real-time systems, and scalable architecture. Portfolio featuring Serein wellness booking, Hestia property management, and GridWatch power monitoring.">
-    <meta property="twitter:image" content="https://ekiyorclifford.github.io/My-Webby/assets/serein/serein-home.jpg">
-    <meta property="twitter:creator" content="@ekiyorclifford">
-    
-    <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#0a0a0a">
-    <meta name="msapplication-TileColor" content="#0a0a0a">
-    <meta name="application-name" content="Ekiyor Clifford Portfolio">
-    <meta name="apple-mobile-web-app-title" content="Portfolio">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://ekiyorclifford.github.io/My-Webby/">
-    
-    <!-- Favicon and Icons -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="apple-touch-icon" href="favicon.svg">
-    <link rel="shortcut icon" href="favicon.svg">
-    
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://github.com">
-    
-    <!-- DNS Prefetch -->
-    <link rel="dns-prefetch" href="https://github.com">
-    
-    <link rel="stylesheet" href="output.css">
-    
-    <style>
-        body { cursor: default; }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Ekiyor Clifford / Full-Stack Developer</title>
+ <meta name="description" content="Full-stack developer in Nigeria building product MVPs, booking/SaaS systems, and LLM-powered features. Portfolio: Spark, Serein, Hestia, GridWatch.">
+ <meta name="author" content="Ekiyor Clifford">
+ <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-        ::selection {
-            background-color: rgba(16, 185, 129, 0.2);
-            color: #10b981;
-        }
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://ekiyorclifford.netlify.app/">
+ <meta property="og:title" content="Ekiyor Clifford / Full-Stack Developer">
+ <meta property="og:description" content="Full-stack developer building product MVPs, booking/SaaS systems, and LLM-powered features.">
+ <meta property="og:image" content="https://ekiyorclifford.netlify.app/assets/spark/spark-home.jpg">
+ <meta property="og:site_name" content="Ekiyor Clifford">
 
-        .cursor-dot {
-            position: fixed;
-            width: 0.75rem;
-            height: 0.75rem;
-            background-color: #10b981;
-            border-radius: 9999px;
-            pointer-events: none;
-            z-index: 50;
-            mix-blend-mode: difference;
-            transform: translate(-50%, -50%);
-            transition: 0.2s;
-        }
+ <meta property="twitter:card" content="summary_large_image">
+ <meta property="twitter:title" content="Ekiyor Clifford / Full-Stack Developer">
+ <meta property="twitter:description" content="Full-stack developer building product MVPs, booking/SaaS systems, and LLM-powered features.">
+ <meta property="twitter:image" content="https://ekiyorclifford.netlify.app/assets/spark/spark-home.jpg">
 
-        .cursor-dot.is-hidden {
-            display: none;
-        }
-
-        a:hover ~ .cursor-dot,
-        button:hover ~ .cursor-dot,
-        .project-row:hover ~ .cursor-dot {
-            width: 2rem;
-            height: 2rem;
-            background-color: transparent;
-            border: 1px solid #10b981;
-        }
-
-        /* Soft terminal accent: readable zinc body, emerald accents */
-        .terminal-mode {
-            background-color: #000;
-        }
-
-        .terminal-mode .text-zinc-100,
-        .terminal-mode h1,
-        .terminal-mode h2,
-        .terminal-mode h3 {
-            color: #ecfdf5;
-        }
-
-        .terminal-mode a,
-        .terminal-mode .text-emerald-400,
-        .terminal-mode .text-emerald-500,
-        .terminal-mode .text-emerald-600,
-        .terminal-mode .text-emerald-700,
-        .terminal-mode .font-mono {
-            color: #34d399;
-        }
-
-        .terminal-mode .border-zinc-800,
-        .terminal-mode .border-zinc-900,
-        .terminal-mode .border-emerald-800 {
-            border-color: #065f46;
-        }
-
-        @media (hover: none), (prefers-reduced-motion: reduce) {
-            .cursor-dot {
-                display: none !important;
-            }
-        }
-    </style>
+ <meta name="theme-color" content="#0c0d0b">
+ <link rel="canonical" href="https://ekiyorclifford.netlify.app/">
+ <link rel="icon" type="image/svg+xml" href="favicon.svg">
+ <link rel="stylesheet" href="output.css">
 </head>
 
-<body class="min-h-screen bg-zinc-950 text-zinc-400 font-light antialiased font-sans">
+<body>
+<div class="site-shell">
+<main class="mx-auto max-w-[1120px] px-6 md:px-10 lg:px-12">
 
-<!-- Cursor -->
-<div class="cursor-dot" id="cursor"></div>
-
-<main class="container mx-auto px-6 md:px-12 lg:px-24 max-w-[1400px]">
-        
-<header class="pt-12 pb-24 flex justify-between text-sm uppercase tracking-[0.2em] text-zinc-500">
-    <div class="hover:text-emerald-400">Ekiyor Clifford</div>
-    <div class="flex gap-6">
-        <a href="#work" class="hover:text-emerald-400">Systems</a>
-        <a href="#about" class="hover:text-emerald-400">About</a>
-    </div>
+<header class="site-nav">
+ <a href="./index.html" class="font-display text-lg text-[var(--color-ink)]" style="color: var(--color-ink)">Ekiyor Clifford</a>
+ <nav class="flex gap-6" aria-label="Primary">
+ <a href="#work">Work</a>
+ <a href="#about">About</a>
+ </nav>
 </header>
 
-<!-- HERO -->
-<section class="mb-32">
-    <h1 class="text-5xl md:text-7xl lg:text-8xl font-medium text-zinc-100 leading-tight">
-        I build systems<br>
-        people actually<br>
-        <span class="text-emerald-500 font-mono">use</span>.
-    </h1>
-
-    <a href="#work" class="scroll-cue" aria-label="Scroll to projects">
-        <span class="scroll-cue-track" aria-hidden="true">
-            <span class="scroll-cue-dot"></span>
-        </span>
-        <span class="scroll-cue-label">scroll</span>
-    </a>
-
-    <p class="mt-5 text-lg max-w-2xl text-zinc-400 font-mono border-l-2 border-emerald-800 pl-6">
-        <span class="text-emerald-500">Who Am I?</span><br>
-        Full-stack developer focused on building scalable platforms, from clean interfaces 
-        to the backend systems that power them. Currently shipping product MVPs and LLM-powered features.
-    </p>
+<section class="hero" aria-label="Introduction">
+ <h1 class="hero-name">
+ Ekiyor
+ <span>Clifford</span>
+ </h1>
+ <div class="hero-aside">
+ <p>Full-stack developer in Nigeria. I ship product MVPs and booking/SaaS systems end to end.</p>
+ <a href="#work">Selected work</a>
+ </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="work" class="mb-32">
-    <div class="mb-8 text-xs uppercase tracking-[0.3em] text-zinc-600 font-mono">~/systems</div>
+<section id="work" class="pb-8">
+ <p class="section-label">Selected systems</p>
 
-    <!-- SPARK -->
-    <a href="./spark.html" class="project-row border-t border-zinc-800">
-        <div class="project-media">
-            <img
-                src="./assets/spark/spark-home.jpg"
-                alt="Spark idea to MVP spec assistant homepage"
-                loading="lazy"
-                decoding="async"
-                width="1200"
-                height="750"
-            >
-        </div>
-        <div class="project-body">
-            <div class="project-num">01</div>
-            <div>
-                <h3 class="text-3xl text-zinc-300">
-                    <span class="text-emerald-600 font-mono">></span> Spark
-                </h3>
-                <div class="flex gap-2 mt-3 flex-wrap text-xs text-zinc-400">
-                    <span class="border border-zinc-700 px-3 py-1">Next.js</span>
-                    <span class="border border-zinc-700 px-3 py-1">TypeScript</span>
-                    <span class="border border-zinc-700 px-3 py-1">Groq</span>
-                    <span class="border border-zinc-700 px-3 py-1">Streaming</span>
-                </div>
-            </div>
-            <div class="project-blurb">
-                <span class="text-emerald-600">//</span>
-                Idea → MVP-spec assistant with streaming LLM API, founder Q&A refine, export, local history, and shareable briefs.
-            </div>
-        </div>
-    </a>
+ <a href="./spark.html" class="project-row">
+ <div class="project-media">
+ <img
+ src="./assets/spark/spark-home.jpg"
+ alt="Spark idea to MVP spec assistant"
+ loading="lazy"
+ decoding="async"
+ width="1200"
+ height="750"
+ >
+ </div>
+ <div class="project-body">
+ <div class="project-meta">
+ <span class="project-num">01</span>
+ <h2 class="project-title">Spark</h2>
+ </div>
+ <p class="project-stack">Next.js / TypeScript / Groq / Streaming</p>
+ <p class="project-blurb">
+ Idea to MVP-spec assistant with streaming LLM output, founder Q&A refine, export, and shareable briefs.
+ </p>
+ </div>
+ </a>
 
-    <!-- SEREIN -->
-    <a href="./serein.html" class="project-row border-t border-zinc-800">
-        <div class="project-media">
-            <img
-                src="./assets/serein/serein-home.jpg"
-                alt="Serein wellness booking app homepage"
-                loading="lazy"
-                decoding="async"
-                width="1200"
-                height="750"
-            >
-        </div>
-        <div class="project-body">
-            <div class="project-num">02</div>
-            <div>
-                <h3 class="text-3xl text-zinc-300">
-                    <span class="text-emerald-600 font-mono">></span> Serein
-                </h3>
-                <div class="flex gap-2 mt-3 flex-wrap text-xs text-zinc-400">
-                    <span class="border border-zinc-700 px-3 py-1">Next.js</span>
-                    <span class="border border-zinc-700 px-3 py-1">TypeScript</span>
-                    <span class="border border-zinc-700 px-3 py-1">Supabase</span>
-                    <span class="border border-zinc-700 px-3 py-1">Paystack</span>
-                </div>
-            </div>
-            <div class="project-blurb">
-                <span class="text-emerald-600">//</span>
-                Full-stack spa booking platform with Paystack payments, dual customer/admin auth, live availability, and an operations dashboard.
-            </div>
-        </div>
-    </a>
+ <a href="./serein.html" class="project-row">
+ <div class="project-media">
+ <img
+ src="./assets/serein/serein-home.jpg"
+ alt="Serein wellness booking app"
+ loading="lazy"
+ decoding="async"
+ width="1200"
+ height="750"
+ >
+ </div>
+ <div class="project-body">
+ <div class="project-meta">
+ <span class="project-num">02</span>
+ <h2 class="project-title">Serein</h2>
+ </div>
+ <p class="project-stack">Next.js / TypeScript / Supabase / Paystack</p>
+ <p class="project-blurb">
+ Spa booking with live availability, upfront payments, dual auth, and an operations dashboard.
+ </p>
+ </div>
+ </a>
 
-    <!-- HESTIA -->
-    <a href="./hestia.html" class="project-row border-t border-zinc-800">
-        <div class="project-media">
-            <img
-                src="./assets/hestia/hestia-home.jpg"
-                alt="Hestia property management platform"
-                loading="lazy"
-                decoding="async"
-                width="1200"
-                height="750"
-            >
-        </div>
-        <div class="project-body">
-            <div class="project-num">03</div>
-            <div>
-                <h3 class="text-3xl text-zinc-300">
-                    <span class="text-emerald-600 font-mono">></span> Hestia
-                </h3>
-                <div class="flex gap-2 mt-3 flex-wrap text-xs text-zinc-400">
-                    <span class="border border-zinc-700 px-3 py-1">HTML</span>
-                    <span class="border border-zinc-700 px-3 py-1">PostgreSQL</span>
-                    <span class="border border-zinc-700 px-3 py-1">JavaScript</span>
-                    <span class="border border-zinc-700 px-3 py-1">PHP</span>
-                </div>
-            </div>
-            <div class="project-blurb">
-                <span class="text-emerald-600">//</span>
-                Property rental platform enabling direct landlord–tenant interaction, with structured workflows for listings, approvals, and inspections.
-            </div>
-        </div>
-    </a>
+ <a href="./hestia.html" class="project-row">
+ <div class="project-media">
+ <img
+ src="./assets/hestia/hestia-home.jpg"
+ alt="Hestia property management platform"
+ loading="lazy"
+ decoding="async"
+ width="1200"
+ height="750"
+ >
+ </div>
+ <div class="project-body">
+ <div class="project-meta">
+ <span class="project-num">03</span>
+ <h2 class="project-title">Hestia</h2>
+ </div>
+ <p class="project-stack">HTML / JavaScript / PHP / PostgreSQL</p>
+ <p class="project-blurb">
+ Property rental workflows for direct landlord-tenant listings, inspections, and approvals.
+ </p>
+ </div>
+ </a>
 
-    <!-- GRIDWATCH -->
-    <a href="./gridwatch.html" class="project-row border-t border-b border-zinc-800">
-        <div class="project-media">
-            <img
-                src="./assets/gridwatch/gridwatch-preview.svg"
-                alt="GridWatch power outage tracking platform preview"
-                loading="lazy"
-                decoding="async"
-                width="1200"
-                height="750"
-            >
-        </div>
-        <div class="project-body">
-            <div class="project-num">04</div>
-            <div>
-                <h3 class="text-3xl text-zinc-300">
-                    <span class="text-emerald-600 font-mono">></span> GridWatch
-                </h3>
-                <div class="flex gap-2 mt-3 flex-wrap text-xs text-zinc-400">
-                    <span class="border border-zinc-700 px-3 py-1">Node.js</span>
-                    <span class="border border-zinc-700 px-3 py-1">Leaflet</span>
-                    <span class="border border-zinc-700 px-3 py-1">JavaScript</span>
-                </div>
-            </div>
-            <div class="project-blurb">
-                <span class="text-emerald-600">//</span>
-                Real-time outage tracking concept (in progress) using user reports and geolocation to visualize electricity disruptions across regions.
-            </div>
-        </div>
-    </a>
+ <a href="./gridwatch.html" class="project-row">
+ <div class="project-media">
+ <img
+ src="./assets/gridwatch/gridwatch-preview.svg"
+ alt="GridWatch outage tracking concept"
+ loading="lazy"
+ decoding="async"
+ width="1200"
+ height="750"
+ >
+ </div>
+ <div class="project-body">
+ <div class="project-meta">
+ <span class="project-num">04</span>
+ <h2 class="project-title">GridWatch</h2>
+ </div>
+ <p class="project-stack">Node.js / Leaflet / JavaScript / In progress</p>
+ <p class="project-blurb">
+ Crowd-reported outage map concept for regions without reliable real-time grid visibility.
+ </p>
+ </div>
+ </a>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="grid md:grid-cols-2 gap-12 mb-32">
-    <div>
-        <div class="mb-6 text-xs uppercase tracking-[0.3em] text-zinc-600 font-mono">~/About</div>
+<section id="about" class="about-grid">
+ <div>
+ <p class="about-lead">
+ I’m Ekiyor, a full-stack developer in Nigeria. Self-taught and bootcamp-trained, I’ve spent the last couple of years building product surfaces end to end: the interface, the API, and the messy parts in between.
+ </p>
+ <p class="about-copy">
+ I like clear user workflows, especially product MVPs and booking/SaaS systems. When it helps the product, I’ll wire LLM features too. Day to day I ship with Next.js, and I’m comfortable in PHP/Laravel when the stack calls for it.
+ </p>
+ <p class="about-copy">
+ I care about the edges that break real users. On Serein, that meant getting multi-booking and duplicate slots right, not just shipping a pretty calendar. I tend to overdeliver past the brief when something would otherwise feel unfinished.
+ </p>
+ <div class="about-list">
+ <p>Ship the workflow, not just the UI</p>
+ <p>Prefer clear systems over clever shortcuts</p>
+ <p>Finish the edges clients actually hit</p>
+ </div>
+ </div>
 
-        <p class="text-xl text-zinc-300 leading-relaxed">
-            I’m Ekiyor, a full-stack developer in Nigeria. I came up self-taught and through a bootcamp, and for the last couple of years I’ve been building product surfaces end-to-end: the interface, the API, and the messy parts in between.
-        </p>
-
-        <p class="mt-6 text-zinc-500 leading-relaxed">
-            I like work with a clear user workflow, especially product MVPs and booking/SaaS systems. When it helps the product, I’ll wire LLM features too (that’s Spark). Day to day I ship with Next.js, and I’m comfortable in PHP/Laravel when the stack calls for it.
-        </p>
-
-        <p class="mt-6 text-zinc-500 leading-relaxed">
-            I care about the edges that break real users. On Serein, that meant getting multi-booking and duplicate slots right, not just shipping a pretty calendar. I tend to overdeliver past the brief when something would otherwise feel unfinished.
-        </p>
-
-        <div class="mt-10 text-sm text-zinc-600 font-mono space-y-2">
-            <p>// How I think</p>
-            <p>→ Ship the workflow, not just the UI</p>
-            <p>→ Prefer clear systems over clever shortcuts</p>
-            <p>→ Finish the edges clients actually hit</p>
-        </div>
-
-        <button id="terminalModeToggle" class="mt-10 text-xs text-zinc-500 font-mono border-b border-zinc-800">
-            $ Ctrl+K
-        </button>
-    </div>
-    <!-- CONTACT ME -->
-    <div>
-        <div class="text-zinc-500 font-mono">$ Contact</div>
-
-        <p class="mt-4 text-zinc-400 max-w-sm">
-            Open to freelance builds, collaborations, and full-time roles, especially product MVPs and booking/SaaS work.
-        </p>
-        <!-- EMAIL -->
-        <div class="mt-6 flex items-center gap-4 flex-wrap">
-            <a href="mailto:ekiyorclifford@gmail.com" 
-            class="text-xl text-zinc-200 hover:text-emerald-400 transition break-all">
-                ekiyorclifford@gmail.com
-            </a>
-
-            <button id="copyEmailBtn"
-                class="text-xs font-mono text-zinc-500 border border-zinc-800 px-2 py-1 hover:text-emerald-400 hover:border-emerald-700 transition">
-                copy
-            </button>
-        </div>
-
-        <div class="mt-10 text-sm text-zinc-500 space-y-2">
-            <a href="https://github.com/EkiyorClifford" 
-            class="text-emerald-400 hover:text-emerald-300" 
-            target="_blank">
-            github /ekiyorclifford
-            </a>
-
-            <p>
-                linkedin 
-                <a href="https://linkedin.com/in/ekiyor" 
-                class="text-emerald-400 hover:text-emerald-300" 
-                target="_blank">
-                /in/ekiyor
-                </a>
-            </p>
-
-            <p>Nigeria</p>
-        </div>
-    </div>
+ <div>
+ <img
+ class="about-portrait"
+ src="./assets/about/ekiyor-portrait.jpg"
+ alt="Ekiyor Clifford"
+ width="900"
+ height="1200"
+ loading="lazy"
+ decoding="async"
+ >
+ <p class="section-label" style="margin-bottom: 0.5rem">Contact</p>
+ <p class="about-copy" style="margin-top: 0">
+ Open to freelance builds, collaborations, and full-time roles, especially product MVPs and booking/SaaS work.
+ </p>
+ <div class="mt-4 flex flex-wrap items-baseline">
+ <a class="contact-email" href="mailto:ekiyorclifford@gmail.com">ekiyorclifford@gmail.com</a>
+ <button type="button" id="copyEmailBtn" class="copy-btn">copy</button>
+ </div>
+ <a
+ class="cv-link"
+ href="./assets/about/Ekiyor-Clifford-CV.pdf"
+ download="Ekiyor-Clifford-CV.pdf"
+ >
+ Download CV
+ </a>
+ <div class="mt-8 space-y-2 text-[0.95rem]" style="color: var(--color-quiet)">
+ <p>
+ <a href="https://github.com/EkiyorClifford" target="_blank" rel="noreferrer" style="color: var(--color-sage-soft); text-decoration: none">
+ github /ekiyorclifford
+ </a>
+ </p>
+ <p>
+ <a href="https://linkedin.com/in/ekiyor" target="_blank" rel="noreferrer" style="color: var(--color-sage-soft); text-decoration: none">
+ linkedin /in/ekiyor
+ </a>
+ </p>
+ <p>Nigeria</p>
+ </div>
+ </div>
 </section>
 
-<footer class="border-t border-zinc-900 py-6 text-xs text-zinc-600 flex justify-between font-mono">
-    <span>© 2026 · EKIYOR CLIFFORD</span>
-    <span class="text-emerald-700">● SYSTEMS ONLINE</span>
+<footer class="site-footer">
+ <span>© 2026 Ekiyor Clifford</span>
+ <span>Nigeria</span>
 </footer>
 
 </main>
+</div>
 
 <script>
-const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-// Cursor: desktop fine pointer only
-const cursor = document.getElementById('cursor');
-if (cursor) {
-    if (!canHover || prefersReducedMotion) {
-        cursor.classList.add('is-hidden');
-    } else {
-        document.addEventListener('mousemove', e => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-    }
-}
-
-// Terminal Mode
-let terminal = false;
-const btn = document.getElementById('terminalModeToggle');
-
-function toggleTerminal() {
-    terminal = !terminal;
-    document.body.classList.toggle('terminal-mode');
-
-    if (btn) {
-        btn.innerHTML = terminal ? '$ Ctrl+K · ACTIVE' : '$ Ctrl+K';
-    }
-}
-
-window.addEventListener('keydown', e => {
-    const key = (e.key || '').toLowerCase();
-    if ((e.ctrlKey || e.metaKey) && key === 'k') {
-        e.preventDefault();
-        toggleTerminal();
-    }
-});
-
-if (btn) btn.addEventListener('click', toggleTerminal);
-
-// EMAIL COPY
 const CONTACT_EMAIL = 'ekiyorclifford@gmail.com';
 const copyBtn = document.getElementById('copyEmailBtn');
-
 if (copyBtn) {
-    copyBtn.addEventListener('click', () => {
-        navigator.clipboard.writeText(CONTACT_EMAIL);
-
-        copyBtn.innerText = 'copied';
-
-        setTimeout(() => {
-            copyBtn.innerText = 'copy';
-        }, 2000);
-    });
+ copyBtn.addEventListener('click', () => {
+ navigator.clipboard.writeText(CONTACT_EMAIL);
+ copyBtn.innerText = 'copied';
+ setTimeout(() => { copyBtn.innerText = 'copy'; }, 2000);
+ });
 }
 </script>
-
 </body>
 </html>

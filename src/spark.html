@@ -1,210 +1,102 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spark · Idea → MVP Spec Assistant | Full-Stack Case Study</title>
-    <meta name="description" content="Spark turns a rough product idea into a structured MVP brief with streaming Groq LLM API, founder Q&A refine, export, and shareable links. Next.js and TypeScript by Ekiyor Clifford.">
-    <meta name="keywords" content="MVP spec, LLM API, Groq, streaming, Next.js, TypeScript, product brief, full-stack case study">
-    <meta name="author" content="Ekiyor Clifford">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="theme-color" content="#0a0a0a">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ekiyorclifford.netlify.app/spark.html">
-    <meta property="og:title" content="Spark · Idea → MVP Spec Assistant | Full-Stack Case Study">
-    <meta property="og:description" content="Idea → MVP spec assistant with streaming Groq LLM API, founder Q&A refine, export, and shareable links. Next.js and TypeScript.">
-    <meta property="og:image" content="https://ekiyorclifford.netlify.app/assets/spark/spark-home.jpg">
-    <meta property="og:site_name" content="Portfolio - Ekiyor Clifford">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ekiyorclifford.netlify.app/spark.html">
-    <meta property="twitter:title" content="Spark · Idea → MVP Spec Assistant | Full-Stack Case Study">
-    <meta property="twitter:description" content="Idea → MVP spec assistant with streaming Groq LLM API, founder Q&A refine, export, and shareable links.">
-    <meta property="twitter:image" content="https://ekiyorclifford.netlify.app/assets/spark/spark-home.jpg">
-
-    <link rel="canonical" href="https://ekiyorclifford.netlify.app/spark.html">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="output.css">
-    <style>
-        ::selection {
-            background-color: rgba(16, 185, 129, 0.2);
-            color: #10b981;
-        }
-    </style>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "CreativeWork",
-        "name": "Spark · Idea → MVP Spec Assistant",
-        "description": "Turns a rough product idea into a structured MVP brief with streaming Groq LLM API, founder Q&A refine, export, and shareable links.",
-        "author": {
-            "@type": "Person",
-            "name": "Ekiyor Clifford",
-            "url": "https://github.com/EkiyorClifford"
-        },
-        "image": "https://ekiyorclifford.netlify.app/assets/spark/spark-home.jpg",
-        "url": "https://ekiyorclifford.netlify.app/spark.html",
-        "dateCreated": "2026",
-        "keywords": "MVP spec, LLM API, Groq, streaming, Next.js, TypeScript",
-        "genre": "Web Development",
-        "programmingLanguage": "TypeScript, JavaScript",
-        "applicationCategory": "Portfolio Project"
-    }
-    </script>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Spark / Idea to MVP Spec Assistant | Ekiyor Clifford</title>
+ <meta name="description" content="Spark turns a rough product idea into a structured MVP brief with streaming Groq LLM API, founder Q&A refine, export, and shareable links.">
+ <meta name="author" content="Ekiyor Clifford">
+ <meta name="theme-color" content="#0c0d0b">
+ <meta property="og:title" content="Spark / Idea to MVP Spec Assistant">
+ <meta property="og:description" content="Idea to MVP spec assistant with streaming Groq LLM API, founder Q&A refine, export, and shareable links.">
+ <meta property="og:image" content="https://ekiyorclifford.netlify.app/assets/spark/spark-home.jpg">
+ <meta property="og:url" content="https://ekiyorclifford.netlify.app/spark.html">
+ <link rel="canonical" href="https://ekiyorclifford.netlify.app/spark.html">
+ <link rel="icon" type="image/svg+xml" href="favicon.svg">
+ <link rel="stylesheet" href="output.css">
 </head>
+<body class="site-shell">
+<article class="case">
+ <div class="case-top">
+ <a href="./index.html" class="back-link">&larr; Work</a>
+ <div class="case-links">
+ <a class="demo-link" href="https://spark-mvp-orcin.vercel.app" target="_blank" rel="noreferrer">Live demo</a>
+ <a class="ghost-link" href="https://github.com/EkiyorClifford" target="_blank" rel="noreferrer">GitHub</a>
+ </div>
+ </div>
 
-<body class="bg-zinc-950 text-zinc-400 font-sans px-6 md:px-20 py-16">
+ <header class="case-hero">
+ <h1 class="case-title">Spark</h1>
+ <p class="case-lede">
+ Idea to MVP spec assistant with streaming LLM API integration.
+ Paste a product idea; get a structured brief founders can actually build from, powered by Groq.
+ </p>
+ <p class="case-stack">Next.js / TypeScript / Groq / Streaming</p>
+ </header>
 
-<a href="./index.html" class="text-sm text-zinc-600 hover:text-emerald-400 font-mono">
-    ← back
-</a>
+ <img class="case-hero-img" src="./assets/spark/spark-home.jpg" alt="Spark idea to MVP spec assistant UI" width="1200" height="750">
 
-<div class="flex flex-wrap items-baseline justify-between gap-4 mt-8">
-    <h1 class="text-4xl md:text-6xl font-medium text-zinc-100 tracking-tight">
-        Spark
-    </h1>
+ <section class="case-section">
+ <h2>01. Outcome / Role</h2>
+ <p>Solo-built a live product that turns a vague founder idea into a scoped MVP brief in under a minute: problem, target user, prioritized features, suggested stack, 2-week plan, and open questions.</p>
+ <p class="quiet">Owned end-to-end: product UX, streaming API integration, refine loop, export/share, and abuse guards on a public demo.</p>
+ </section>
 
-    <div class="flex gap-4 flex-wrap">
-        <a id="spark-live" href="https://spark-mvp-orcin.vercel.app" target="_blank" rel="noreferrer"
-           class="text-sm font-mono text-emerald-400 hover:text-emerald-300 border border-emerald-800 bg-emerald-950/30 px-4 py-2 rounded-full transition-all duration-300 hover:bg-emerald-950/50">
-            Live Demo
-        </a>
-        <a href="https://github.com/EkiyorClifford" target="_blank" rel="noreferrer"
-           class="text-sm font-mono text-zinc-400 hover:text-white border border-zinc-800 bg-zinc-900/50 px-4 py-2 rounded-full transition-all duration-300 hover:bg-zinc-800">
-            GitHub
-        </a>
-    </div>
-</div>
+ <section class="case-section">
+ <h2>02. Problem</h2>
+ <p>Founders often have a rough idea but no scoped MVP. Generic chat tools dump walls of text; Spark turns that ambiguity into a brief someone can actually build from, then lets them refine it with answers to open questions.</p>
+ </section>
 
-<p class="mt-6 max-w-2xl text-lg text-zinc-300">
-    Idea → MVP spec assistant with streaming LLM API integration.
-    Paste a product idea; get a structured brief founders can actually build from, powered by Groq.
-</p>
+ <section class="case-section">
+ <h2>03. System Flow</h2>
+ <div class="case-flow">
+ <span class="step">Paste idea</span><span class="sep">&rarr;</span>
+ <span class="step">Stream brief</span><span class="sep">&rarr;</span>
+ <span class="step">Answer questions</span><span class="sep">&rarr;</span>
+ <span class="end">Refine / export / share</span>
+ </div>
+ <p class="quiet" style="margin-top: 0.85rem">Round 1 generates the brief. Round 2 uses founder answers to tighten scope, with the same six-section shell so the UI stays predictable while tokens stream in.</p>
+ </section>
 
-<div class="flex flex-wrap gap-2 mt-4">
-    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">Next.js</span>
-    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">TypeScript</span>
-    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">Groq API</span>
-    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">Streaming</span>
-</div>
+ <section class="case-section">
+ <h2>04. What I Built</h2>
+ <ul>
+ <li>Next.js App Router UI with a streaming response panel and section shells</li>
+ <li>Server-side Groq Chat Completions. API key never exposed to the browser</li>
+ <li>Round-2 founder Q&A that refines the MVP brief from answers</li>
+ <li>Stack preference, example ideas, local history, copy + Markdown download</li>
+ <li>Shareable short links with server-side brief storage</li>
+ <li>Per-IP rate limiting for the public demo</li>
+ </ul>
+ </section>
 
-<img
-    src="./assets/spark/spark-home.jpg"
-    alt="Spark idea to MVP spec assistant UI"
-    class="mt-12 w-full max-w-4xl rounded-lg border border-zinc-800"
-    width="1200"
-    height="750"
->
+ <section class="case-section">
+ <h2>05. Key Decisions</h2>
+ <p><span class="ink">Streaming over wait-and-dump.</span> Founders see the brief form as it arrives. It feels like a product, not a black-box chat.</p>
+ <p><span class="ink">Structured sections, not freeform chat.</span> Fixed headings make output scannable and exportable.</p>
+ <p><span class="ink">Server-only LLM calls + rate limits.</span> Keys stay off the client; a simple IP bucket protects the free-tier demo.</p>
+ <p><span class="ink">Short share IDs, not URL-stuffed briefs.</span> Briefs live server-side so links stay clean and storage can swap without changing the product surface.</p>
+ </section>
 
-<!-- 01. Outcome / Role -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">01. Outcome / Role</h2>
-    <p class="max-w-2xl text-zinc-400 leading-relaxed">
-        Solo-built a live product that turns a vague founder idea into a scoped MVP brief in under a minute: problem, target user, prioritized features, suggested stack, 2-week plan, and open questions.
-    </p>
-    <p class="max-w-2xl text-zinc-500 leading-relaxed mt-4">
-        Owned end-to-end: product UX, streaming API integration, refine loop, export/share, and abuse guards on a public demo.
-    </p>
-</section>
+ <section class="case-section">
+ <h2>06. Engineering Notes</h2>
+ <div class="case-notes">
+ <p>POST /api/generate: validate idea / rate-limit / stream Groq completions</p>
+ <p>POST /api/shares: store brief by short id / GET /s/[id] for view</p>
+ <p>Section parser: match streamed ## headings into UI shells as tokens arrive</p>
+ <p class="quiet">Share storage order: Vercel KV / Upstash &rarr; GitHub branch &rarr; local .data/shares</p>
+ </div>
+ </section>
 
-<!-- 02. Problem -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">02. Problem</h2>
-    <p class="max-w-2xl text-zinc-400 leading-relaxed">
-        Founders often have a rough idea but no scoped MVP. Generic chat tools dump walls of text; Spark turns that ambiguity into a brief someone can actually build from, then lets them refine it with answers to open questions.
-    </p>
-</section>
+ <section class="case-section">
+ <h2>07. Result</h2>
+ <p>A live, shareable demo of the same pattern used to ship AI features inside real products: product UX + Node API + LLM streaming, not a model-training research project.</p>
+ </section>
 
-<!-- 03. System Flow -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">03. System Flow</h2>
-
-    <div class="bg-zinc-900 border border-zinc-800 p-6">
-        <div class="flex flex-wrap gap-4 md:gap-8 items-center">
-            <div class="flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">1</span>
-                <span class="font-mono text-sm">Paste product idea</span>
-            </div>
-            <span class="text-zinc-600">→</span>
-            <div class="flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">2</span>
-                <span class="font-mono text-sm">Stream structured brief</span>
-            </div>
-            <span class="text-zinc-600">→</span>
-            <div class="flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">3</span>
-                <span class="font-mono text-sm">Answer open questions</span>
-            </div>
-            <span class="text-zinc-600">→</span>
-            <div class="flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 text-xs flex items-center justify-center font-mono border border-emerald-700">4</span>
-                <span class="font-mono text-sm text-emerald-300">Refine · export · share</span>
-            </div>
-        </div>
-    </div>
-
-    <p class="mt-4 text-sm text-zinc-500 max-w-2xl leading-relaxed">
-        Round 1 generates the brief. Round 2 uses founder answers to tighten scope, with the same six-section shell so the UI stays predictable while tokens stream in.
-    </p>
-</section>
-
-<!-- 04. What I Built -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">04. What I Built</h2>
-    <ul class="max-w-2xl space-y-2 list-disc list-inside text-zinc-400 leading-relaxed">
-        <li>Next.js App Router UI with a streaming response panel and section shells</li>
-        <li>Server-side Groq Chat Completions. API key never exposed to the browser</li>
-        <li>Round-2 founder Q&A that refines the MVP brief from answers</li>
-        <li>Stack preference, example idea chips, local history, copy + Markdown download</li>
-        <li>Shareable short links (<span class="font-mono text-zinc-500">/s/{id}</span>) with server-side brief storage</li>
-        <li>Per-IP rate limiting to keep a public demo from getting abused</li>
-    </ul>
-</section>
-
-<!-- 05. Key Decisions -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">05. Key Decisions</h2>
-
-    <p class="max-w-2xl leading-relaxed text-zinc-400">
-        <span class="text-zinc-200">Streaming over wait-and-dump.</span> Founders see the brief form as it arrives. It feels like a product, not a black-box chat.
-    </p>
-    <p class="max-w-2xl leading-relaxed text-zinc-400 mt-4">
-        <span class="text-zinc-200">Structured sections, not freeform chat.</span> Fixed headings (problem, user, features, stack, plan, questions) make output scannable and exportable.
-    </p>
-    <p class="max-w-2xl leading-relaxed text-zinc-400 mt-4">
-        <span class="text-zinc-200">Server-only LLM calls + rate limits.</span> Keys stay off the client; a simple IP bucket protects the free-tier demo.
-    </p>
-    <p class="max-w-2xl leading-relaxed text-zinc-400 mt-4">
-        <span class="text-zinc-200">Short share IDs, not URL-stuffed briefs.</span> Briefs live server-side so links stay clean and storage can swap (KV → GitHub → local) without changing the product surface.
-    </p>
-</section>
-
-<!-- 06. Engineering Notes -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">06. Engineering Notes</h2>
-
-    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed space-y-3 max-w-3xl">
-        <p>POST /api/generate → validate idea · rate-limit · stream Groq completions</p>
-        <p>POST /api/shares → store brief by short id · GET /s/[id] resolves for view</p>
-        <p>Section parser → match streamed ## headings into UI shells as tokens arrive</p>
-        <p class="text-xs text-zinc-500">Share storage order: Vercel KV / Upstash → GitHub branch → local .data/shares</p>
-    </div>
-</section>
-
-<!-- 07. Result -->
-<section class="mt-16 mb-8">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">07. Result</h2>
-    <p class="max-w-2xl text-zinc-400 leading-relaxed">
-        A live, shareable demo of the same pattern used to ship AI features inside real products: product UX + Node API + LLM streaming, not a model-training research project. Proof for founders and hiring managers that I can wire LLM APIs into a usable vertical slice.
-    </p>
-</section>
-
-<footer class="border-t border-zinc-900 mt-20 pt-6 text-xs text-zinc-600 font-mono flex justify-between">
-    <span>© 2026. EKIYOR CLIFFORD</span>
-    <a href="./index.html" class="text-emerald-700 hover:text-emerald-500">← systems</a>
-</footer>
-
+ <footer class="case-footer">
+ <span>/ 2026 Ekiyor Clifford</span>
+ <a href="./index.html">Back to work</a>
+ </footer>
+</article>
 </body>
 </html>

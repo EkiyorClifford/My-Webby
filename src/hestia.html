@@ -1,478 +1,169 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hestia Property Management System - Complete Real Estate Platform Design</title>
-    <meta name="description" content="Complete system design and implementation of Hestia, a modern property management platform featuring landlord dashboards, property listings, tenant management, and real-time analytics. Built with scalable architecture and responsive design.">
-    <meta name="keywords" content="property management system, real estate platform, landlord dashboard, tenant management, property listings, web development, system design, full-stack development, responsive design">
-    <meta name="author" content="Ekiyor Clifford">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ekiyorclifford.github.io/My-Webby/hestia.html">
-    <meta property="og:title" content="Hestia Property Management System - Complete Real Estate Platform Design">
-    <meta property="og:description" content="Complete system design and implementation of Hestia, a modern property management platform featuring landlord dashboards, property listings, tenant management, and real-time analytics.">
-    <meta property="og:image" content="https://ekiyorclifford.github.io/My-Webby/assets/hestia/hestia-home.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="Portfolio - Ekiyor Clifford">
-    <meta property="og:locale" content="en_US">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ekiyorclifford.github.io/My-Webby/hestia.html">
-    <meta property="twitter:title" content="Hestia Property Management System - Complete Real Estate Platform Design">
-    <meta property="twitter:description" content="Complete system design and implementation of Hestia, a modern property management platform featuring landlord dashboards, property listings, tenant management, and real-time analytics.">
-    <meta property="twitter:image" content="https://ekiyorclifford.github.io/My-Webby/assets/hestia/hestia-home.jpg">
-    <meta property="twitter:creator" content="@ekiyorclifford">
-    
-    <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#0a0a0a">
-    <meta name="msapplication-TileColor" content="#0a0a0a">
-    <meta name="application-name" content="Hestia Property Management">
-    <meta name="apple-mobile-web-app-title" content="Hestia">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://ekiyorclifford.github.io/My-Webby/hestia.html">
-    
-    <!-- Favicon and Icons -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="apple-touch-icon" href="favicon.svg">
-    <link rel="shortcut icon" href="favicon.svg">
-    
-    <link rel="stylesheet" href="output.css">
-    <style>
-        ::selection {
-            background-color: rgba(16, 185, 129, 0.2);
-            color: #10b981;
-        }
-    </style>
-    
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "CreativeWork",
-        "name": "Hestia Property Management System",
-        "description": "Complete system design and implementation of Hestia, a modern property management platform featuring landlord dashboards, property listings, tenant management, and real-time analytics.",
-        "author": {
-            "@type": "Person",
-            "name": "Ekiyor Clifford",
-            "url": "https://github.com/EkiyorClifford"
-        },
-        "image": "https://ekiyorclifford.github.io/My-Webby/assets/hestia/hestia-home.jpg",
-        "url": "https://ekiyorclifford.github.io/My-Webby/hestia.html",
-        "dateCreated": "2025",
-        "keywords": "property management system, real estate platform, landlord dashboard, tenant management, property listings, web development, system design, full-stack development, responsive design",
-        "genre": "Web Development",
-        "programmingLanguage": "HTML, CSS, JavaScript",
-        "applicationCategory": "Portfolio Project"
-    }
-    </script>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Hestia / Property Rental Workflows | Ekiyor Clifford</title>
+ <meta name="description" content="Hestia is a property rental platform for direct landlord-tenant interaction through structured listing, inspection, and approval workflows.">
+ <meta name="author" content="Ekiyor Clifford">
+ <meta name="theme-color" content="#0c0d0b">
+ <meta property="og:title" content="Hestia / Property Rental Workflows">
+ <meta property="og:description" content="Property rental platform for direct landlord-tenant listings, inspections, and approvals.">
+ <meta property="og:image" content="https://ekiyorclifford.netlify.app/assets/hestia/hestia-home.jpg">
+ <link rel="canonical" href="https://ekiyorclifford.netlify.app/hestia.html">
+ <link rel="icon" type="image/svg+xml" href="favicon.svg">
+ <link rel="stylesheet" href="output.css">
 </head>
+<body class="site-shell">
+<article class="case">
+ <div class="case-top">
+ <a href="./index.html" class="back-link">&larr; Work</a>
+ <div class="case-links">
+ <a class="demo-link" href="https://hestia.xo.je/" target="_blank" rel="noreferrer">Live demo</a>
+ <a class="ghost-link" href="https://github.com/EkiyorClifford/HESTIA-Part-2" target="_blank" rel="noreferrer">GitHub</a>
+ </div>
+ </div>
 
-<body class="bg-zinc-950 text-zinc-400 font-sans px-6 md:px-20 py-16">
+ <header class="case-hero">
+ <h1 class="case-title">Hestia</h1>
+ <p class="case-lede">
+ Property rental platform designed to remove agent friction by enabling direct landlord-tenant interaction through structured workflows.
+ </p>
+ <p class="case-stack">HTML / CSS / JavaScript / PHP / PostgreSQL</p>
+ </header>
 
-<!-- HEADER -->
-<a href="./index.html" class="text-sm text-zinc-600 hover:text-emerald-400 font-mono">
-    ← back
-</a>
+ <div class="case-gallery cols-3">
+ <figure class="case-shot" data-lightbox data-cap="01. Home" data-desc="Landing page with search entry">
+ <img src="./assets/hestia/hestia-home.jpg" alt="Hestia home" width="1200" height="750" fetchpriority="high" decoding="async">
+ <figcaption class="case-shot-meta">
+ <div class="cap">01. Home</div>
+ <div class="desc">Landing page with search entry</div>
+ </figcaption>
+ </figure>
+ <figure class="case-shot" data-lightbox data-cap="02. Browse" data-desc="Property listings with filtering">
+ <img src="./assets/hestia/hestia-properties.jpg" alt="Hestia properties" width="1200" height="750" loading="lazy" decoding="async">
+ <figcaption class="case-shot-meta">
+ <div class="cap">02. Browse</div>
+ <div class="desc">Property listings with filtering</div>
+ </figcaption>
+ </figure>
+ <figure class="case-shot" data-lightbox data-cap="03. Dashboard" data-desc="Landlord and user actions">
+ <img src="./assets/hestia/hestia-dashboard.jpg" alt="Hestia dashboard" width="1200" height="910" loading="lazy" decoding="async">
+ <figcaption class="case-shot-meta">
+ <div class="cap">03. Dashboard</div>
+ <div class="desc">Landlord and user actions</div>
+ </figcaption>
+ </figure>
+ </div>
+ <p class="case-fig">Discovery to booking intent. Click any image to expand.</p>
 
-<div class="flex flex-wrap items-baseline justify-between gap-4 mt-8">
-    <h1 class="text-4xl md:text-6xl font-medium text-zinc-100 tracking-tight">
-        Hestia
-    </h1>
-    
-    <!-- Live Links -->
-    <div class="flex gap-4">
-        <a href="https://hestia.xo.je/" target="_blank" class="text-sm font-mono text-emerald-400 hover:text-emerald-300 border border-emerald-800 bg-emerald-950/30 px-4 py-2 rounded-full transition-all duration-300 hover:bg-emerald-950/50">
-            Live Demo
-        </a>
-        <a href="https://github.com/EkiyorClifford/HESTIA-Part-2" target="_blank" class="text-sm font-mono text-zinc-400 hover:text-white border border-zinc-800 bg-zinc-900/50 px-4 py-2 rounded-full transition-all duration-300 hover:bg-zinc-800">
-            GitHub
-        </a>
-    </div>
+ <section class="case-section">
+ <h2>01. Outcome / Role</h2>
+ <p>Built a property rental platform that lets landlords and tenants interact directly through structured workflows (browse, request inspection, approve) without agent middlemen slowing every step.</p>
+ <p class="quiet">Owned the full stack: public listings UI, auth, inspection request flow, landlord dashboard actions, PostgreSQL schema, and REST API.</p>
+ </section>
+
+ <section class="case-section">
+ <h2>02. Problem</h2>
+ <p>Renting often depends on agents and informal back-and-forth. Landlords need control over who visits; tenants need a clear path from discovery to inspection without opaque handoffs.</p>
+ </section>
+
+ <section class="case-section">
+ <h2>03. System Flow</h2>
+ <div class="case-flow">
+ <span class="step">Register</span><span class="sep">&rarr;</span>
+ <span class="step">Browse properties</span><span class="sep">&rarr;</span>
+ <span class="step">Request inspection</span><span class="sep">&rarr;</span>
+ <span class="step">Landlord review</span><span class="sep">&rarr;</span>
+ <span class="end">Approve / reject</span>
+ </div>
+ </section>
+
+ <section class="case-section">
+ <h2>04. What I Built</h2>
+ <ul>
+ <li>Public home + property browse with filtering</li>
+ <li>User registration / login and role-aware access</li>
+ <li>Inspection request flow from tenant to landlord</li>
+ <li>Landlord dashboard to review, approve, or reject requests</li>
+ <li>PostgreSQL-backed data model separating actions from decisions</li>
+ </ul>
+ </section>
+
+ <section class="case-section">
+ <h2>05. Key Decisions</h2>
+ <p><span class="ink">Inspection before booking.</span> Direct booking was skipped in favor of an inspection layer that validates intent, reduces landlord risk, and leaves room for payments or scheduling later.</p>
+ <p><span class="ink">Separate actions from decisions.</span> Inspections and approvals stay distinct so workflows stay flexible and automatable.</p>
+ <p><span class="ink">Explicit status transitions.</span> pending &rarr; approved / rejected keeps both sides aligned and blocks conflicting actions.</p>
+ </section>
+
+ <section class="case-section">
+ <h2>06. Engineering Notes</h2>
+ <div class="case-notes">
+ <p>users / properties / inspections / approvals</p>
+ <p>POST /register / POST /login / GET /properties</p>
+ <p>POST /inspection/request / approve / reject</p>
+ <p class="quiet">inspection.status: pending | approved | rejected</p>
+ </div>
+ </section>
+
+ <section class="case-section">
+ <h2>07. Result</h2>
+ <p>A clear landlord-tenant loop without intermediaries: discovery &rarr; inspection request &rarr; decision. Structured workflows keep both sides aligned.</p>
+ </section>
+
+ <footer class="case-footer">
+ <span>© 2026 Ekiyor Clifford</span>
+ <a href="./index.html">Back to work</a>
+ </footer>
+</article>
+
+<div id="lightbox" class="lightbox" aria-hidden="true">
+ <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+ <button type="button" class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous">‹</button>
+ <img id="lightboxImg" src="" alt="">
+ <button type="button" class="lightbox-nav next" id="lightboxNext" aria-label="Next">›</button>
+ <div id="lightboxCaption" class="lightbox-caption"></div>
 </div>
 
-<p class="mt-6 max-w-2xl text-lg">
-    Property rental platform designed to remove agent friction by enabling direct landlord–tenant interaction through structured workflows.
-</p>
-
-<!-- STACK USED -->
-<div class="flex flex-wrap gap-2 mt-4">
-    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">HTML</span>
-    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">PostgreSQL</span>
-    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">CSS</span>
-    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">JavaScript</span>
-    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">REST</span>
-</div>
-
-
-<!-- PICTURE PROOF -->
-   <!-- Image Gallery: The User Journey (Larger, Clearer) -->
-    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
-        
-        <!-- Screenshot 1: Home Page -->
-        <div class="rounded-xl border border-zinc-800 overflow-hidden bg-zinc-900/30 group cursor-zoom-in" data-lightbox="hestia-home">
-            <div class="relative overflow-hidden">
-                <img 
-                    src="./assets/hestia/hestia-home.jpg"
-                    alt="Hestia home page: landing and search" 
-                    class="w-full h-64 md:h-72 object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                    width="1200"
-                    height="750"
-                    fetchpriority="high"
-                    decoding="async"
-                >
-                <div class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-sm px-2.5 py-1 rounded text-[10px] font-mono text-emerald-400 border border-zinc-700">
-                    /
-                </div>
-                <!-- Zoom indicator on hover -->
-                <div class="absolute bottom-3 right-3 bg-zinc-950/80 backdrop-blur-sm p-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        <line x1="11" y1="8" x2="11" y2="14"></line>
-                        <line x1="8" y1="11" x2="14" y2="11"></line>
-                    </svg>
-                </div>
-            </div>
-            <div class="p-4 border-t border-zinc-800">
-                <div class="font-mono text-xs text-emerald-400">01. Home</div>
-                <div class="text-xs text-zinc-500 mt-1">Landing page with search entry</div>
-            </div>
-        </div>
-        
-        <!-- Screenshot 2: Properties Listing -->
-        <div class="rounded-xl border border-zinc-800 overflow-hidden bg-zinc-900/30 group cursor-zoom-in" data-lightbox="hestia-properties">
-            <div class="relative overflow-hidden">
-                <img 
-                    src="./assets/hestia/hestia-properties.jpg"
-                    alt="Hestia properties listing with filtering"
-                    class="w-full h-64 md:h-72 object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                    width="1200"
-                    height="750"
-                    loading="lazy"
-                    decoding="async"
-                >
-                <div class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-sm px-2.5 py-1 rounded text-[10px] font-mono text-emerald-400 border border-zinc-700">
-                    /properties
-                </div>
-                <div class="absolute bottom-3 right-3 bg-zinc-950/80 backdrop-blur-sm p-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        <line x1="11" y1="8" x2="11" y2="14"></line>
-                        <line x1="8" y1="11" x2="14" y2="11"></line>
-                    </svg>
-                </div>
-            </div>
-            <div class="p-4 border-t border-zinc-800">
-                <div class="font-mono text-xs text-emerald-400">02. Browse</div>
-                <div class="text-xs text-zinc-500 mt-1">Property listings with filtering</div>
-            </div>
-        </div>
-        
-        <!-- Screenshot 3: USER DASHBOARD -->
-        <div class="rounded-xl border border-zinc-800 overflow-hidden bg-zinc-900/30 group cursor-zoom-in" data-lightbox="hestia-dashboard">
-            <div class="relative overflow-hidden">
-                <img 
-                    src="./assets/hestia/hestia-dashboard.jpg"
-                    alt="Hestia landlord dashboard"
-                    class="w-full h-64 md:h-72 object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                    width="1200"
-                    height="910"
-                    loading="lazy"
-                    decoding="async"
-                >
-                <div class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-sm px-2.5 py-1 rounded text-[10px] font-mono text-emerald-400 border border-zinc-700">
-                    /dashboard
-                </div>
-                <div class="absolute bottom-3 right-3 bg-zinc-950/80 backdrop-blur-sm p-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        <line x1="11" y1="8" x2="11" y2="14"></line>
-                        <line x1="8" y1="11" x2="14" y2="11"></line>
-                    </svg>
-                </div>
-            </div>
-            <div class="p-4 border-t border-zinc-800">
-                <div class="font-mono text-xs text-emerald-400">03. Action</div>
-                <div class="text-xs text-zinc-500 mt-1">User Dashboard</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Gallery Caption -->
-    <p class="mt-3 text-xs text-zinc-600 font-mono text-center">
-        Fig 1–3. Complete user journey, from discovery to booking intent. Click any image to expand.
-    </p>
-
-<!-- 01. Outcome / Role -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">01. Outcome / Role</h2>
-    <p class="max-w-2xl text-zinc-400 leading-relaxed">
-        Built a property rental platform that lets landlords and tenants interact directly through structured workflows (browse, request inspection, approve) without agent middlemen slowing every step.
-    </p>
-    <p class="max-w-2xl text-zinc-500 leading-relaxed mt-4">
-        Owned the full stack: public listings UI, auth, inspection request flow, landlord dashboard actions, PostgreSQL schema, and REST API.
-    </p>
-</section>
-
-<!-- 02. Problem -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">02. Problem</h2>
-    <p class="max-w-2xl text-zinc-400 leading-relaxed">
-        Renting often depends on agents and informal back-and-forth. Landlords need control over who visits; tenants need a clear path from discovery to inspection without opaque handoffs.
-    </p>
-</section>
-
-<!-- 03. System Flow -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">03. System Flow</h2>
-
-    <div class="bg-zinc-900 border border-zinc-800 p-6">
-        <div class="flex flex-wrap gap-4 md:gap-8 items-center">
-            <div class="flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">1</span>
-                <span class="font-mono text-sm">User registers account</span>
-            </div>
-            <span class="text-zinc-600">→</span>
-            <div class="flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">2</span>
-                <span class="font-mono text-sm">Browses available properties</span>
-            </div>
-            <span class="text-zinc-600">→</span>
-            <div class="flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">3</span>
-                <span class="font-mono text-sm">Requests inspection</span>
-            </div>
-            <span class="text-zinc-600">→</span>
-            <div class="flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">4</span>
-                <span class="font-mono text-sm">Landlord reviews request</span>
-            </div>
-            <span class="text-zinc-600">→</span>
-            <div class="flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 text-xs flex items-center justify-center font-mono border border-emerald-700">5</span>
-                <span class="font-mono text-sm text-emerald-300">Approval → booking confirmed</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 04. What I Built -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">04. What I Built</h2>
-    <ul class="max-w-2xl space-y-2 list-disc list-inside text-zinc-400 leading-relaxed">
-        <li>Public home + property browse with filtering</li>
-        <li>User registration / login and role-aware access</li>
-        <li>Inspection request flow from tenant to landlord</li>
-        <li>Landlord dashboard to review, approve, or reject requests</li>
-        <li>PostgreSQL-backed data model separating actions from decisions</li>
-    </ul>
-</section>
-
-<!-- 05. Key Decisions -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">05. Key Decisions</h2>
-
-    <p class="max-w-2xl leading-relaxed text-zinc-400">
-        <span class="text-zinc-200">Inspection before booking.</span> Direct booking was skipped in favor of an inspection layer that validates intent, reduces landlord risk, and leaves room for payments or scheduling later.
-    </p>
-    <p class="max-w-2xl leading-relaxed text-zinc-400 mt-4">
-        <span class="text-zinc-200">Separate actions from decisions.</span> Inspections (user requests) and approvals (landlord outcomes) stay distinct so workflows stay flexible and automatable.
-    </p>
-    <p class="max-w-2xl leading-relaxed text-zinc-400 mt-4">
-        <span class="text-zinc-200">Explicit status transitions.</span> pending → approved / rejected keeps both sides aligned and blocks conflicting actions.
-    </p>
-</section>
-
-<!-- 06. Engineering Notes -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">06. Engineering Notes</h2>
-
-    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed space-y-4 max-w-3xl">
-        <div>
-            users · properties · inspections · approvals
-        </div>
-        <div>
-            POST /register · POST /login · GET /properties
-        </div>
-        <div>
-            POST /inspection/request · POST /inspection/approve · POST /inspection/reject
-        </div>
-        <div class="text-xs text-zinc-500">
-            inspection.status: pending | approved | rejected
-        </div>
-    </div>
-</section>
-
-<!-- 07. Result -->
-<section class="mt-16 mb-8">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">07. Result</h2>
-    <p class="max-w-2xl text-zinc-400 leading-relaxed">
-        A clear landlord–tenant loop without intermediaries: discovery → inspection request → decision. The core challenge was balancing user freedom with landlord control. Structured workflows keep both sides aligned.
-    </p>
-</section>
-
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="fixed inset-0 z-50 bg-zinc-950/95 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 md:p-8">
-        
-        <!-- Close Button -->
-        <button id="lightboxClose" class="absolute top-6 right-6 text-zinc-400 hover:text-white transition-colors duration-300 z-10">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        </button>
-        
-        <!-- Image Container -->
-        <div class="max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center">
-            <img id="lightboxImg" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl border border-zinc-800 opacity-0 transition-opacity duration-300" loading="lazy" decoding="async">
-        </div>
-        
-        <!-- Caption -->
-        <div id="lightboxCaption" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm font-mono text-zinc-400 bg-zinc-950/80 backdrop-blur-sm px-4 py-2 rounded-full border border-zinc-800">
-            <!-- Caption injected via JS -->
-        </div>
-        
-        <!-- Prev/Next arrows (optional, for gallery navigation) -->
-        <button id="lightboxPrev" class="absolute left-6 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white transition-colors duration-300 hidden md:block">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-        </button>
-        <button id="lightboxNext" class="absolute right-6 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white transition-colors duration-300 hidden md:block">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-        </button>
-    </div>
-
-    <script>
-                // --- Lightbox Functionality ---
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightboxImg');
-        const lightboxCaption = document.getElementById('lightboxCaption');
-        const lightboxClose = document.getElementById('lightboxClose');
-        const lightboxPrev = document.getElementById('lightboxPrev');
-        const lightboxNext = document.getElementById('lightboxNext');
-
-        // Collect all gallery images
-        const galleryImages = document.querySelectorAll('[data-lightbox]');
-        let currentImageIndex = 0;
-        const imageData = [];
-
-        // Build image data array
-        galleryImages.forEach((item, index) => {
-            const img = item.querySelector('img');
-            const captionEl = item.querySelector('.font-mono.text-xs.text-emerald-400');
-            const descEl = item.querySelector('.text-xs.text-zinc-500');
-            
-            imageData.push({
-                src: img.src,
-                alt: img.alt,
-                caption: captionEl ? captionEl.textContent : '',
-                description: descEl ? descEl.textContent : ''
-            });
-            
-            // Attach click handler
-            item.addEventListener('click', () => {
-                openLightbox(index);
-            });
-        });
-
-        function openLightbox(index) {
-            currentImageIndex = index;
-            const data = imageData[index];
-            
-            lightboxImg.style.opacity = '0';
-            lightboxImg.src = data.src;
-            lightboxImg.alt = data.alt;
-            lightboxCaption.textContent = `${data.caption} · ${data.description}`;
-            
-            lightbox.style.opacity = '1';
-            
-            // Fade in image when loaded
-            lightboxImg.onload = () => {
-                lightboxImg.style.opacity = '1';
-            };
-            lightbox.style.pointerEvents = 'auto';
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
-            
-            // Update arrow visibility
-            updateArrows();
-        }
-
-        function closeLightbox() {
-            lightbox.style.opacity = '0';
-            lightbox.style.pointerEvents = 'none';
-            document.body.style.overflow = '';
-        }
-
-        function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % imageData.length;
-            const data = imageData[currentImageIndex];
-            
-            lightboxImg.src = data.src;
-            lightboxImg.alt = data.alt;
-            lightboxCaption.textContent = `${data.caption} · ${data.description}`;
-            
-            updateArrows();
-        }
-
-        function prevImage() {
-            currentImageIndex = (currentImageIndex - 1 + imageData.length) % imageData.length;
-            const data = imageData[currentImageIndex];
-            
-            lightboxImg.src = data.src;
-            lightboxImg.alt = data.alt;
-            lightboxCaption.textContent = `${data.caption} · ${data.description}`;
-            
-            updateArrows();
-        }
-
-        function updateArrows() {
-            if (imageData.length <= 1) {
-                lightboxPrev.style.display = 'none';
-                lightboxNext.style.display = 'none';
-            } else {
-                lightboxPrev.style.display = 'block';
-                lightboxNext.style.display = 'block';
-            }
-        }
-
-        // Event listeners
-        lightboxClose.addEventListener('click', closeLightbox);
-        lightboxPrev.addEventListener('click', prevImage);
-        lightboxNext.addEventListener('click', nextImage);
-
-        // Close on background click
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                closeLightbox();
-            }
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (lightbox.style.opacity === '1') {
-                if (e.key === 'Escape') {
-                    closeLightbox();
-                } else if (e.key === 'ArrowLeft') {
-                    prevImage();
-                } else if (e.key === 'ArrowRight') {
-                    nextImage();
-                }
-            }
-        });
-    </script>
+<script>
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxCaption = document.getElementById('lightboxCaption');
+const shots = [...document.querySelectorAll('[data-lightbox]')];
+let i = 0;
+const data = shots.map((el) => ({
+ src: el.querySelector('img').src,
+ alt: el.querySelector('img').alt,
+ caption: el.dataset.cap || '',
+ description: el.dataset.desc || '',
+}));
+function open(n) {
+ i = n;
+ const d = data[i];
+ lightboxImg.src = d.src;
+ lightboxImg.alt = d.alt;
+ lightboxCaption.textContent = d.description ? `${d.caption} / ${d.description}` : d.caption;
+ lightbox.classList.add('is-open');
+ lightbox.setAttribute('aria-hidden', 'false');
+ document.body.style.overflow = 'hidden';
+}
+function close() {
+ lightbox.classList.remove('is-open');
+ lightbox.setAttribute('aria-hidden', 'true');
+ document.body.style.overflow = '';
+}
+shots.forEach((el, n) => el.addEventListener('click', () => open(n)));
+document.getElementById('lightboxClose').addEventListener('click', close);
+document.getElementById('lightboxPrev').addEventListener('click', () => open((i - 1 + data.length) % data.length));
+document.getElementById('lightboxNext').addEventListener('click', () => open((i + 1) % data.length));
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) close(); });
+document.addEventListener('keydown', (e) => {
+ if (!lightbox.classList.contains('is-open')) return;
+ if (e.key === 'Escape') close();
+ if (e.key === 'ArrowLeft') open((i - 1 + data.length) % data.length);
+ if (e.key === 'ArrowRight') open((i + 1) % data.length);
+});
+</script>
 </body>
 </html>

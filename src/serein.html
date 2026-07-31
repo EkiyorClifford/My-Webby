@@ -1,494 +1,194 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serein · Wellness Spa Booking App | Full-Stack Case Study</title>
-    <meta name="description" content="Serein is a full-stack wellness spa booking platform with Paystack payments, dual customer/admin auth, live availability, and an operations dashboard. Built with Next.js, Supabase, and TypeScript.">
-    <meta name="keywords" content="spa booking app, wellness booking, Next.js, TypeScript, Supabase, Paystack, Resend, RLS, webhooks, full-stack development, system design">
-    <meta name="author" content="Ekiyor Clifford">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ekiyorclifford.github.io/My-Webby/serein.html">
-    <meta property="og:title" content="Serein · Wellness Spa Booking App | Full-Stack Case Study">
-    <meta property="og:description" content="Full-stack spa booking platform with Paystack payments, dual customer/admin auth, live availability, and an operations dashboard. Next.js, Supabase, TypeScript.">
-    <meta property="og:image" content="https://ekiyorclifford.github.io/My-Webby/assets/serein/serein-home.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="Portfolio - Ekiyor Clifford">
-    <meta property="og:locale" content="en_US">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ekiyorclifford.github.io/My-Webby/serein.html">
-    <meta property="twitter:title" content="Serein · Wellness Spa Booking App | Full-Stack Case Study">
-    <meta property="twitter:description" content="Full-stack spa booking platform with Paystack payments, dual customer/admin auth, live availability, and an operations dashboard. Next.js, Supabase, TypeScript.">
-    <meta property="twitter:image" content="https://ekiyorclifford.github.io/My-Webby/assets/serein/serein-home.jpg">
-    <meta property="twitter:creator" content="@ekiyorclifford">
-
-    <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#0a0a0a">
-    <meta name="msapplication-TileColor" content="#0a0a0a">
-    <meta name="application-name" content="Serein Wellness Booking">
-    <meta name="apple-mobile-web-app-title" content="Serein">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="mobile-web-app-capable" content="yes">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://ekiyorclifford.github.io/My-Webby/serein.html">
-
-    <!-- Favicon and Icons -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="apple-touch-icon" href="favicon.svg">
-    <link rel="shortcut icon" href="favicon.svg">
-
-    <link rel="stylesheet" href="output.css">
-    <style>
-        ::selection {
-            background-color: rgba(16, 185, 129, 0.2);
-            color: #10b981;
-        }
-    </style>
-
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "CreativeWork",
-        "name": "Serein · Wellness Booking App",
-        "description": "Full-stack spa booking platform with Paystack payments, dual customer/admin auth, live availability, and an operations dashboard.",
-        "author": {
-            "@type": "Person",
-            "name": "Ekiyor Clifford",
-            "url": "https://github.com/EkiyorClifford"
-        },
-        "image": "https://ekiyorclifford.github.io/My-Webby/assets/serein/serein-home.jpg",
-        "url": "https://ekiyorclifford.github.io/My-Webby/serein.html",
-        "dateCreated": "2026",
-        "keywords": "spa booking, Next.js, TypeScript, Supabase, Paystack, Resend, RLS, webhooks",
-        "genre": "Web Development",
-        "programmingLanguage": "TypeScript, JavaScript",
-        "applicationCategory": "Portfolio Project"
-    }
-    </script>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Serein / Wellness Spa Booking | Ekiyor Clifford</title>
+ <meta name="description" content="Serein is a full-stack wellness spa booking platform with Paystack payments, dual customer/admin auth, live availability, and an operations dashboard.">
+ <meta name="author" content="Ekiyor Clifford">
+ <meta name="theme-color" content="#0c0d0b">
+ <meta property="og:title" content="Serein / Wellness Spa Booking">
+ <meta property="og:description" content="Full-stack spa booking with Paystack, dual auth, live availability, and an ops dashboard.">
+ <meta property="og:image" content="https://ekiyorclifford.netlify.app/assets/serein/serein-home.jpg">
+ <link rel="canonical" href="https://ekiyorclifford.netlify.app/serein.html">
+ <link rel="icon" type="image/svg+xml" href="favicon.svg">
+ <link rel="stylesheet" href="output.css">
 </head>
+<body class="site-shell">
+<article class="case">
+ <div class="case-top">
+ <a href="./index.html" class="back-link">&larr; Work</a>
+ <div class="case-links">
+ <a class="demo-link" href="https://wellness-booking-app-orcin.vercel.app/" target="_blank" rel="noopener noreferrer">Live demo</a>
+ <a class="ghost-link" href="https://github.com/EkiyorClifford/wellness-booking-app" target="_blank" rel="noopener noreferrer">GitHub</a>
+ </div>
+ </div>
 
-<body class="bg-zinc-950 text-zinc-400 font-sans px-6 md:px-20 py-16">
+ <header class="case-hero">
+ <h1 class="case-title">Serein</h1>
+ <p class="case-lede">
+ Wellness spa booking where customers claim live slots with upfront Paystack payment.
+ Admins manage bookings, walk-ins, blocked availability, services, and revenue.
+ </p>
+ <p class="case-stack">Next.js / TypeScript / Supabase / Paystack / Resend</p>
+ </header>
 
-<!-- HEADER -->
-<a href="./index.html" class="text-sm text-zinc-600 hover:text-emerald-400 font-mono">
-    ← back
-</a>
+ <div class="case-gallery cols-2">
+ <figure class="case-shot" data-lightbox data-cap="01. Home" data-desc="Hero, services entry, brand-first public shell">
+ <img src="./assets/serein/serein-home.jpg" alt="Serein homepage" width="1200" height="750" fetchpriority="high" decoding="async">
+ <figcaption class="case-shot-meta">
+ <div class="cap">01. Home</div>
+ <div class="desc">Hero, services entry, brand-first public shell</div>
+ </figcaption>
+ </figure>
+ <figure class="case-shot" data-lightbox data-cap="02. Book" data-desc="Service detail + Paystack-backed claim CTA">
+ <img src="./assets/serein/serein-booking.jpg" alt="Serein booking" width="1200" height="750" loading="lazy" decoding="async">
+ <figcaption class="case-shot-meta">
+ <div class="cap">02. Book</div>
+ <div class="desc">Service detail + Paystack-backed claim CTA</div>
+ </figcaption>
+ </figure>
+ <figure class="case-shot" data-lightbox data-cap="03. Account" data-desc="Upcoming booking, history, cancel/reschedule policy">
+ <img src="./assets/serein/serein-account.jpg" alt="Serein account" width="1200" height="750" loading="lazy" decoding="async">
+ <figcaption class="case-shot-meta">
+ <div class="cap">03. Account</div>
+ <div class="desc">Upcoming booking, history, cancel/reschedule</div>
+ </figcaption>
+ </figure>
+ <figure class="case-shot" data-lightbox data-cap="04. Admin" data-desc="Revenue, calendar view, walk-ins and ops">
+ <img src="./assets/serein/serein-admin-dashboard.jpg" alt="Serein admin" width="1200" height="750" loading="lazy" decoding="async">
+ <figcaption class="case-shot-meta">
+ <div class="cap">04. Admin</div>
+ <div class="desc">Revenue, calendar, walk-ins and ops</div>
+ </figcaption>
+ </figure>
+ </div>
+ <p class="case-fig">Home &rarr; book &rarr; account &rarr; admin. Click any image to expand.</p>
 
-<div class="flex flex-wrap items-baseline justify-between gap-4 mt-8">
-    <h1 class="text-4xl md:text-6xl font-medium text-zinc-100 tracking-tight">
-        Serein
-    </h1>
+ <section class="case-section">
+ <h2>01. Outcome / Role</h2>
+ <p>Solo-built a full booking + payments + admin ops platform for a wellness spa: guests claim live slots with upfront Paystack payment; staff run walk-ins, blocked availability, services, and revenue from one dashboard.</p>
+ <p class="quiet">Owned the full stack: customer booking UX, dual auth, slot engine, payment verification/webhooks, admin operations, and email notifications.</p>
+ </section>
 
-    <!-- Live Links -->
-    <div class="flex gap-4 flex-wrap">
-        <a href="https://wellness-booking-app-orcin.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-sm font-mono text-emerald-400 hover:text-emerald-300 border border-emerald-800 bg-emerald-950/30 px-4 py-2 rounded-full transition-all duration-300 hover:bg-emerald-950/50">
-            Live Demo
-        </a>
-        <a href="https://github.com/EkiyorClifford/wellness-booking-app" target="_blank" rel="noopener noreferrer" class="text-sm font-mono text-zinc-400 hover:text-white border border-zinc-800 bg-zinc-900/50 px-4 py-2 rounded-full transition-all duration-300 hover:bg-zinc-800">
-            GitHub
-        </a>
-    </div>
-</div>
+ <section class="case-section">
+ <h2>02. Problem</h2>
+ <p>Spas need more than a contact form. Customers expect live availability and paid confirmation; staff need walk-ins, blocks, and revenue without double-booking the same chair at the same hour.</p>
+ </section>
 
-<p class="mt-6 max-w-2xl text-lg">
-    Wellness spa booking app where customers book manicure, pedicure, and spa services with real-time availability and upfront Paystack payment. Admins manage bookings, walk-ins, blocked availability, services, and revenue.
-</p>
+ <section class="case-section">
+ <h2>03. System Flow</h2>
+ <div class="case-flow">
+ <span class="step">Browse services</span><span class="sep">&rarr;</span>
+ <span class="step">Pick live slot</span><span class="sep">&rarr;</span>
+ <span class="step">Guest checkout</span><span class="sep">&rarr;</span>
+ <span class="step">Paystack</span><span class="sep">&rarr;</span>
+ <span class="end">Confirm + email</span>
+ </div>
+ <p class="quiet" style="margin-top: 0.85rem">Guests book without an account. After payment, they can optionally create an account to cancel/reschedule under a 2-hour cutoff and a max of 3 reschedules.</p>
+ </section>
 
-<!-- STACK USED -->
-<div class="flex flex-wrap gap-2 mt-4">
-    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">Next.js</span>
-    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">React</span>
-    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">TypeScript</span>
-    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">Tailwind CSS</span>
-    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">Supabase</span>
-    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">Paystack</span>
-    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">Resend</span>
-    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">RLS</span>
-    <span class="text-xs font-mono text-emerald-400 border border-emerald-800 bg-emerald-950/30 px-3 py-1 rounded-full">Webhooks</span>
-</div>
+ <section class="case-section">
+ <h2>04. What I Built</h2>
+ <div class="case-split">
+ <div>
+ <p class="label">Customer</p>
+ <ul>
+ <li>Service browsing + booking</li>
+ <li>Live slot availability (Africa/Lagos)</li>
+ <li>Guest checkout + upfront Paystack</li>
+ <li>Account auth, cancel/reschedule rules</li>
+ <li>Confirmation emails (Resend)</li>
+ </ul>
+ </div>
+ <div>
+ <p class="label">Admin</p>
+ <ul>
+ <li>Allowlist-gated admin login</li>
+ <li>Bookings dashboard and calendar</li>
+ <li>Walk-ins, blocked slots, Sunday closure</li>
+ <li>Services CRUD (safe deactivate)</li>
+ <li>Paid revenue windows</li>
+ </ul>
+ </div>
+ </div>
+ </section>
 
-<!-- PICTURE PROOF -->
-<div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5">
+ <section class="case-section">
+ <h2>05. Key Decisions</h2>
+ <p><span class="ink">Duplicate-booking guard first.</span> Pre-insert check plus post-insert re-check with rollback so two guests cannot claim the same hour under concurrency.</p>
+ <p><span class="ink">Pay before confirm.</span> The calendar only fills with paid demand. Guest checkout removes signup friction; account creation stays optional and post-booking.</p>
+ <p><span class="ink">Isolated admin auth.</span> Allowlist-gated and cookie-isolated from customer sessions.</p>
+ <p><span class="ink">Policy where customers look.</span> Cancel/reschedule rules show in the UI and emails, not only in backend checks.</p>
+ </section>
 
-    <!-- Screenshot 1: Home -->
-    <div class="rounded-xl border border-zinc-800 overflow-hidden bg-zinc-900/30 group cursor-zoom-in" data-lightbox="serein-home">
-        <div class="relative overflow-hidden">
-            <img
-                src="./assets/serein/serein-home.jpg"
-                alt="Serein homepage: full-bleed hero and brand"
-                class="w-full h-64 md:h-72 object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                width="1200"
-                height="750"
-                fetchpriority="high"
-                decoding="async"
-            >
-            <div class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-sm px-2.5 py-1 rounded text-[10px] font-mono text-emerald-400 border border-zinc-700">
-                /
-            </div>
-            <div class="absolute bottom-3 right-3 bg-zinc-950/80 backdrop-blur-sm p-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    <line x1="11" y1="8" x2="11" y2="14"></line>
-                    <line x1="8" y1="11" x2="14" y2="11"></line>
-                </svg>
-            </div>
-        </div>
-        <div class="p-4 border-t border-zinc-800">
-            <div class="font-mono text-xs text-emerald-400">01. Home</div>
-            <div class="text-xs text-zinc-500 mt-1">Hero, services entry, brand-first public shell</div>
-        </div>
-    </div>
+ <section class="case-section">
+ <h2>06. Engineering Notes</h2>
+ <div class="case-notes">
+ <p>Slot engine: hours, duration, bookings, blocks, closed days, past-slot rejection</p>
+ <p>Payments: create + Paystack / verify route / HMAC webhook (idempotent confirm)</p>
+ <p>Auth: dual cookie namespaces / RLS for email-scoped booking reads</p>
+ <p class="quiet">Timezone: Africa/Lagos across availability, cutoffs, and revenue windows</p>
+ </div>
+ </section>
 
-    <!-- Screenshot 2: Service / book CTA -->
-    <div class="rounded-xl border border-zinc-800 overflow-hidden bg-zinc-900/30 group cursor-zoom-in" data-lightbox="serein-booking">
-        <div class="relative overflow-hidden">
-            <img
-                src="./assets/serein/serein-booking.jpg"
-                alt="Serein service detail: Full Body Massage with Claim this hour CTA"
-                class="w-full h-64 md:h-72 object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                loading="lazy"
-                decoding="async"
-            >
-            <div class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-sm px-2.5 py-1 rounded text-[10px] font-mono text-emerald-400 border border-zinc-700">
-                /book/[id]
-            </div>
-            <div class="absolute bottom-3 right-3 bg-zinc-950/80 backdrop-blur-sm p-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    <line x1="11" y1="8" x2="11" y2="14"></line>
-                    <line x1="8" y1="11" x2="14" y2="11"></line>
-                </svg>
-            </div>
-        </div>
-        <div class="p-4 border-t border-zinc-800">
-            <div class="font-mono text-xs text-emerald-400">02. Book</div>
-            <div class="text-xs text-zinc-500 mt-1">Service detail + Paystack-backed claim CTA</div>
-        </div>
-    </div>
+ <section class="case-section">
+ <h2>07. Result</h2>
+ <p>A trustworthy booking loop for guests and staff: overlap-aware slots, idempotent payment confirmation, and Lagos timezone discipline. The hard part was keeping availability, payments, and operations consistent under concurrency.</p>
+ </section>
 
-    <!-- Screenshot 3: Customer account -->
-    <div class="rounded-xl border border-zinc-800 overflow-hidden bg-zinc-900/30 group cursor-zoom-in" data-lightbox="serein-account">
-        <div class="relative overflow-hidden">
-            <img
-                src="./assets/serein/serein-account.jpg"
-                alt="Serein customer account: next ritual with cancel and reschedule"
-                class="w-full h-64 md:h-72 object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                loading="lazy"
-                decoding="async"
-            >
-            <div class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-sm px-2.5 py-1 rounded text-[10px] font-mono text-emerald-400 border border-zinc-700">
-                /account
-            </div>
-            <div class="absolute bottom-3 right-3 bg-zinc-950/80 backdrop-blur-sm p-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    <line x1="11" y1="8" x2="11" y2="14"></line>
-                    <line x1="8" y1="11" x2="14" y2="11"></line>
-                </svg>
-            </div>
-        </div>
-        <div class="p-4 border-t border-zinc-800">
-            <div class="font-mono text-xs text-emerald-400">03. Account</div>
-            <div class="text-xs text-zinc-500 mt-1">Upcoming booking, history, cancel/reschedule policy</div>
-        </div>
-    </div>
+ <footer class="case-footer">
+ <span>© 2026 Ekiyor Clifford</span>
+ <a href="./index.html">Back to work</a>
+ </footer>
+</article>
 
-    <!-- Screenshot 4: Admin dashboard -->
-    <div class="rounded-xl border border-zinc-800 overflow-hidden bg-zinc-900/30 group cursor-zoom-in" data-lightbox="serein-admin">
-        <div class="relative overflow-hidden">
-            <img
-                src="./assets/serein/serein-admin-dashboard.jpg"
-                alt="Serein admin dashboard: revenue summary and bookings calendar"
-                class="w-full h-64 md:h-72 object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                loading="lazy"
-                decoding="async"
-            >
-            <div class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-sm px-2.5 py-1 rounded text-[10px] font-mono text-emerald-400 border border-zinc-700">
-                /admin
-            </div>
-            <div class="absolute bottom-3 right-3 bg-zinc-950/80 backdrop-blur-sm p-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    <line x1="11" y1="8" x2="11" y2="14"></line>
-                    <line x1="8" y1="11" x2="14" y2="11"></line>
-                </svg>
-            </div>
-        </div>
-        <div class="p-4 border-t border-zinc-800">
-            <div class="font-mono text-xs text-emerald-400">04. Admin</div>
-            <div class="text-xs text-zinc-500 mt-1">Revenue, calendar view, walk-ins &amp; ops</div>
-        </div>
-    </div>
-</div>
-
-<p class="mt-3 text-xs text-zinc-600 font-mono text-center">
-    Fig 1–4. Home → book → account → admin. Click any image to expand.
-</p>
-
-<!-- 01. Outcome / Role -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">01. Outcome / Role</h2>
-    <p class="max-w-2xl text-zinc-400 leading-relaxed">
-        Solo-built a full booking + payments + admin ops platform for a wellness spa: guests claim live slots with upfront Paystack payment; staff run walk-ins, blocked availability, services, and revenue from one dashboard.
-    </p>
-    <p class="max-w-2xl text-zinc-500 leading-relaxed mt-4">
-        Owned the full stack: customer booking UX, dual auth, slot engine, payment verification/webhooks, admin operations, and email notifications.
-    </p>
-</section>
-
-<!-- 02. Problem -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">02. Problem</h2>
-    <p class="max-w-2xl text-zinc-400 leading-relaxed">
-        Spas need more than a contact form. Customers expect live availability and paid confirmation; staff need walk-ins, blocks, and revenue without double-booking the same chair at the same hour.
-    </p>
-</section>
-
-<!-- 03. System Flow -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">03. System Flow</h2>
-
-    <div class="bg-zinc-900 border border-zinc-800 p-6">
-        <div class="flex flex-wrap gap-4 md:gap-8 items-center">
-            <div class="flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">1</span>
-                <span class="font-mono text-sm">Browse active services</span>
-            </div>
-            <span class="text-zinc-600">→</span>
-            <div class="flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">2</span>
-                <span class="font-mono text-sm">Pick live time slot</span>
-            </div>
-            <span class="text-zinc-600">→</span>
-            <div class="flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">3</span>
-                <span class="font-mono text-sm">Guest checkout details</span>
-            </div>
-            <span class="text-zinc-600">→</span>
-            <div class="flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 text-xs flex items-center justify-center font-mono">4</span>
-                <span class="font-mono text-sm">Paystack payment</span>
-            </div>
-            <span class="text-zinc-600">→</span>
-            <div class="flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 text-xs flex items-center justify-center font-mono border border-emerald-700">5</span>
-                <span class="font-mono text-sm text-emerald-300">Confirm + email notifications</span>
-            </div>
-        </div>
-    </div>
-
-    <p class="mt-4 text-sm text-zinc-500 max-w-2xl leading-relaxed">
-        Guests book without an account. After payment, they can optionally create an account with the same email to cancel/reschedule under a 2-hour cutoff and a max of 3 reschedules.
-    </p>
-</section>
-
-<!-- 04. What I Built -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">04. What I Built</h2>
-
-    <div class="grid md:grid-cols-2 gap-8">
-        <div>
-            <p class="text-xs font-mono text-zinc-600 mb-3">Customer</p>
-            <ul class="space-y-2 list-disc list-inside text-zinc-400 text-sm leading-relaxed">
-                <li>Service browsing + booking at /book/[serviceId]</li>
-                <li>Live slot availability (Africa/Lagos)</li>
-                <li>Guest checkout + upfront Paystack payment</li>
-                <li>Account auth, cancel/reschedule with policy rules</li>
-                <li>Confirmation emails (Resend)</li>
-            </ul>
-        </div>
-        <div>
-            <p class="text-xs font-mono text-zinc-600 mb-3">Admin</p>
-            <ul class="space-y-2 list-disc list-inside text-zinc-400 text-sm leading-relaxed">
-                <li>Allowlist-gated admin login</li>
-                <li>Bookings dashboard (search / filter / calendar)</li>
-                <li>Walk-ins, blocked slots, Sunday closure</li>
-                <li>Services CRUD (safe deactivate)</li>
-                <li>Paid revenue: today / week / month / all-time</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<!-- 05. Key Decisions -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">05. Key Decisions</h2>
-
-    <p class="max-w-2xl leading-relaxed text-zinc-400">
-        <span class="text-zinc-200">Duplicate-booking guard first.</span> Multi-booking and overlapping slots were treated as a core product risk: pre-insert check plus post-insert re-check with rollback so two guests cannot claim the same hour under concurrency.
-    </p>
-    <p class="max-w-2xl leading-relaxed text-zinc-400 mt-4">
-        <span class="text-zinc-200">Pay before confirm.</span> The calendar only fills with paid demand. Guest checkout removes signup friction; account creation stays optional and post-booking.
-    </p>
-    <p class="max-w-2xl leading-relaxed text-zinc-400 mt-4">
-        <span class="text-zinc-200">Isolated admin auth.</span> Allowlist-gated and cookie-isolated from customer sessions. A role claim alone is not enough to reach operations tools.
-    </p>
-    <p class="max-w-2xl leading-relaxed text-zinc-400 mt-4">
-        <span class="text-zinc-200">Policy where customers look.</span> Cancel/reschedule rules (2-hour cutoff, max 3 reschedules) show in the UI and emails, not only in backend checks.
-    </p>
-</section>
-
-<!-- 06. Engineering Notes -->
-<section class="mt-16">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">06. Engineering Notes</h2>
-
-    <div class="bg-zinc-900 border border-zinc-800 p-6 font-mono text-sm leading-relaxed space-y-3 max-w-3xl">
-        <p>Slot engine → hours, duration, bookings, blocks, closed days, past-slot rejection</p>
-        <p>Payments → create + Paystack initiate · verify route · HMAC webhook (idempotent confirm)</p>
-        <p>Auth → dual cookie namespaces (customer vs admin) · RLS for email-scoped booking reads</p>
-        <p>Timezone → Africa/Lagos across availability, cutoffs, and revenue windows</p>
-    </div>
-
-    <p class="mt-4 text-sm text-zinc-500 max-w-2xl leading-relaxed">
-        Verify route and webhook share confirmation logic so retries and race conditions do not double-confirm a booking.
-    </p>
-</section>
-
-<!-- 07. Result -->
-<section class="mt-16 mb-8">
-    <h2 class="text-xl text-emerald-400 font-mono mb-4">07. Result</h2>
-    <p class="max-w-2xl text-zinc-400 leading-relaxed">
-        A trustworthy booking loop for guests and staff: overlap-aware slots, idempotent payment confirmation, and Lagos timezone discipline. The hard part was not the form. It was keeping availability, payments, and operations consistent under concurrency.
-    </p>
-</section>
-
-<!-- Lightbox Modal -->
-<div id="lightbox" class="fixed inset-0 z-50 bg-zinc-950/95 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 md:p-8">
-
-    <button id="lightboxClose" class="absolute top-6 right-6 text-zinc-400 hover:text-white transition-colors duration-300 z-10" aria-label="Close lightbox">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-    </button>
-
-    <div class="max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center">
-        <img id="lightboxImg" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl border border-zinc-800 opacity-0 transition-opacity duration-300" loading="lazy" decoding="async">
-    </div>
-
-    <div id="lightboxCaption" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm font-mono text-zinc-400 bg-zinc-950/80 backdrop-blur-sm px-4 py-2 rounded-full border border-zinc-800"></div>
-
-    <button id="lightboxPrev" class="absolute left-6 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white transition-colors duration-300 hidden md:block" aria-label="Previous image">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
-    </button>
-    <button id="lightboxNext" class="absolute right-6 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white transition-colors duration-300 hidden md:block" aria-label="Next image">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
-    </button>
+<div id="lightbox" class="lightbox" aria-hidden="true">
+ <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+ <button type="button" class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous">‹</button>
+ <img id="lightboxImg" src="" alt="">
+ <button type="button" class="lightbox-nav next" id="lightboxNext" aria-label="Next">›</button>
+ <div id="lightboxCaption" class="lightbox-caption"></div>
 </div>
 
 <script>
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxCaption = document.getElementById('lightboxCaption');
-    const lightboxClose = document.getElementById('lightboxClose');
-    const lightboxPrev = document.getElementById('lightboxPrev');
-    const lightboxNext = document.getElementById('lightboxNext');
-
-    const galleryImages = document.querySelectorAll('[data-lightbox]');
-    let currentImageIndex = 0;
-    const imageData = [];
-
-    galleryImages.forEach((item, index) => {
-        const img = item.querySelector('img');
-        const captionEl = item.querySelector('.font-mono.text-xs.text-emerald-400');
-        const descEl = item.querySelector('.text-xs.text-zinc-500');
-
-        imageData.push({
-            src: img.src,
-            alt: img.alt,
-            caption: captionEl ? captionEl.textContent : '',
-            description: descEl ? descEl.textContent : ''
-        });
-
-        item.addEventListener('click', () => {
-            openLightbox(index);
-        });
-    });
-
-    function openLightbox(index) {
-        currentImageIndex = index;
-        const data = imageData[index];
-
-        lightboxImg.style.opacity = '0';
-        lightboxImg.src = data.src;
-        lightboxImg.alt = data.alt;
-        lightboxCaption.textContent = `${data.caption} · ${data.description}`;
-
-        lightbox.style.opacity = '1';
-        lightboxImg.onload = () => {
-            lightboxImg.style.opacity = '1';
-        };
-        lightbox.style.pointerEvents = 'auto';
-        document.body.style.overflow = 'hidden';
-        updateArrows();
-    }
-
-    function closeLightbox() {
-        lightbox.style.opacity = '0';
-        lightbox.style.pointerEvents = 'none';
-        document.body.style.overflow = '';
-    }
-
-    function nextImage() {
-        currentImageIndex = (currentImageIndex + 1) % imageData.length;
-        const data = imageData[currentImageIndex];
-        lightboxImg.src = data.src;
-        lightboxImg.alt = data.alt;
-        lightboxCaption.textContent = `${data.caption} · ${data.description}`;
-        updateArrows();
-    }
-
-    function prevImage() {
-        currentImageIndex = (currentImageIndex - 1 + imageData.length) % imageData.length;
-        const data = imageData[currentImageIndex];
-        lightboxImg.src = data.src;
-        lightboxImg.alt = data.alt;
-        lightboxCaption.textContent = `${data.caption} · ${data.description}`;
-        updateArrows();
-    }
-
-    function updateArrows() {
-        if (imageData.length <= 1) {
-            lightboxPrev.style.display = 'none';
-            lightboxNext.style.display = 'none';
-        } else {
-            lightboxPrev.style.display = 'block';
-            lightboxNext.style.display = 'block';
-        }
-    }
-
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightboxPrev.addEventListener('click', prevImage);
-    lightboxNext.addEventListener('click', nextImage);
-
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeLightbox();
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (lightbox.style.opacity === '1') {
-            if (e.key === 'Escape') closeLightbox();
-            else if (e.key === 'ArrowLeft') prevImage();
-            else if (e.key === 'ArrowRight') nextImage();
-        }
-    });
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxCaption = document.getElementById('lightboxCaption');
+const shots = [...document.querySelectorAll('[data-lightbox]')];
+let i = 0;
+const data = shots.map((el) => ({
+ src: el.querySelector('img').src,
+ alt: el.querySelector('img').alt,
+ caption: el.dataset.cap || '',
+ description: el.dataset.desc || '',
+}));
+function open(n) {
+ i = n;
+ const d = data[i];
+ lightboxImg.src = d.src;
+ lightboxImg.alt = d.alt;
+ lightboxCaption.textContent = d.description ? `${d.caption} / ${d.description}` : d.caption;
+ lightbox.classList.add('is-open');
+ lightbox.setAttribute('aria-hidden', 'false');
+ document.body.style.overflow = 'hidden';
+}
+function close() {
+ lightbox.classList.remove('is-open');
+ lightbox.setAttribute('aria-hidden', 'true');
+ document.body.style.overflow = '';
+}
+shots.forEach((el, n) => el.addEventListener('click', () => open(n)));
+document.getElementById('lightboxClose').addEventListener('click', close);
+document.getElementById('lightboxPrev').addEventListener('click', () => open((i - 1 + data.length) % data.length));
+document.getElementById('lightboxNext').addEventListener('click', () => open((i + 1) % data.length));
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) close(); });
+document.addEventListener('keydown', (e) => {
+ if (!lightbox.classList.contains('is-open')) return;
+ if (e.key === 'Escape') close();
+ if (e.key === 'ArrowLeft') open((i - 1 + data.length) % data.length);
+ if (e.key === 'ArrowRight') open((i + 1) % data.length);
+});
 </script>
 </body>
 </html>
